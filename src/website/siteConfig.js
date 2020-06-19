@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'OrgFlow Documentation', // Title for your website.
+  title: 'OrgFlow', // Title for your website.
   tagline: 'A website for testing',
   url: 'https://docs.orgflow.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -31,31 +31,30 @@ const siteConfig = {
 
   // Used for publishing and more
   projectName: 'docs',
-  organizationName: 'OrgFlow',
+  organizationName: 'OrgFlow GmbH.',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    {doc: 'guides_welcome', label: 'Guides'},
+    {doc: 'doc4', label: 'Reference'},
+    {page: 'help', label: 'Download'},
   ],
 
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  headerIcon: 'img/OrgFlow-Logo-Naked.svg',
+  footerIcon: 'img/OrgFlow-Logo-Naked.svg',
+  favicon: 'img/OrgFlow-Logo-Boxed.svg',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#2044a3',
-    secondaryColor: '#162f72',
+    primaryColor: '#070032',
+    secondaryColor: '#DB162F',
   },
 
   /* Custom fonts for website */
@@ -97,10 +96,10 @@ const siteConfig = {
   // docsSideNavCollapsible: true,
 
   // Show documentation's last contributor's name.
-  // enableUpdateBy: true,
+  enableUpdateBy: true,
 
   // Show documentation's last update time.
-  // enableUpdateTime: true,
+  enableUpdateTime: true,
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...

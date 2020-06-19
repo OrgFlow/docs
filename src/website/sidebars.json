@@ -1,8 +1,8 @@
 {
-  "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+  "guides": {
+    "Getting Started": ["guides_welcome", "guides_coreconcepts", "guides_download", "guides_git", "guides_terminology"],
+    "Walkthrough": ["doc2"],
+    "Samples": ["doc3"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]

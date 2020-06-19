@@ -1,5 +1,5 @@
 ---
-id: doc2
+id: reference.welcome
 title: document number 2
 ---
 
