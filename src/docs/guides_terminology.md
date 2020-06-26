@@ -20,6 +20,9 @@ The **Git repository** is external to OrgFlow, which means that you can choose a
 ## Branch
 A Git concept; a **branch** encapsulates a set of code changes. A **branch** allows you to change **metadata** without affecting the main (or production) **metadata**. A change in a **branch** can be moved between other **branches** as required. This is one of the core concepts of Git that OrgFlow uses to **flow** your changes between **environments**.
 
+## Merge conflict
+A Git concept; a **merge conflict** occurs when two or more sets of changes cannot be automatically merged. **Merge conflicts** usually need to resolved manually, as a decision needs to be made regarding which changes to keep.
+
 ## Environment
 OrgFlow combines an **org** with a **branch** to create an **environment**. You can then use OrgFlow to move (or **flow**) the **metadata** between **environments**, or from the **org** to the **branch** and vice versa.
 

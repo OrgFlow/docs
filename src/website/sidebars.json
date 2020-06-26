@@ -1,7 +1,7 @@
 {
   "guides": {
     "Getting Started": ["guides_welcome", "guides_coreconcepts", "guides_download", "guides_git", "guides_terminology"],
-    "Walkthrough": ["doc2"],
+    "Quick Starts": ["guides_quickstartprerequisites", "guides_quickstartcli", "guides_quickstartvscode"],
     "Samples": ["doc3"]
   },
   "docs-other": {

@@ -16,7 +16,6 @@ If you prefer point and click, you can use that too. Whether you're low code, no
 ## How to get started
 You'll find a series of helpful guides and samples on this website. Each command also has an in-depth reference page if you want to fine tune your usage.
 
-We recommend that you start by [familiarising yourself with some of the core concepts of OrgFlow](guides_coreconcepts). But we won't discourage you if you just want to jump right in. You'll need:
-* Access to a Salesforce org
-* [A Git repository](guides_git)
-* [A copy of OrgFlow](guides_download)
+We recommend that you start by [familiarizing yourself with some of the core concepts of OrgFlow](guides_coreconcepts). But we won't discourage you if you just want to jump right in. We have quick start guides for our:
+* [Command Line Interface (CLI)](guides_quickstartcli)
+* [Visual Studio Code (VS Code) extension](guides_quickstartvscode)
