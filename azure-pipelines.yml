@@ -27,7 +27,7 @@ steps:
   displayName: 'Push to storage'
   inputs:
     SourcePath: '$(websiteDirectory)/build/docs/*'
-    azureSubscription: 'OrgFlow'
+    azureSubscription: 'IDeliverable Azure Subscription'
     Destination: 'AzureBlob'
     storage: 'orgflowdocs'
     ContainerName: '$web'
