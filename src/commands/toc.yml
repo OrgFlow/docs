@@ -1,0 +1,10 @@
+- name: "Stack-based commands"
+  items:
+    - topicUid: command_stack_delete
+    - topicUid: command_stack_generatekey
+    - topicUid: command_stack_gitauth
+    - topicUid: command_stack_init
+    - topicUid: command_stack_list
+    - topicUid: command_stack_savekey
+    - topicUid: command_stack_setcredentials
+    - topicUid: command_stack_setdefault
