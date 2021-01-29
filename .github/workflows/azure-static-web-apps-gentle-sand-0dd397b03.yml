@@ -23,7 +23,7 @@ jobs:
         with:
           args: src/docfx.json        
         env:
-          DOCFX_SOURCE_BRANCH_NAME: $GITHUB_REF
+          DOCFX_SOURCE_BRANCH_NAME: ${{env.GITHUB_REF}}
       - name: Build And Deploy Azure Static Site
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
