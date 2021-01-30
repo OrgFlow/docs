@@ -1,0 +1,24 @@
+<div class="navbar-container ">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light" data-sticky="top">
+    <div class="container">
+        <a class="navbar-brand fade-page" href="index.html">
+        <img src="{{_src}}assets/img/logo.svg" alt="OrgFlow">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <img class="icon navbar-toggler-open" src="assets/img/icons/interface/menu.svg" alt="menu interface icon" data-inject-svg />
+        <img class="icon navbar-toggler-close" src="assets/img/icons/interface/cross.svg" alt="cross interface icon" data-inject-svg />
+        </button>
+        <div class="collapse navbar-collapse justify-content-end">
+        <div class="py-2 py-lg-0">
+            <ul class="navbar-nav">
+                {{#_nav.items}}
+                <li class="nav-item {{#active}}active{{/active}}">
+                    <a class="nav-link" href="{{href}}">{{name}}{{#active}}<span class="sr-only">(current)</span></a>{{/active}}
+                </li>
+                {{/_nav.items}}
+            </ul>
+        </div><a href="https://themes.getbootstrap.com/product/leap-multipurpose-bootstrap-theme/" class="btn btn-primary ml-lg-3">Purchase Now</a>
+        </div>
+    </div>
+    </nav>
+</div>

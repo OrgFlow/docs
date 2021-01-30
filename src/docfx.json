@@ -29,7 +29,9 @@
     ],
     "dest": "_site",
     "template": [
-      "default"
+      "Default",
+      "StaticToc",
+      "../templates/leap"
     ]
   }
 }

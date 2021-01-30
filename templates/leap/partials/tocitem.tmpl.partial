@@ -1,0 +1,15 @@
+<h6>{{name}}</h6>
+{{#items}}
+    <ul class="nav">
+        <li class="nav-item">
+            <a 
+                href="{{#active}}#{{/active}}{{^active}}{{href}}{{/active}}" 
+                class="py-0 nav-link {{#active}}active{{/active}}">
+                    {{name}}
+            </a>
+        </li>
+        {{#items}}
+            {{>partials/tocitem}}
+        {{/items}}
+    </ul>
+{{/items}}
