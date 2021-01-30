@@ -1,8 +1,8 @@
 <div class="navbar-container ">
     <nav class="navbar navbar-expand-lg bg-white navbar-light" data-sticky="top">
     <div class="container">
-        <a class="navbar-brand fade-page" href="index.html">
-        <img src="{{_src}}assets/img/logo.svg" alt="OrgFlow">
+        <a class="navbar-brand fade-page" href="{{_rel}}index.html">
+        <img src="{{_rel}}assets/img/logo.svg" alt="OrgFlow">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <img class="icon navbar-toggler-open" src="assets/img/icons/interface/menu.svg" alt="menu interface icon" data-inject-svg />
