@@ -27,10 +27,7 @@ This command can also be used to validate a deployment without actually making a
   
   If specified, no change to the metadata in the Salesforce organisation are made. Instead, the changes are validated by Salesforce, similar to [validating a changeset](https://help.salesforce.com/articleView?id=sf.changesets_inbound_test_deploy.htm&type=5).
 
-  >[!WARNING]
-  >Using this option can potentially leave a validated changeset with in the target Salesforce organisation and the Salesforce UI will show a button to 'Quick Deploy' a validated changeset.
-  >
-  >Using the 'Quick Deploy' option will cause the metadata tracked with OrgFlow to be out of sync, which may cause further OrgFlow operations to incorrectly merge or overwrite metadata changes.
+[!include[CheckOnlyDeployWarning](partials/check-only-deploy-warning.md)]
 
 - **`--testLevel=[NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]`**
   

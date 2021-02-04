@@ -1,6 +1,12 @@
 - name: "Stack-based commands"
   items:
+    - topicUid: command_env_list
+    - topicUid: command_env_setup
+    - topicUid: command_env_teardown
+    - topicUid: command_env_test
+    - topicUid: command_env_unlock
     - topicUid: command_flow_in
+    - topicUid: command_flow_merge
     - topicUid: command_flow_out
     - topicUid: command_stack_delete
     - topicUid: command_stack_generatekey
