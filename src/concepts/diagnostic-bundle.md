@@ -1,4 +1,4 @@
 ---
 uid: concept_diagnosticbundle
-title: Diagnotic Bundle
+title: Diagnostic Bundle
 ---

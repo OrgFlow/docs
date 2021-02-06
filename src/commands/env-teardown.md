@@ -21,17 +21,17 @@ Remove any non-production @concept_environment and the associated @concept_envir
   
 - **`-e|--environment=<environmentName>`**
 
-Required. Prompted for if not supplied and able to do so.
+  Required. Prompted for if not supplied and able to do so.
   
-The name of the environment to tear down. Environment names are case-insensitive.
+  The name of the environment to tear down. Environment names are case-insensitive.
   
 - **`-b|--deleteBranch`**
 
-If specified, the Git branch that backs this environment is deleted from the remote Git repository.
+  If specified, the Git branch that backs this environment is deleted from the remote Git repository.
   
 - **`-sb|--deleteSandbox`**
 
-If specified, the sandbox associated with this environment is deleted from Salesforce.
+  If specified, the sandbox associated with this environment is deleted from Salesforce.
   
 [!include[EncryptionKeyOption](partials/encryption-key-option.md)]
 
