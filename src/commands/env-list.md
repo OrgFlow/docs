@@ -25,7 +25,7 @@ List every @concept_environment in the selected @concept_stack.
 
 ## Examples
 
-List every environment in the @concept_default_stack:
+List every environment in the @concept_defaultstack:
 
 ```bash
 orgflow env:list

@@ -34,7 +34,7 @@ Generate a key and copy it to the clipboard (useful to paste a generated key int
 # [Windows](#tab/win)
 
 ```bash
-orgflow stack:generatekey --output=flat | clip
+orgflow stack:generatekey --output=flat | clip 
 ```
 
 # [macOS](#tab/macos)

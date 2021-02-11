@@ -1,3 +1,15 @@
-- name: "State store"
+- name: "Core Concepts"
+  items:
+    - topicUid: concept_diagnosticbundle
+    - topicUid: concept_includespecs
+    - topicUid: concept_licensekey
+- name: "Stack-Based Concepts"
   items:
     - topicUid: concept_stack
+    - topicUid: concept_statestore
+    - topicUid: concept_credentialinference
+    - topicUid: concept_defaultstack
+    - topicUid: concept_environmentstate
+    - topicUid: concept_environment
+    - topicUid: concept_orgflowincludefile
+    - topicUid: concept_productionenvironment

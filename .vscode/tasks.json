@@ -6,7 +6,7 @@
         {
             "label": "echo",
             "type": "shell",
-            "command": "docfx build src/docfx.json --serve --debug --exportViewModel",
+            "command": "docfx build src/docfx.json --serve --force --debug --exportViewModel",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

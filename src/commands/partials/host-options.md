@@ -4,7 +4,7 @@ The following options are global across all commands:
 
 - **`-l|--licenseKey=<key>`**
   
-  The license key you were issued to allow you to use the OrgFlow CLI. If a valid key is supplied, it is stored locally on the machine so that it does not need to be specified again on the next execution.
+  The @concept_licensekey you were issued to allow you to use the OrgFlow CLI. If a valid key is supplied, it is stored locally on the machine so that it does not need to be specified again on the next execution.
 
 - **`--logTo=<filePath>`**
   

@@ -3,6 +3,8 @@ uid: concept_productionenvironment
 title: Production Environment
 ---
 
+# Production Environment
+
 A production environment is an @concept_environment that connects to your production Salesforce organisation (as opposed to a sandbox). The other differences are:
 
 - Every @concept_stack must have exactly one production environment.
@@ -20,4 +22,4 @@ This is because these operations require OrgFlow to query for, create, and delet
 
 Yes.
 
-See @concept_accesscontrol for more information. But remember- in order to use @command_env_setup or to delete a sandbox with @command_env_teardown, you must be able to authenticate to the production environment.
+See @concept_accesscontrol for more information. But remember- anyone who wishes to use @command_env_setup, or to delete a sandbox with @command_env_teardown must be able to access the production environment.

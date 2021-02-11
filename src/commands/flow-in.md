@@ -37,7 +37,7 @@ title: flow:in
 
 - **`--exclude=<includeSpecs>`**
 
-  If specified, the OrgFlow CLI will exclude metadata types and items that match the @concept_includespec from this flow in execution.
+  If specified, the OrgFlow CLI will exclude metadata types and items that match the @concept_includespecs from this flow in execution.
 
   Each include spec should be comma separated.
 

@@ -3,6 +3,8 @@ uid: concept_credentialinference
 title: Credential Inference
 ---
 
+# Credential Inference
+
 OrgFlow is able to infer sandbox Salesforce credentials and login URLs if it knows the equivalent values for the production organisation.
 
 For example: if OrgFlow knows that there is a production account with the username `allan@mycompany.com`, then it is able to infer that the username to login in to a sandbox called `dev` would be `allan@mycompany.com.dev`.

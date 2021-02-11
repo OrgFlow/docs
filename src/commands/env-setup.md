@@ -45,7 +45,7 @@ This command will make sure that all of these items are available, and in a stat
   The name of the Git branch that will be assigned to this environment. The value provided must be a valid value for a Git branch name, and it must also be a value that does not already exist in the remote Git repository (unless `--useExistingBranch` is specified).
 
   >[!TIP]
-  >Unless `createFrom` is specified, the branch will be created from the HEAD of the branch that backs the @concept_productionEnvironment. If you would prefer to create this branch from elsewhere in the commit history, you can do so by first manually creating the branch in the remote Git repository, and then running `env:setup` with the `--useExistingBranch` option.
+  >Unless `createFrom` is specified, the branch will be created from the HEAD of the branch that backs the @concept_productionenvironment. If you would prefer to create this branch from elsewhere in the commit history, you can do so by first manually creating the branch in the remote Git repository, and then running `env:setup` with the `--useExistingBranch` option.
 
 - **`-sb|--sandboxName=<sandboxName>`**
   
@@ -141,7 +141,7 @@ This command will make sure that all of these items are available, and in a stat
   
   If specified, then this URL will be used when authenticating with the sandbox specified by `--sandboxName`. 
   
-  This is only required if the URL required to authenticate with the sandbox cannot be inferred from the URL stored on the stack (see @concept_credentialInferrence for more information). Any value specified will be saved in the stack store so that it can be re-used in further operations that involve this environment.
+  This is only required if the URL required to authenticate with the sandbox cannot be inferred from the URL stored on the stack (see @concept_credentialinference for more information). Any value specified will be saved in the stack store so that it can be re-used in further operations that involve this environment.
   
 - **`-u|--username=<username>`**
   TODO: update once #2135 has been rectified
