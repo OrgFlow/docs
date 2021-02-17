@@ -5,7 +5,7 @@ title: State Store
 
 # State Store
 
-Every @concept_stackbasedcommand requires knowledge of either a @concept_stack, an @concept_evironments, or an @concept_environementstate (in most cases they require knowledge of a combination of these items). These items are stored as records in the state store.
+Every @concept_stackbasedcommand requires knowledge of either a @concept_stack, an @concept_environment, or an @concept_environmentstate (in most cases they require knowledge of a combination of these items). These items are stored as records in the state store.
 
 The state store is a remote, cloud-based service that is owned and managed by OrgFlow; you do not need to set up or maintain this service. OrgFlow implicitly knows how to connect and authenticate with the state store, and so requires no configuration in this regard.
 

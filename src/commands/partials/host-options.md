@@ -28,9 +28,9 @@ The following options are global across all commands:
   
   If specified, sets the location to write the @concept_diagnosticbundle (if any). If not specified, a default location will automatically be chosen. This default location depends on a number of factors, including the operating system and some file-system based restrictions that might be in place. The location that the diagnostic bundle is ultimately written to is always included in the standard error output of the CLI.
 
-- **`--noBanner`**.
+- **`--noHeader`**.
   
-  If specified, suppresses the OrgFlow welcome banner that would otherwise be displayed when the CLI starts.
+  If specified, suppresses the OrgFlow welcome header that would otherwise be displayed when the CLI starts.
 
 - **`--noConfirm`**
   
