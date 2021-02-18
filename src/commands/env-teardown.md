@@ -1,9 +1,8 @@
 ---
 uid: command_env_teardown
 title: env:teardown
+stackBased: true
 ---
-
-#env:teardown
 
 ## Description
 

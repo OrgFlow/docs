@@ -1,10 +1,8 @@
 ---
 uid: command_stack_delete
 title: stack:delete
+stackBased: true
 ---
-
-
-#stack:delete
 
 ## Description
 
@@ -16,7 +14,6 @@ This process does not delete the Git branches, nor the Salesforce organisations 
 
 >[!WARNING]
 >This process is non-reversible.
-
 
 ## Options
 

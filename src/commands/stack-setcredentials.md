@@ -1,9 +1,8 @@
 ---
 uid: command_stack_setcredentials
 title: stack:setcredentials
+stackBased: true
 ---
-
-#stack:setcredentials
 
 ## Description
 
@@ -17,7 +16,7 @@ Alternatively, this command can be used to clear out previously saved credential
 
 When setting credentials, it is important to understand how they are retrieved and applied in subsequent processes.
 
-There are two locations where credentials can be saved: locally, and remotely in the stack state store. Additionally- there are also two scopes for credentials: environment specific, and stack level (or base). This means that there are four locations that could potentially contain credentials for each environment. When retrieving credentials, OrgFlow needs to be able to deterministically be able to choose which location takes precedence. 
+There are two locations where credentials can be saved: locally, and remotely in the stack state store. Additionally- there are also two scopes for credentials: environment specific, and stack level (or base). This means that there are four locations that could potentially contain credentials for each environment. When retrieving credentials, OrgFlow needs to be able to deterministically be able to choose which location takes precedence.
 
 It does this by checking for credentials in one location, and if it finds credentials there then it uses those credentials. Otherwise it will check the next location, and so on until either the credentials are discovered, or all possible locations are exhausted (whichever happens first). The precedence is (starting at the top):
 
@@ -38,12 +37,13 @@ Where credentials are stored is controlled by the `--location` and `--environmen
   If specified, the credentials to be saved will be specific to the environment specified. Omit to save the credentials at the stack-level. When retrieving saved credentials, the OrgFlow CLI will first to check to see there is are saved credentials that are specific to the environment that it is trying to connect to. If there are no credentials available at the environment level then the CLI will then fall back to using credentials set the stack level.
 
   >[!NOTE]
-  >If credentials are set at the stack level, they should be in a valid format for the production Salesforce organisation. This is because the OrgFlow CLI will try to transform stack level credentials into environment specific credentials should it need to. 
+  >If credentials are set at the stack level, they should be in a valid format for the production Salesforce organisation. This is because the OrgFlow CLI will try to transform stack level credentials into environment specific credentials should it need to.
   >
   >For example- imagine an environment called *EnvironmentA* which is backed by a sandbox called *SandboxA*, and a production Salesforce username *user@orgflow.io*:
+  >
   > - If you set credentials at the environment level, then the username needs to be ***user@orgflow.io.sandboxa*** (because no username transformation is applied to environment specific credentials).
   > - If you set credentials at the stack level, then the username needs to be ***user@orgflow.io***. OrgFlow will automatically append ***.sandboxa*** to this username when connecting to *SandboxA* because it expects production credentials to be stored at the stack level, which in turn allows them to be transformed to sandbox credentials.
-  > - If you set credentials at the stack level, but use a sandbox specific username (e.g. ***user@orgflow.io.sandboxa***), then OrgFlow will transform this username to ***user@orgflow.io.sandboxa.sandboxa*** when connecting to *SandboxA*. This is probably not what you want, and authentication will probably fail. 
+  > - If you set credentials at the stack level, but use a sandbox specific username (e.g. ***user@orgflow.io.sandboxa***), then OrgFlow will transform this username to ***user@orgflow.io.sandboxa.sandboxa*** when connecting to *SandboxA*. This is probably not what you want, and authentication will probably fail.
 
   Environment names are case-insensitive.
 

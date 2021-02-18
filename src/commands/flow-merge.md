@@ -1,9 +1,8 @@
 ---
 uid: command_flow_merge
 title: flow:merge
+stackBased: true
 ---
-
-#flow:merge
 
 ## Description
 
@@ -13,7 +12,7 @@ Merges metadata from one @concept_environment into another.
 
 1. @concept_flowin the source and target environments (optional- see `--noSourceIn` and `--noTargetIn` options).
 1. Merge the metadata from the source environment into the target environment.
-2. @concept_flowout the target environment to deploy the result of the merge in to the target environment's Salesforce organisation (optional- see the `--noTargetOut` option).
+1. @concept_flowout the target environment to deploy the result of the merge in to the target environment's Salesforce organisation (optional- see the `--noTargetOut` option).
 
 ## Options
 
@@ -59,8 +58,8 @@ Merges metadata from one @concept_environment into another.
   If specified, the merge result will be validated, but it won't be persisted. 
 
   This means that:
-  * The result of the merge will not be pushed to your remote Git respository
-  * The deployment to the `--into` environment's Salesforce organisation (if any) will be validated by Salesforce, but the changes will not be deployed.
+  - The result of the merge will not be pushed to your remote Git respository
+  - The deployment to the `--into` environment's Salesforce organisation (if any) will be validated by Salesforce, but the changes will not be deployed.
 
 [!include[CheckOnlyDeployWarning](partials/check-only-deploy-warning.md)]
 

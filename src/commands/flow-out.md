@@ -1,9 +1,8 @@
 ---
 uid: command_flow_out
 title: flow:out
+stackBased: true
 ---
-
-#flow:out
 
 ## Description
 

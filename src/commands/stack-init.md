@@ -1,9 +1,8 @@
 ---
 uid: command_stack_init
 title: stack:init
+stackBased: true
 ---
-
-#stack:init
 
 ## Description
 
@@ -14,13 +13,14 @@ Can also be used to re-initialise an existing stack with the `--overwrite` optio
 ## Process
 
 The `stack:init` command will create a stack that contains the minimum amount of data required for stack based commands to function:
+
 - A stack record is added to the stack state store, containing:
   - The remote Git repository's URL. This allows further OrgFlow commands to clone the repository.
   - A path relative to the root of the repository to indicate where metadata should be located within the repository (optional).
   - A flag indicating whether or not metadata should be committed in a way that maintains compatibility with other deployment tools (optional) .
   - The Sign-in URL for your production Salesforce organisation (optional).
   - The preferred Salesforce API version to use (optional).
-- The remote Git repository must already exist, but OrgFlow will configure it with a few pre-requisites: 
+- The remote Git repository must already exist, but OrgFlow will configure it with a few pre-requisites:
   - The repository will be intialised with a first commit if required. The first commit will be a `.gitignore` file
   - The branch to back the production environment will be created from the head of the default branch (if the branch does not already exist).
   - A `.gitattributes` file will be added at the root of the metadata location in the repository. This file ensures that the metadata is committed in a way that is compatible with OrgFlow.
@@ -74,7 +74,7 @@ The `stack:init` command will create a stack that contains the minimum amount of
 
 - **`-su|--signInUrl=<url>`**
   
-  If specified, then this URL will be used when authenticating with the production Salesforce organisation. This is useful if your organisation is configured in a way that authentication is only possible via a 'My Domain' custom domain (e.g. `https://myorganisation.my.salesforce.com`). 
+  If specified, then this URL will be used when authenticating with the production Salesforce organisation. This is useful if your organisation is configured in a way that authentication is only possible via a 'My Domain' custom domain (e.g. `https://myorganisation.my.salesforce.com`).
 
   If not specified, the OrgFlow CLI will use `https://login.salesforce.com`.
   
@@ -112,6 +112,7 @@ To be interactively guided through the initialisation process:
 ```bash
 orgflow stack:init
 ```
+
 ***
 
 Initialise a new stack called *NightlyBackup* with a production environment called *Prod*. Commit all metadata to a repository on GitHub, inside a folder called *metadata*. Use a custom URL to authenticate with Salesforce:

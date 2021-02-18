@@ -1,9 +1,8 @@
 ---
 uid: command_env_unlock
 title: env:unlock
+stackBased: true
 ---
-
-#env:unlock
 
 ## Description
 

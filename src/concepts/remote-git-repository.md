@@ -3,9 +3,7 @@ uid: concept_remotegitrepository
 title: Remote Git Repository
 ---
 
-# Remote Git Repository
-
-For [stack-based processes](@concept_stackbasedcommand), OrgFlow uses a [Git](https://git-scm.com/) repository to maintain a record of your Salesforce metadata and its history.
+For [stack-based processes](xref:concept_stackbasedcommands), OrgFlow uses a [Git](https://git-scm.com/) repository to maintain a record of your Salesforce metadata and its history.
 
 Every @concept_stack needs to be linked to a single remote Git repository. The location of this repository is set when you run the @command_stack_init command.
 

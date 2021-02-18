@@ -1,16 +1,14 @@
 ---
 uid: command_stack_savekey
 title: stack:savekey
+stackBased: true
 ---
-
-#stack:savekey
 
 ## Description
 
 Saves an @concept_encryptionkey locally so that it can automatically be applied to encrypt and un-encrypt credentials saved either locally or on the stack. See the @command_stack_setcredentials or @command_stack_gitauth commands for examples of saving credentials.
 
 [!include[EncryptionKeyWarning](partials/encryption-key-warning.md)]
-
 
 ## Options
 
@@ -45,6 +43,7 @@ Save an encryption key for re-use locally:
 ```bash
 orgflow stack:savekey --encryptionKey=ABCDEFGHIJKLM
 ```
+
 ***
 
 Save an encryption key that is specific to and environment called 'QA' for re-use locally:

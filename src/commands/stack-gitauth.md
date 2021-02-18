@@ -1,19 +1,18 @@
 ---
 uid: command_stack_gitauth
 title: stack:gitauth
+stackBased: true
 ---
-
-
-#stack:gitauth
 
 ## Description
 
 The `stack:gitauth` command can be used to allow authentication with a remote Git repository on machines that may not necessarily have authentication already configured. A good example of this are CI/CD agents that are ephemeral and may be spun up or town down at any time.
 
 The basic premise is:
-1. The username and password (or token) for the remote Git repository are saved on the @concept_stack record in the state store. These credentials are encrypted and can only be un-encrypted by users in possession of the encryption key (see @command_stack_generatekey).
+
+1. The username and password (or token) for the remote Git repository are saved on the @concept_stack record in the state store. These credentials are encrypted and can only be un-encrypted by users in possession of the encryption key (see @command_stack_generatekey ).
 1. The `stack:gitauth` command is added to Git as a [Credentials Helper](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage). This allows Git to query the OrgFlow CLI to retrieve credentials stored on the stack.
-   
+
 This command can also be used to change the URL of the remote repository that is stored on the stack. For example, if you re-name or migrate your remote repository from one location to another.
 
 ## Options
@@ -91,4 +90,3 @@ Save the username and password for remote Git repository authentication:
 ```bash
 orgflow stack:gitauth --gitUsername=MyUsername --gitPassword=MyPassword
 ```
-

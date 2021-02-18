@@ -3,11 +3,9 @@ uid: concept_backinggitbranch
 title: Backing Git Branch
 ---
 
-# Backing Git Branch
-
 A @concept_stack is linked to a @concept_remotegitrepository. A backing [Git branch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) is simply a branch in this repository this is used to track the metadata of a particular @concept_environment. The environment record serves as a link between the backing Git branch and the Salesforce organisation which it backs.
 
-The metadata in a Salesforce organisation can be committed to the backing Git branch with the @command_flow_in command (@concept_flowin). And the metadata in the backing Git branch can be deployed to a Salesforce organisation with the @command_flow_out command (@concept_flowout).
+The metadata in a Salesforce organisation can be committed to the backing Git branch with the @command_flow_in command (@concept_flowin ). And the metadata in the backing Git branch can be deployed to a Salesforce organisation with the @command_flow_out command (@concept_flowout ).
 
 > [!TIP]
 > The @command_flow_in command is no the only way that you can change the metadata in a backing Git branch.
@@ -20,4 +18,4 @@ The metadata in a Salesforce organisation can be committed to the backing Git br
 
 Bt default, the backing Git branch is created by the @command_env_setup command. The branch will be created from the `HEAD` of the branch that backs the source environment used by that command (by default this will be the @concept_productionenvironment, but this can be changed by the options available on that command).
 
-You can avoid this default functionality by manually creating the backing Git branch in the remote Git repository *before* running the @command_env_setup command. See the [env:setup command documentation](@command_env_setup) for details on how to do this. 
+You can avoid this default functionality by manually creating the backing Git branch in the remote Git repository *before* running the @command_env_setup command. See the [env:setup command documentation](xref:command_env_setup) for details on how to do this.

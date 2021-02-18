@@ -3,8 +3,6 @@ uid: concept_productionenvironment
 title: Production Environment
 ---
 
-# Production Environment
-
 A production environment is an @concept_environment that connects to your production Salesforce organisation (as opposed to a sandbox). The other differences are:
 
 - Every @concept_stack must have exactly one production environment.
@@ -14,7 +12,7 @@ A production environment is an @concept_environment that connects to your produc
 
 ## Why do I need to have a production environment?
 
-In short, you wouldn't be able to set up new environments without OrgFlow being able to connect to your production Salesforce organisation. To a lesser extent, this is also true of OrgFlow's ability to teardown an environment. 
+In short, you wouldn't be able to set up new environments without OrgFlow being able to connect to your production Salesforce organisation. To a lesser extent, this is also true of OrgFlow's ability to teardown an environment.
 
 This is because these operations require OrgFlow to query for, create, and delete sandboxes, and this is only possible via the Tooling API on the production Salesforce organisation.
 

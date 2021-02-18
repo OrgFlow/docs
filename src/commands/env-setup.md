@@ -1,19 +1,19 @@
 ---
 uid: command_env_setup
 title: env:setup
+stackBased: true
 ---
-
-#env:setup
 
 ## Description
 
 Adds a new @concept_environment to the selected @concept_stack.
 
-By default, the Git branch and the Salesforce sandbox will be created by this command, however this can be avoided with the `--useExistingBranch` and `--useExistingSandbox` options. 
+By default, the Git branch and the Salesforce sandbox will be created by this command, however this can be avoided with the `--useExistingBranch` and `--useExistingSandbox` options.
 
 ## Process
 
 An environment consists of several items:
+
 - a Salesforce sandbox
 - a branch on the remote Git repository
 - an environment record in the @concept_statestore
@@ -21,6 +21,7 @@ An environment consists of several items:
 - a known point of parity between the sandbox and the Git branch
 
 This command will make sure that all of these items are available, and in a state ready to be used by OrgFlow. The following steps are required to do this:
+
 1. Provision a new sandbox (or optionally use an existing sandbox) in the target Salesforce organisation. By default, a sandbox that is created will be cloned from the production Salesforce organisation, but you can change this with the `--createFrom` option.
 1. Create a new Git branch (or optionally use an existing branch) in the remote Git repository. By default, a Git branch that is created will be branched from the head of the branch that backs your @concept_productionenvironment, but you can change this with the `--createFrom` option.
 1. Create a record for the environment in the state store. The record contains (among other things) the name of the environment, the name of the sandbox, and the name of the Git branch.
@@ -75,7 +76,7 @@ This command will make sure that all of these items are available, and in a stat
   - The point in the Git history which the `--branchName` branch is created from (unless `useExistingBranch` is specified).
   - The source Salesforce organisation that the `--sandboxName` sandbox is copied from (unless `useExistingSandbox` is specified).
 
-  If a sandbox is cloned from another sandbox, Salesforce requires that the licenses of the two sandboxes are equal. For example, a `developerPro` sandbox can only be copied into another `developerPro` sandbox. This means that if you specify an environment other than the production environment (and do not specify `--useExistingSandbox`), then you will need to also make sure that the `--licenseType` is specified and that the value matches the license of the source sandbox. 
+  If a sandbox is cloned from another sandbox, Salesforce requires that the licenses of the two sandboxes are equal. For example, a `developerPro` sandbox can only be copied into another `developerPro` sandbox. This means that if you specify an environment other than the production environment (and do not specify `--useExistingSandbox`), then you will need to also make sure that the `--licenseType` is specified and that the value matches the license of the source sandbox.
   
   Only effective if a sandbox is created during this process.
 
@@ -139,7 +140,7 @@ This command will make sure that all of these items are available, and in a stat
 
 - **`-su|--signInUrl=<url>`**
   
-  If specified, then this URL will be used when authenticating with the sandbox specified by `--sandboxName`. 
+  If specified, then this URL will be used when authenticating with the sandbox specified by `--sandboxName`.
   
   This is only required if the URL required to authenticate with the sandbox cannot be inferred from the URL stored on the stack (see @concept_credentialinference for more information). Any value specified will be saved in the stack store so that it can be re-used in further operations that involve this environment.
   
@@ -158,6 +159,7 @@ This command will make sure that all of these items are available, and in a stat
 ## Examples
 
 Interactively set up a new environment:
+
 ```bash
 orgflow env:setup
 ```
@@ -165,6 +167,7 @@ orgflow env:setup
 ***
 
 Set up a new environment called `developerA` with a sandbox called `devA` and a Git branch called `sandbox/deva`:
+
 ```bash
 orgflow env:setup --environment=developerA --sandboxName=devA --branchname="sandbox/deva"
 ```

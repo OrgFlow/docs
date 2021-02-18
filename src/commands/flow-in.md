@@ -1,9 +1,8 @@
 ---
 uid: command_flow_in
 title: flow:in
+stackBased: true
 ---
-
-#flow:in
 
 ## Description
 

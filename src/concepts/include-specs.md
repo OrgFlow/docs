@@ -3,8 +3,6 @@ uid: concept_includespecs
 title: Include Specs
 ---
 
-# Include Specs
-
 During the @concept_flowin and the @concept_flowout processes, OrgFlow needs to know which metadata items you would like to include in the process. The include specs are a declarative syntax that allows you define rules as to which packages, namespace prefixes, types, and records should be included or excluded. Each individual rule is called an `include spec`, these individual rules can be combined into what are collectively called `include specs`. The order that each `include spec` appears within the `include specs` is important, as explained below.
 
 ## The Syntax

@@ -1,10 +1,8 @@
 ---
 uid: command_stack_list
 title: stack:list
+stackBased: true
 ---
-
-
-#stack:list
 
 ## Description
 
