@@ -2,6 +2,9 @@
 uid: command_env_teardown
 title: env:teardown
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description

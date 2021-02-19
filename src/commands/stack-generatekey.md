@@ -2,6 +2,9 @@
 uid: command_stack_generatekey
 title: stack:generatekey
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description

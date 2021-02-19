@@ -2,6 +2,9 @@
 uid: command_stack_savekey
 title: stack:savekey
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description

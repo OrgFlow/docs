@@ -2,11 +2,14 @@
 uid: command_flow_in
 title: flow:in
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description
 
-@concept_flowin metadata. Retrieve metadata for a particular @concept_environment from your Salesforce organisation and commit it to your Git repository.
+@concept_flowin metadata. Retrieve metadata for a particular @concept_environment from your Salesforce organization and commit it to your Git repository.
 
 ## Options
 
@@ -42,9 +45,9 @@ stackBased: true
 
 - **`--force`**
 
-  If specified, the metadata that is retrieved from the Salesforce organisation is committed to the Git repository as-is. The OrgFlow CLI will make no attempt to merge the changes in the Salesforce organisation with the changes in Git (if any).
+  If specified, the metadata that is retrieved from the Salesforce organization is committed to the Git repository as-is. The OrgFlow CLI will make no attempt to merge the changes in the Salesforce organization with the changes in Git (if any).
 
-  The end result is that the metadata in the Git repository will match the metadata in the Salesforce organisation, but any changes to the metadata that are in Git but not the Salesforce organisation will be lost.
+  The end result is that the metadata in the Git repository will match the metadata in the Salesforce organization, but any changes to the metadata that are in Git but not the Salesforce organization will be lost.
 
   This has the side effect of removing all @concept_undeployablecomponents from the state store for this specific environment.
 

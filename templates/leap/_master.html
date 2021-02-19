@@ -39,10 +39,35 @@
                   {{/sourceurl}}
                 </nav>
               {{/_disableContribution}}
-
-              {{#stackBased}}
-              <p>This is a <b>stack-based command</b>.</p>
-              {{/stackBased}}
+                <ul>
+                  {{#stackBased}}
+                    <li>This is a <b>stack-based command</b>.</li>
+                  {{/stackBased}}
+                  {{#orgBased}}
+                    <li>This is an <b>org-based command</b>.</li>
+                  {{/orgBased}}
+                  
+                  {{#starterEdition}}
+                    <li>Starter edition: &#9989;</li>
+                  {{/starterEdition}}
+                  {{^starterEdition}}
+                    <li>Starter edition: &#10134;</li>
+                  {{/starterEdition}}
+                  
+                  {{#proEdition}}
+                    <li>Pro edition: &#9989;</li>
+                  {{/proEdition}}
+                  {{^proEdition}}
+                    <li>Pro edition: &#10134;</li>
+                  {{/proEdition}}
+                  
+                  {{#enterpriseEdition}}
+                    <li>Enterprise edition: &#9989;</li>
+                  {{/enterpriseEdition}}
+                  {{^enterpriseEdition}}
+                    <li>Enterprise edition: &#10134;</li>
+                  {{/enterpriseEdition}}
+                </ul>
               
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
                 <h5>{{__global.inThisArticle}}</h5>

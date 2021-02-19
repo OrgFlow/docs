@@ -2,6 +2,9 @@
 uid: command_env_setup
 title: env:setup
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description
@@ -22,7 +25,7 @@ An environment consists of several items:
 
 This command will make sure that all of these items are available, and in a state ready to be used by OrgFlow. The following steps are required to do this:
 
-1. Provision a new sandbox (or optionally use an existing sandbox) in the target Salesforce organisation. By default, a sandbox that is created will be cloned from the production Salesforce organisation, but you can change this with the `--createFrom` option.
+1. Provision a new sandbox (or optionally use an existing sandbox) in the target Salesforce organization. By default, a sandbox that is created will be cloned from the production Salesforce organization, but you can change this with the `--createFrom` option.
 1. Create a new Git branch (or optionally use an existing branch) in the remote Git repository. By default, a Git branch that is created will be branched from the head of the branch that backs your @concept_productionenvironment, but you can change this with the `--createFrom` option.
 1. Create a record for the environment in the state store. The record contains (among other things) the name of the environment, the name of the sandbox, and the name of the Git branch.
 1. Perform a @concept_flowout on the environment. This creates a known point of parity between the sandbox and the Git branch, as well as the environment state record.
@@ -52,7 +55,7 @@ This command will make sure that all of these items are available, and in a stat
   
   Required. Prompted for if not supplied and possible to do so.
 
-  The name of the sandbox that will be associated to the environment to be created. An existing sandbox can be used if `--useExistingSandbox` is specified, otherwise the sandbox is created as a copy of the production Salesforce organisation (unless `--createFrom` is specified).
+  The name of the sandbox that will be associated to the environment to be created. An existing sandbox can be used if `--useExistingSandbox` is specified, otherwise the sandbox is created as a copy of the production Salesforce organization (unless `--createFrom` is specified).
 
 - **`-d|--description=<text>`**
   
@@ -74,7 +77,7 @@ This command will make sure that all of these items are available, and in a stat
   
   This affects:
   - The point in the Git history which the `--branchName` branch is created from (unless `useExistingBranch` is specified).
-  - The source Salesforce organisation that the `--sandboxName` sandbox is copied from (unless `useExistingSandbox` is specified).
+  - The source Salesforce organization that the `--sandboxName` sandbox is copied from (unless `useExistingSandbox` is specified).
 
   If a sandbox is cloned from another sandbox, Salesforce requires that the licenses of the two sandboxes are equal. For example, a `developerPro` sandbox can only be copied into another `developerPro` sandbox. This means that if you specify an environment other than the production environment (and do not specify `--useExistingSandbox`), then you will need to also make sure that the `--licenseType` is specified and that the value matches the license of the source sandbox.
   
@@ -99,8 +102,8 @@ This command will make sure that all of these items are available, and in a stat
   Optional (and only valid) if `--licenseType=full`. Default: `none`.
 
   If specified, the data copied to the full sandbox that will be created will be:
-  - `allAvailable`: all data from the source Salesforce organisation will be copied.
-  - `none`: no data from the source Salesforce organisation will be copied.
+  - `allAvailable`: all data from the source Salesforce organization will be copied.
+  - `none`: no data from the source Salesforce organization will be copied.
   - `10`: only data created in the past 10 days will be copied.
   - `20`: only data created in the past 10 days will be copied.
   - `30`: only data created in the past 10 days will be copied.

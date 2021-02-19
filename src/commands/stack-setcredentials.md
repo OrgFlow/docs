@@ -2,11 +2,14 @@
 uid: command_stack_setcredentials
 title: stack:setcredentials
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description
 
-Encrypt and save credentials that can be used to connect to a Salesforce organisation. Credentials can be saved either locally or remotely, and can also optionally be scoped to specific environments.
+Encrypt and save credentials that can be used to connect to a Salesforce organization. Credentials can be saved either locally or remotely, and can also optionally be scoped to specific environments.
 
 Alternatively, this command can be used to clear out previously saved credentials.
 
@@ -37,13 +40,15 @@ Where credentials are stored is controlled by the `--location` and `--environmen
   If specified, the credentials to be saved will be specific to the environment specified. Omit to save the credentials at the stack-level. When retrieving saved credentials, the OrgFlow CLI will first to check to see there is are saved credentials that are specific to the environment that it is trying to connect to. If there are no credentials available at the environment level then the CLI will then fall back to using credentials set the stack level.
 
   >[!NOTE]
-  >If credentials are set at the stack level, they should be in a valid format for the production Salesforce organisation. This is because the OrgFlow CLI will try to transform stack level credentials into environment specific credentials should it need to.
+  >If credentials are set at the stack level, they should be in a valid format for the production Salesforce organization. This is because the OrgFlow CLI will try to transform stack level credentials into environment specific credentials should it need to.
   >
   >For example- imagine an environment called *EnvironmentA* which is backed by a sandbox called *SandboxA*, and a production Salesforce username *user@orgflow.io*:
   >
   > - If you set credentials at the environment level, then the username needs to be ***user@orgflow.io.sandboxa*** (because no username transformation is applied to environment specific credentials).
   > - If you set credentials at the stack level, then the username needs to be ***user@orgflow.io***. OrgFlow will automatically append ***.sandboxa*** to this username when connecting to *SandboxA* because it expects production credentials to be stored at the stack level, which in turn allows them to be transformed to sandbox credentials.
   > - If you set credentials at the stack level, but use a sandbox specific username (e.g. ***user@orgflow.io.sandboxa***), then OrgFlow will transform this username to ***user@orgflow.io.sandboxa.sandboxa*** when connecting to *SandboxA*. This is probably not what you want, and authentication will probably fail.
+  >
+  > See @concept_credentialinferrence for more details.
 
   Environment names are case-insensitive.
 

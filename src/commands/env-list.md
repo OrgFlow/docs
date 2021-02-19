@@ -2,6 +2,9 @@
 uid: command_env_list
 title: env:list
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description

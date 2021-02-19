@@ -2,6 +2,9 @@
 uid: command_stack_setdefault
 title: stack:setdefault
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description

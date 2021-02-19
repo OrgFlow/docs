@@ -2,6 +2,9 @@
 uid: command_env_test
 title: env:test
 stackBased: true
+starterEdition: false
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description

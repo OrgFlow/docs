@@ -2,6 +2,9 @@
 uid: command_stack_gitauth
 title: stack:gitauth
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description

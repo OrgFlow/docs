@@ -2,6 +2,9 @@
 uid: command_stack_list
 title: stack:list
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description

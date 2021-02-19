@@ -2,17 +2,20 @@
 uid: command_flow_merge
 title: flow:merge
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description
 
 Merges metadata from one @concept_environment into another.
 
-## Process:
+## Process
 
 1. @concept_flowin the source and target environments (optional- see `--noSourceIn` and `--noTargetIn` options).
 1. Merge the metadata from the source environment into the target environment.
-1. @concept_flowout the target environment to deploy the result of the merge in to the target environment's Salesforce organisation (optional- see the `--noTargetOut` option).
+1. @concept_flowout the target environment to deploy the result of the merge in to the target environment's Salesforce organization (optional- see the `--noTargetOut` option).
 
 ## Options
 
@@ -43,11 +46,11 @@ Merges metadata from one @concept_environment into another.
   If specified, the inbound flow of metadata from the `--into` environment is not performed. Instead, the metadata changes from the `--into` environment will be merged with the changes in the `--from` environment's Git branch.
 
   >[!WARNING]
-  >`--noTargetIn` can be potentially destructive unless either `--noTargetOut` or `--checkOnly` is also specified. This is because any metadata changes in the `--into` environment's Salesforce organisation that are not already in the `--into` environment's Git branch will be overwritten by the deployment to the `--into` environment.
+  >`--noTargetIn` can be potentially destructive unless either `--noTargetOut` or `--checkOnly` is also specified. This is because any metadata changes in the `--into` environment's Salesforce organization that are not already in the `--into` environment's Git branch will be overwritten by the deployment to the `--into` environment.
 
 - **`--noTargetOut`**
 
-  If specified, the merged metadata is not deployed to the `--into` environment's Salesforce organisation.
+  If specified, the merged metadata is not deployed to the `--into` environment's Salesforce organization.
 
 - **`-g|--gitOnly`**
 
@@ -55,11 +58,11 @@ Merges metadata from one @concept_environment into another.
 
 - **`-c|--checkOnly`**
 
-  If specified, the merge result will be validated, but it won't be persisted. 
+  If specified, the merge result will be validated, but it won't be persisted.
 
   This means that:
-  - The result of the merge will not be pushed to your remote Git respository
-  - The deployment to the `--into` environment's Salesforce organisation (if any) will be validated by Salesforce, but the changes will not be deployed.
+  - The result of the merge will not be pushed to your remote Git repository
+  - The deployment to the `--into` environment's Salesforce organization (if any) will be validated by Salesforce, but the changes will not be deployed.
 
 [!include[CheckOnlyDeployWarning](partials/check-only-deploy-warning.md)]
 
@@ -83,7 +86,7 @@ orgflow flow:merge
 
 ***
 
-Commit (flow in) the changes from the `test` and `production` environments, merge the changes from `test` into the `production` environment, and deploy the result of the merge into the `production` Salesforce organisation:
+Commit (flow in) the changes from the `test` and `production` environments, merge the changes from `test` into the `production` environment, and deploy the result of the merge into the `production` Salesforce organization:
 
 ```bash
 orgflow flow:merge --from=test --into=production
@@ -91,7 +94,7 @@ orgflow flow:merge --from=test --into=production
 
 ***
 
-Commit (flow in) the changes from the `test` and `production` Salesforce organisations, merge the changes from `test` into the `production` environment, and deploy the result of the merge into the `production` Salesforce organisation:
+Commit (flow in) the changes from the `test` and `production` Salesforce organizations, merge the changes from `test` into the `production` environment, and deploy the result of the merge into the `production` Salesforce organization:
 
 ```bash
 orgflow flow:merge --from=test --into=production

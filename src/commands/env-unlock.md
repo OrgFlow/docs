@@ -2,6 +2,9 @@
 uid: command_env_unlock
 title: env:unlock
 stackBased: true
+starterEdition: true
+proEdition: true
+enterpriseEdition: true
 ---
 
 ## Description
