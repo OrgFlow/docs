@@ -23,24 +23,21 @@
 			"script": "install",
 			"path": "leap/",
 			"problemMatcher": [],
-			"label": "npm: install - leap",
-			"detail": "install dependencies from package"
+			"label": "leap: npm install",
 		},
 		{
 			"type": "npm",
-			"script": "postinstall",
+			"script": "build",
 			"path": "leap/",
 			"problemMatcher": [],
-			"label": "npm: postinstall - leap",
-			"detail": "gulp deps"
+			"label": "leap: build",
 		},
 		{
 			"type": "npm",
 			"script": "start",
 			"path": "leap/",
 			"problemMatcher": [],
-			"label": "npm: start - leap",
-			"detail": "./node_modules/.bin/gulp"
+			"label": "leap: serve",
 		}
 	]
 }

@@ -2,16 +2,17 @@
 	"build": {
 		"content": [
 			{
+				"src": "content",
 				"files": [
-					"content/api/*.md",
-					"content/articles/**.md",
-					"content/commands/**.md",
-					"content/concepts/**.md",
-					"content/**/toc.yml",
-					"content/*.md"
+					"api/*.md",
+					"articles/**.md",
+					"commands/**.md",
+					"concepts/**.md",
+					"**/toc.yml",
+					"*.md"
 				],
 				"exclude": [
-					"content/obj/**"
+					"obj/**"
 				]
 			}
 		],
