@@ -4,8 +4,6 @@
 			{
 				"src": "content",
 				"files": [
-					"api/*.md",
-					"articles/**.md",
 					"commands/**.md",
 					"concepts/**.md",
 					"**/toc.yml",

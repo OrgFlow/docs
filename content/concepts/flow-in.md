@@ -7,11 +7,11 @@ One of OrgFlow's core features is the ability to flow metadata between a Salesfo
 
 The flow in process does more than just download the metadata from a Salesforce org and commit it to a Git repository:
 
-## Bi-directional metadata
+## Merge-based commit strategy
 
 OrgFlow is able to determine changes to metadata that have been made directly in the Salesforce organization, as well as changes to the metadata that are only in the @concept_backinggitbranch. Even more impressively, OrgFlow is able to merge changes that have been made the Salesforce organization and the backing Git branch.
 
-For more information, see @concept_bidirectionalmetadata.
+For more information, see @concept_mergebasedcommitstrategy.
 
 ## Author attribution
 
