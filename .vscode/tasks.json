@@ -1,17 +1,43 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "echo",
-            "type": "shell",
-            "command": "docfx build src/docfx.json --serve --force --debug --exportViewModel",
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "docfx build docfx.json",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "serve",
+			"type": "shell",
+			"command": "docfx build --serve docfx.json",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "leap/",
+			"problemMatcher": [],
+			"label": "leap: npm install",
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "leap/",
+			"problemMatcher": [],
+			"label": "leap: build",
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "leap/",
+			"problemMatcher": [],
+			"label": "leap: serve",
+		}
+	]
 }

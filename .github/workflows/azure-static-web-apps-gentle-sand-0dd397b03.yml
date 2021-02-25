@@ -21,7 +21,7 @@ jobs:
       - uses: nikeee/docfx-action@v1.0.0
         name: Generate Static Documentation
         with:
-          args: src/docfx.json        
+          args: docfx.json
         env:
           DOCFX_SOURCE_BRANCH_NAME: ${{env.GITHUB_REF}}
       - name: Build And Deploy Azure Static Site
@@ -31,7 +31,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GENTLE_SAND_0DD397B03 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/src/_site" # App source code path
+          app_location: "/_site" # App source code path
           routes_location: /
 
   close_pull_request_job:

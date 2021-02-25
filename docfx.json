@@ -1,0 +1,30 @@
+{
+	"build": {
+		"content": [
+			{
+				"src": "content",
+				"files": [
+					"commands/**.md",
+					"concepts/**.md",
+					"**/toc.yml",
+					"*.md"
+				],
+				"exclude": [
+					"obj/**"
+				]
+			}
+		],
+		"resource": [
+			{
+				"src": "leap/dist",
+				"files": [ "assets/**" ]
+			}
+		],
+		"dest": "_site",
+		"template": [
+			"Default",
+			"StaticToc",
+			"templates/leap"
+		]
+	}
+}
