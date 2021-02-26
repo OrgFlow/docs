@@ -23,21 +23,28 @@
 			"script": "install",
 			"path": "leap/",
 			"problemMatcher": [],
-			"label": "leap: npm install",
+			"label": "leap: npm install"
 		},
 		{
 			"type": "npm",
 			"script": "build",
 			"path": "leap/",
 			"problemMatcher": [],
-			"label": "leap: build",
+			"label": "leap: build"
 		},
 		{
 			"type": "npm",
 			"script": "start",
 			"path": "leap/",
 			"problemMatcher": [],
-			"label": "leap: serve",
+			"label": "leap: serve"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "leap/",
+			"problemMatcher": [],
+			"label": "leap: build"
 		}
 	]
 }
