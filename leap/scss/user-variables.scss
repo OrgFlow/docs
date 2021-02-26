@@ -12,10 +12,6 @@ $primary:      #DB162F;
 $primary-2:    #2F7EE9;
 $primary-3:    #070032;
 
-// TODO: Recolor code elements
-// TODO: Recolor link elements
-//$link-color: theme-color("primary-2");
-
 // Do not change or remove the $theme-color-scheme or $theme-colors maps below
 
 $theme-color-scheme: (
@@ -30,3 +26,7 @@ $theme-colors: (
     "primary-3":  $primary-3,
 );
 
+$link-color: darken($primary-2, 15);
+
+$code-color: $primary-3;
+$code-font-size: 90%;
