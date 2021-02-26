@@ -3,87 +3,81 @@
 <!doctype html>
 
 <html>
+
   {{>partials/head}}
-  <body data-smooth-scroll-offset="73">
+
+  <body data-smooth-scroll-offset="120">
+
+	<div class="loader">
+		<div class="loading-animation"></div>
+	  </div>
+
     {{^_disableNavbar}}
     {{>partials/navbar}}
     {{/_disableNavbar}}
 
-    <section class="py-0">
-      <div class="container">
-        <div class="row min-vh-70 mb-3">
-          <div class="col-3">
-            <div class="py-3 px-3 bg-primary-alt rounded h-100">
-              {{>partials/toc}}
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="py-0 h-100">
-              {{!body}}
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="py-3 px-3 bg-primary-alt rounded h-100">
+	<button class="btn btn-lg btn-primary btn-block rounded-0 d-md-none" type="button" data-toggle="collapse" data-target="#docs-index" aria-expanded="false" aria-controls="docs-index">
+		<img class="icon" src="{{_rel}}assets/img/icons/interface/menu.svg" alt="menu interface icon" data-inject-svg />
+		<span>Toggle Docs Index</span>
+	</button>
 
-              {{^_disableContribution}}
-                <nav class="nav flex-column">
-                  {{#docurl}}
-                  <li>
-                    <a href="{{docurl}}" class="contribution-link nav-link">{{__global.improveThisDoc}}</a>
-                  </li>
-                  {{/docurl}}
-                  {{#sourceurl}}
-                  <li>
-                    <a href="{{sourceurl}}" class="contribution-link nav-link">{{__global.viewSource}}</a>
-                  </li>
-                  {{/sourceurl}}
-                </nav>
-              {{/_disableContribution}}
-                <ul>
-                  {{#stackBased}}
-                    <li>This is a <b>stack-based command</b>.</li>
-                  {{/stackBased}}
-                  {{#orgBased}}
-                    <li>This is an <b>org-based command</b>.</li>
-                  {{/orgBased}}
+    <section class="container-fluid py-0">
+		<div class="row">
+			<div class="col-12 col-md-3 col-lg-2 border-right pt-3 pt-md-5 docs-sidebar">
+				{{>partials/toc}}
+			</div>
+			<div class="col-md-9 col-lg-10">
+				<div class="row">
+					<div class="col-xl-10 col-lg-9 px-xl-6 px-lg-4 px-md-3 py-md-5">
+						{{!body}}
+					</div>
+					<div class="col-xl-2 col-lg-3 d-none d-lg-block py-md-5 docs-sidebar">
+						<ul class="nav flex-column">
+							{{^_disableContribution}}
+						  {{#docurl}}
+						  <li class="nav-item"></li>>
+							<a href="{{docurl}}" class="contribution-link nav-link">{{__global.improveThisDoc}}</a>
+						  </li>
+						  {{/docurl}}
+						  {{#sourceurl}}
+						  <li class="nav-item"></li>>
+							<a href="{{sourceurl}}" class="contribution-link nav-link">{{__global.viewSource}}</a>
+						  </li>
+						  {{/sourceurl}}
+					  {{/_disableContribution}}
+						  {{#stackBased}}
+							<li class="nav-item">This is a <b>stack-based command</b>.</li>
+						  {{/stackBased}}
+						  {{#orgBased}}
+							<li class="nav-item">This is an <b>org-based command</b>.</li>
+						  {{/orgBased}}
 
-                  {{#starterEdition}}
-                    <li>Starter edition: &#9989;</li>
-                  {{/starterEdition}}
-                  {{^starterEdition}}
-                    <li>Starter edition: &#10134;</li>
-                  {{/starterEdition}}
+						  {{#starterEdition}}
+							<li class="nav-item">Starter edition: &#9989;</li>
+						  {{/starterEdition}}
+						  {{^starterEdition}}
+							<li class="nav-item">Starter edition: &#10134;</li>
+						  {{/starterEdition}}
 
-                  {{#proEdition}}
-                    <li>Pro edition: &#9989;</li>
-                  {{/proEdition}}
-                  {{^proEdition}}
-                    <li>Pro edition: &#10134;</li>
-                  {{/proEdition}}
+						  {{#proEdition}}
+							<li class="nav-item">Pro edition: &#9989;</li>
+						  {{/proEdition}}
+						  {{^proEdition}}
+							<li class="nav-item">Pro edition: &#10134;</li>
+						  {{/proEdition}}
 
-                  {{#enterpriseEdition}}
-                    <li>Enterprise edition: &#9989;</li>
-                  {{/enterpriseEdition}}
-                  {{^enterpriseEdition}}
-                    <li>Enterprise edition: &#10134;</li>
-                  {{/enterpriseEdition}}
-                </ul>
-
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>{{__global.inThisArticle}}</h5>
-                <div></div>
-              </nav>
-
-            </div>
-          </div>
-        </div>
-      </div>
+						  {{#enterpriseEdition}}
+							<li class="nav-item">Enterprise edition: &#9989;</li>
+						  {{/enterpriseEdition}}
+						  {{^enterpriseEdition}}
+							<li class="nav-item">Enterprise edition: &#10134;</li>
+						  {{/enterpriseEdition}}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
     </section>
-
-    <!-- Can probably be removed:
-	<script type="text/javascript" src="{{_rel}}styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="{{_rel}}styles/docfx.js"></script>
-    <script type="text/javascript" src="{{_rel}}styles/main.js"></script> -->
 
     <!-- Required vendor scripts (Do not remove) -->
     <script type="text/javascript" src="{{_rel}}assets/js/jquery.min.js"></script>

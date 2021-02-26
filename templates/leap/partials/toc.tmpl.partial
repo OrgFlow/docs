@@ -1,3 +1,5 @@
-{{#_toc.items}}
-    {{>partials/tocitem}}
-{{/_toc.items}}
+<div id="docs-index" class="collapse">
+	{{#_toc.items}}
+		{{>partials/tocitem}}
+	{{/_toc.items}}
+</div>

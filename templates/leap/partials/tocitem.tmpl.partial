@@ -1,21 +1,21 @@
-<h6>
-    <a 
-        href="{{#active}}#{{/active}}{{^active}}{{href}}{{/active}}" 
-        class="py-0 nav-link {{#active}}active{{/active}}">
-            {{name}}
-    </a>
-</h6>
-{{#items}}
-    <ul class="nav">
-        <li class="nav-item">
-            <a 
-                href="{{#active}}#{{/active}}{{^active}}{{href}}{{/active}}" 
-                class="py-0 nav-link {{#active}}active{{/active}}">
-                    {{name}}
-            </a>
-        </li>
-        {{#items}}
-            {{>partials/tocitem}}
-        {{/items}}
-    </ul>
-{{/items}}
+<div class="mb-3 mb-md-4">
+	<h6 class="mb-2">{{name}}</h6>
+	{{#items.length}}
+	<ul class="nav flex-column">
+		{{#items}}
+		<li class="nav-item {{#active}}active{{/active}}">
+			<a href="#navs-bars-collapse-{{token}}" class="nav-link text-small" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navs-bars-collapse">{{name}}</a>
+			{{#items.length}}
+			<ul class="nav flex-column collapse pl-3" id="navs-bars-collapse-{{token}}">
+				{{#items}}
+				<li class="nav-item">
+					<a href="{{#active}}#{{/active}}{{^active}}{{href}}{{/active}}" class="nav-link text-small {{#active}}active{{/active}}">{{name}}</a>
+				</li>
+				{{/items}}
+			</ul>
+			{{/items.length}}
+		</li>
+		{{/items}}
+	</ul>
+	{{/items.length}}
+</div>

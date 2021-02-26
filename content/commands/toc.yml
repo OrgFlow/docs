@@ -1,4 +1,5 @@
 - name: "Stack-based commands"
+  token: stack_based_commands
   items:
     - topicUid: command_env_list
     - topicUid: command_env_setup

@@ -1,4 +1,6 @@
 - name: Commands
-  href: commands/
+  href: commands/toc.yml
+  token: commands
 - name: Concepts
-  href: concepts/
+  href: concepts/toc.yml
+  token: concepts
