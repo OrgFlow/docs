@@ -1,0 +1,19 @@
+- name: "Getting Started"
+  items:
+    - topicUid: guide_gettingstarted
+    - topicUid: guide_installingorgflow
+    - topicUid: guide_runningyourfirstcommand
+    - topicUid: guide_initializingastack
+    - topicUid: guide_inspectingtheremotegitrepository
+    - topicUid: guide_addingnewenvironments
+    - topicUid: guide_flowingchangesin
+    - topicUid: guide_flowingchangesout
+- name: "Flowing Metadata"
+  items:
+    - topicUid: guide_flowingmetadata
+- name: "Managing Stacks"
+  items:
+    - topicUid: guide_managingstacks
+- name: "Automating Workflows"
+  items:
+    - topicUid: guide_automatingworkflows

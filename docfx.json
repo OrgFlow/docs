@@ -4,7 +4,8 @@
 			{
 				"src": "content",
 				"files": [
-					"commands/**.md",
+					"guides/**/**.md",
+					"commands/*.md",
 					"concepts/**.md",
 					"**/toc.yml",
 					"*.md"
@@ -18,6 +19,10 @@
 			{
 				"src": "leap/dist",
 				"files": [ "assets/**" ]
+			},
+			{
+				"src": "content",
+				"files": [ "guides/**/images/**" ]
 			}
 		],
 		"dest": "_site",
