@@ -1,9 +1,8 @@
-- name: Guides
-  href: guides/toc.yml
-  token: guides
-- name: Commands
-  href: commands/toc.yml
-  token: commands
-- name: Concepts
-  href: concepts/toc.yml
-  token: concepts
+- name: Getting started
+  href: guides/getting-started/getting-started.md
+- name: Tutorials
+  href: guides/
+- name: Key concepts
+  href: concepts/
+- name: Reference
+  href: commands/
