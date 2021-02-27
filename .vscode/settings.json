@@ -2,7 +2,8 @@
 	"files.exclude": {
 		"node_modules": true,
 		"dist": true,
-		"obj": true
+		"obj": true,
+		"bin": true
 	},
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
