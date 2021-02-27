@@ -4,7 +4,7 @@
 		{
 			"label": "build",
 			"type": "shell",
-			"command": "docfx build docfx.json",
+			"command": "docfx build --force --exportViewModel docfx.json",
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",
@@ -49,8 +49,8 @@
 		{
 			"label": "plugin: build",
 			"type": "shell",
-			"command": "dotnet build plugins/Plugins.csproj --output templates/leap/plugins",
-			"problemMatcher": [],
+			"command": "dotnet build plugins/Plugins.csproj --output templates/leap/plugins /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary",
+            "problemMatcher": "$msCompile",
 			"group": "build"
 		},
 	]
