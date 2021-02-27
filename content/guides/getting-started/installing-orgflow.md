@@ -3,6 +3,10 @@ uid: guide_installingorgflow
 title: Installing OrgFlow
 ---
 
+```c
+This is my code block
+```
+
 OrgFlow is cross platform, and supports Windows, macOS, and Linux. Use the tabs to follow the instructions for the computer you are working on.
 
 ## [Windows](#tab/win)
