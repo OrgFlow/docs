@@ -20,3 +20,9 @@ pre[class*='language-'], code[class*='language-']
 {
 	background: mix(white, theme-color('primary-3'), 95%);
 }
+
+.navbar-brand-title
+{
+	font-size: 140%;
+	font-weight: 300;
+}

@@ -1,12 +1,29 @@
 <div class="navbar-container">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary-3" data-sticky="top">
 		<div class="container-fluid">
-			{{>partials/logo}}
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-				<img class="icon navbar-toggler-open" src="{{_rel}}assets/img/icons/interface/menu.svg" alt="menu interface icon" data-inject-svg />
-				<img class="icon navbar-toggler-close" src="{{_rel}}assets/img/icons/interface/cross.svg" alt="cross interface icon" data-inject-svg />
-			</button>
-			<div class="collapse navbar-collapse justify-content-end">
+
+			{{>partials/navbar-brand}}
+
+			<div class="d-flex align-items-center order-lg-3">
+				<form>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon-1">
+								<img class="icon" src="{{_rel}}assets/img/icons/theme/general/search.svg" alt="search icon" data-inject-svg />
+							</span>
+						</div>
+						<input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon-1">
+					</div>
+				</form>
+				<div class="ml-2">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+						<img class="icon navbar-toggler-open" src="{{_rel}}assets/img/icons/interface/menu.svg" alt="menu interface icon" data-inject-svg />
+						<img class="icon navbar-toggler-close" src="{{_rel}}assets/img/icons/interface/cross.svg" alt="cross interface icon" data-inject-svg />
+					</button>
+				</div>
+			</div>
+
+			<div class="collapse navbar-collapse justify-content-between order-lg-2">
 				<div class="py-2 py-lg-0">
 					{{#_nav}}
 					<ul class="navbar-nav">
@@ -16,8 +33,12 @@
 					</ul>
 					{{/_nav}}
 				</div>
-				<a href="#" class="btn btn-primary ml-lg-3">Purchase Now</a>
+				<a href="https://www.orgflow.io" class="btn btn-primary-2 mx-lg-3">
+					<span>Back to main site</span>
+					<img class="icon icon-sm bg-white" src="{{_rel}}assets/img/icons/theme/text/redo.svg" alt="exit icon" data-inject-svg />
+				</a>
 			</div>
+
 		</div>
 	</nav>
 </div>
