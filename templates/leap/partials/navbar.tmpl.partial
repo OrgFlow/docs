@@ -35,7 +35,7 @@
 				</div>
 				<a href="https://www.orgflow.io" class="btn btn-primary-2 mx-lg-3">
 					<span>Back to main site</span>
-					<img class="icon icon-sm bg-white" src="{{_rel}}assets/img/icons/theme/text/redo.svg" alt="exit icon" data-inject-svg />
+					<img class="icon bg-white" src="{{_rel}}assets/img/icons/theme/text/redo.svg" alt="exit icon" data-inject-svg />
 				</a>
 			</div>
 
