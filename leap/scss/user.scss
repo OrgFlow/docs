@@ -4,25 +4,71 @@
 //
 // Place your own custom CSS or SCSS rules below this line, these rules will override any Bootstrap and theme variables.
 
-a
-{
+a {
 	color: $link-color; // Because this is hard-coded in typography.scss to not respect the $link-color variable
 }
 
-:not(pre) > code
-{
-	border-radius: 2px;
-	background-color: $gray-200;
-	padding: 2px 4px;
-}
-
-pre[class*='language-'], code[class*='language-']
-{
-	background: mix(white, theme-color('primary-3'), 95%);
-}
-
-.navbar-brand-title
-{
+.navbar-brand-title {
 	font-size: 140%;
 	font-weight: 300;
+}
+
+article {
+	line-height: 1.7;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6 {
+		&:not(:first-child) {
+			margin-top: 1.25em;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 0.75em;
+		}
+	}
+
+	p {
+		max-width: 75em; // https://baymard.com/blog/line-length-readability
+
+		&:not(:first-child) {
+			margin-top: 1rem;
+		}
+	}
+
+	table,
+	pre {
+		&:not(:first-child) {
+			margin-top: 1rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	:not(pre) > code {
+		border-radius: 2px;
+		background-color: $gray-200;
+		padding: 2px 4px;
+	}
+
+	pre[class*="language-"],
+	code[class*="language-"] {
+		background: mix(white, theme-color("primary-3"), 95%);
+	}
+
+	pre,
+	pre[class*="language-"] {
+		padding: 1rem;
+	}
 }
