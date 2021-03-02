@@ -4,7 +4,7 @@
 		{
 			"label": "build",
 			"type": "shell",
-			"command": "docfx build docfx.json",
+			"command": "docfx build --disableGitFeatures --logLevel=warning docfx.json",
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",
@@ -12,9 +12,16 @@
 			}
 		},
 		{
+			"label": "build (debug)",
+			"type": "shell",
+			"command": "docfx build --disableGitFeatures --logLevel=verbose --force --debug --exportViewModel --exportRawModel docfx.json",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
 			"label": "serve",
 			"type": "shell",
-			"command": "docfx build --serve docfx.json",
+			"command": "docfx build --disableGitFeatures --logLevel=warning --serve docfx.json",
 			"problemMatcher": [],
 			"group": "build"
 		},
