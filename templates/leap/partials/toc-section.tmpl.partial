@@ -1,5 +1,5 @@
 <div class="mb-3 mb-md-4">
-	<h6 class="mb-2">{{name}}</h6>
+	<h6 class="mb-2 text-uppercase">{{name}}</h6>
 	{{#items.length}}
 	<ul class="nav flex-column">
 		{{#items}}
