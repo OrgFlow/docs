@@ -1,0 +1,4 @@
+<a class="navbar-brand fade-page d-flex align-items-center" href="{{_rel}}index.html">
+	<img src="{{_rel}}assets/img/orgflow/OrgFlow-Logo-Boxed-Name-Horz-White.svg" height="42px" alt="OrgFlow">
+	<div class="navbar-brand-title ml-1 font-italic">Docs</div>
+</a>

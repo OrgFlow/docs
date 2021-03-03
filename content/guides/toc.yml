@@ -6,11 +6,12 @@
     - topicUid: guide_initializingastack
     - topicUid: guide_inspectingtheremotegitrepository
     - topicUid: guide_addingnewenvironments
-    - topicUid: guide_flowingchangesin
-    - topicUid: guide_flowingchangesout
+    - topicUid: guide_reusingsalesforcecredentials
 - name: "Flowing Metadata"
   items:
     - topicUid: guide_flowingmetadata
+    - topicUid: guide_flowingchangesin
+    - topicUid: guide_flowingchangesout
 - name: "Managing Stacks"
   items:
     - topicUid: guide_managingstacks

@@ -4,7 +4,7 @@
 		{
 			"label": "build",
 			"type": "shell",
-			"command": "docfx build --force --exportViewModel docfx.json",
+			"command": "docfx build --logLevel=warning docfx.json",
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",
@@ -12,9 +12,16 @@
 			}
 		},
 		{
+			"label": "build (debug)",
+			"type": "shell",
+			"command": "docfx build --logLevel=verbose --force --debug --exportViewModel --exportRawModel docfx.json",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
 			"label": "serve",
 			"type": "shell",
-			"command": "docfx build --serve docfx.json",
+			"command": "docfx build --logLevel=warning --serve docfx.json",
 			"problemMatcher": [],
 			"group": "build"
 		},

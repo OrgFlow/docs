@@ -7,7 +7,7 @@
 	},
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
-	"html.format.wrapLineLength": 240,
+	"html.format.wrapLineLength": 512,
     "cSpell.words": [
         "orgflow",
         "undeployable"

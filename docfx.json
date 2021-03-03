@@ -18,17 +18,30 @@
 		"resource": [
 			{
 				"src": "leap/dist",
-				"files": [ "assets/**" ]
+				"files": [
+					"assets/**"
+				]
+			},
+			{
+				"src": "leap/favicon",
+				"files": [
+					"**"
+				]
 			},
 			{
 				"src": "content",
-				"files": [ "guides/**/images/**" ]
+				"files": [
+					"guides/**/images/**"
+				]
 			}
 		],
+		"globalMetadata": {
+			"_appTitle": "OrgFlow Docs",
+			"_repoUrl": "https://github.com/OrgFlow/docs"
+		},
 		"dest": "_site",
 		"template": [
-			"Default",
-			"StaticToc",
+			"statictoc",
 			"templates/leap"
 		]
 	}
