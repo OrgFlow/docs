@@ -21,6 +21,10 @@
 				"files": [ "assets/**" ]
 			},
 			{
+				"src": "leap/favicon",
+				"files": [ "**" ]
+			},
+			{
 				"src": "content",
 				"files": [ "guides/**/images/**" ]
 			}
