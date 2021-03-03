@@ -28,16 +28,22 @@
 			</div>
 			<div class="col-md-9 col-lg-10">
 				<div class="row">
-					<article class="content-body col-lg-8 col-xl-9 px-xl-6 px-lg-4 px-md-3 py-md-5">
+					<article id="content-body" class="content-body col-lg-8 col-xl-9 px-xl-6 px-lg-4 px-md-3 py-md-5">
 						{{!body}}
 					</article>
 					<aside class="col-lg-4 col-xl-3 py-3 py-md-5 docs-sidebar">
 						{{^_disableContribution}}
-						<a class="btn btn-outline-primary" href="{{_repoUrl}}/edit/{{source.remote.branch}}/{{source.remote.path}}">
+						<a class="btn btn-outline-primary w-100" href="{{_repoUrl}}/edit/{{source.remote.branch}}/{{source.remote.path}}">
 							<img class="icon bg-primary" src="{{_rel}}assets/img/icons/custom/github.svg" alt="GitHub icon" data-inject-svg />
 							Improve this page
 						</a>
 						{{/_disableContribution}}
+						<div class="d-none d-lg-block my-lg-3 bg-primary-3-alt rounded p-3">
+							<h6 class="text-uppercase text-small">On this page</h6>
+							<div id="index-container">
+								<!-- Page index will be injected here by tocbot script -->
+							</div>
+						</div>
 					</aside>
 				</div>
 			</div>
@@ -45,6 +51,25 @@
 	</section>
 
 	{{>partials/scripts}}
+
+	<script>
+		tocbot.init({
+			// Where to render the table of contents.
+			tocSelector: '#index-container',
+			// Where to grab the headings to build the table of contents.
+			contentSelector: '#content-body',
+			// Which headings to grab inside of the contentSelector element.
+			headingSelector: 'h2, h3, h4',
+			// For headings inside relative or absolute positioned containers within content.
+			hasInnerContainers: false,
+			linkClass: "nav-link",
+			extraLinkClasses: "text-small",
+			activeLinkClass: "active",
+			listClass: "nav flex-column",
+			listItemClass: "nav-item",
+			activeListItemClass: "active"
+		});
+	</script>
 
 </body>
 

@@ -5,6 +5,8 @@
 
 <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+
 <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
 <script type="text/javascript" src="{{_rel}}assets/js/aos.js"></script>
 <!-- Clipboard (copies content from browser into OS clipboard) -->
