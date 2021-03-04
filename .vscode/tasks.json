@@ -57,7 +57,7 @@
 			"label": "plugin: build",
 			"type": "shell",
 			"command": "dotnet build plugins/Plugins.csproj --output templates/leap/plugins /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary",
-            "problemMatcher": "$msCompile",
+			"problemMatcher": "$msCompile",
 			"group": "build"
 		},
 	]
