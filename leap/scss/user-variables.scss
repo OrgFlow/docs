@@ -1,0 +1,35 @@
+//
+//
+// user-variables.scss
+//
+// Place your own variable overrides here, these will override any Bootstrap and theme variables.
+
+// Color Scheme
+// Uncomment the variables below and change the hex values.
+
+$primary: #db162f;
+$primary-2: #2f7ee9;
+$primary-3: #070032;
+
+// Do not change or remove the $theme-color-scheme or $theme-colors maps below
+
+$theme-color-scheme: (
+	"primary": $primary,
+	"primary-2": $primary-2,
+	"primary-3": $primary-3,
+);
+
+$theme-colors: (
+	"primary": $primary,
+	"primary-2": $primary-2,
+	"primary-3": $primary-3,
+);
+
+$line-height-base: 1.7;
+
+$link-color: darken($primary-2, 15);
+
+$code-color: $primary-3;
+$code-font-size: 90%;
+
+$alert-color-level: 7; // Make alert text a little bit darker that BS default (6) for better legibility

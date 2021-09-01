@@ -1,0 +1,15 @@
+{
+	"files.exclude": {
+		"node_modules": true,
+		"dist": true,
+		"obj": true,
+		"bin": true
+	},
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"html.format.wrapLineLength": 512,
+    "cSpell.words": [
+        "orgflow",
+        "undeployable"
+    ]
+}

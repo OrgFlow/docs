@@ -1,0 +1,25 @@
+- name: "Stack-based commands"
+  token: stack_based_commands
+  items:
+    - topicUid: command_auth_git_credentialhelper
+    - topicUid: command_auth_git_save
+    - topicUid: command_auth_key_create
+    - topicUid: command_auth_key_save
+    - topicUid: command_auth_salesforce_save
+    - topicUid: command_env_create
+    - topicUid: command_env_delete
+    - topicUid: command_env_flowin
+    - topicUid: command_env_flowmerge
+    - topicUid: command_env_flowout
+    - topicUid: command_env_list
+    - topicUid: command_env_test
+    - topicUid: command_env_unlock
+    - topicUid: command_stack_delete
+    - topicUid: command_stack_create
+    - topicUid: command_stack_list
+    - topicUid: command_stack_setdefault
+- name: "Other Commands"
+  token: other_commands
+  items:
+    - topicUid: command_help
+    - topicUid: command_version

@@ -1,0 +1,96 @@
+//
+//
+// user.scss
+//
+// Place your own custom CSS or SCSS rules below this line, these rules will override any Bootstrap and theme variables.
+
+a {
+	color: $link-color; // Because this is hard-coded in typography.scss to not respect the $link-color variable
+}
+
+.navbar-brand-title {
+	font-size: 140%;
+	font-weight: 300;
+}
+
+article {
+	line-height: 1.7;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6 {
+		&:not(:first-child) {
+			margin-top: 1.25em;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 0.75em;
+		}
+	}
+
+	p {
+		max-width: 75em; // https://baymard.com/blog/line-length-readability
+
+		&:not(:first-child) {
+			margin-top: 1rem;
+		}
+	}
+
+	table,
+	pre {
+		&:not(:first-child) {
+			margin-top: 1rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	:not(pre) > code {
+		border-radius: 2px;
+		background-color: $gray-200;
+		padding: 2px 4px;
+	}
+
+	pre[class*="language-"],
+	code[class*="language-"] {
+		background: mix(white, theme-color("primary-3"), 95%);
+	}
+
+	pre,
+	pre[class*="language-"] {
+		padding: 1rem;
+		font-size: 90%;
+	}
+}
+
+.tab-group {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border-left: 5px solid $gray-200;
+	padding-left: $spacer * 0.75;
+
+	.nav-item + .nav-item {
+		margin-left: $spacer * 0.25;
+	}
+
+	.tab-content {
+		padding-top: 1rem;
+	}
+}
+
+#index {
+	.nav-item > ol {
+		padding-left: $spacer * 0.5;
+	}
+}

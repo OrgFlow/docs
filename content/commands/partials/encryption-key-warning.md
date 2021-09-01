@@ -1,0 +1,2 @@
+>[!WARNING]
+>Your encryption keys are secrets and should be treated as such. They can be used to un-encrypt credentials that in turn can be used to access your Salesforce organizations or your remote Git repository. The OrgFlow CLI is designed in a way that all encryption keys are generated (and optionally saved) locally- in other words, we as a company never get to see them. If you lose or forget your encryption key, it is not possible for us to recover any encrypted credentials that you may have saved either locally or remotely in our state store.

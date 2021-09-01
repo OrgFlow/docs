@@ -1,0 +1,68 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "docfx build --logLevel=warning docfx.json",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "build (debug)",
+			"type": "shell",
+			"command": "docfx build --logLevel=verbose --force --debug --exportViewModel --exportRawModel docfx.json",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "serve",
+			"type": "shell",
+			"command": "docfx build --logLevel=warning --serve docfx.json",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "build & serve",
+			"type": "shell",
+			"command": "docfx build --force --logLevel=warning --serve docfx.json",
+			"dependsOn":[
+				"leap: npm install",
+				"leap: build"
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "leap/",
+			"problemMatcher": [],
+			"label": "leap: npm install"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "leap/",
+			"problemMatcher": [],
+			"label": "leap: build"
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "leap/",
+			"problemMatcher": [],
+			"label": "leap: serve"
+		},
+		{
+			"label": "plugin: build",
+			"type": "shell",
+			"command": "dotnet build plugins/Plugins.csproj --output templates/leap/plugins /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary",
+			"problemMatcher": "$msCompile",
+			"group": "build"
+		},
+	]
+}

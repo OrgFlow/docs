@@ -1,0 +1,8 @@
+- name: Getting started
+  href: guides/getting-started/getting-started.md
+- name: Tutorials
+  href: guides/
+- name: Key concepts
+  href: concepts/
+- name: Reference
+  href: commands/

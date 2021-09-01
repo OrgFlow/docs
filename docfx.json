@@ -1,0 +1,48 @@
+{
+	"build": {
+		"content": [
+			{
+				"src": "content",
+				"files": [
+					"guides/**/**.md",
+					"commands/*.md",
+					"concepts/**.md",
+					"**/toc.yml",
+					"*.md"
+				],
+				"exclude": [
+					"obj/**"
+				]
+			}
+		],
+		"resource": [
+			{
+				"src": "leap/dist",
+				"files": [
+					"assets/**"
+				]
+			},
+			{
+				"src": "leap/favicon",
+				"files": [
+					"**"
+				]
+			},
+			{
+				"src": "content",
+				"files": [
+					"guides/**/images/**"
+				]
+			}
+		],
+		"globalMetadata": {
+			"_appTitle": "OrgFlow Docs",
+			"_repoUrl": "https://github.com/OrgFlow/docs"
+		},
+		"dest": "_site",
+		"template": [
+			"statictoc",
+			"templates/leap"
+		]
+	}
+}

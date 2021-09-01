@@ -1,0 +1,7 @@
+{{#_toc}}
+<div id="docs-index" class="collapse">
+	{{#items}}
+	{{>partials/toc-section}}
+	{{/items}}
+</div>
+{{/_toc}}
