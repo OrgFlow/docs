@@ -31,8 +31,8 @@ This command can also be used to validate a deployment without actually making a
   
   If specified, indicates the tests that should be executed as part of the deployment to Salesforce:
   - `NoTestRun`: No tests are executed.
-  - `RunSpecifiedTests`: Only the tests classes specified by `--tests` are executed.
-  - `RunLocalTests`: Alls tests in the organization that do not originate from managed packages are executed.
+  - `RunSpecifiedTests`: Only the test classes specified by `--tests` are executed.
+  - `RunLocalTests`: All tests in the organization that do not originate from managed packages are executed.
   - `RunAllTestsInOrg`: Every test in the organization (including those in managed packages) are executed.
 
   All deployments are subject to Salesforce's minimum test requirements (e.g. code coverage etc.), regardless of the value that you specify for this option.

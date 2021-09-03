@@ -3,7 +3,7 @@ uid: concept_orgbasedcommands
 title: Org Based Commands
 ---
 
-OrgFlow commands are split in to two categories: org-based, and @concept_stackbasedcommands.
+OrgFlow commands are split into two categories: org-based, and @concept_stackbasedcommands.
 
 Org based commands are not stateful, whereas stack-based commands are. This means that org-based commands connect directly to your Salesforce organisations, and you need to tell them how to do this (i.e. you cannot use the @concept_stack and @concept_environment records in your @concept_statestore ).
 
