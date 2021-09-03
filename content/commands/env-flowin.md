@@ -43,7 +43,7 @@ title: env:flowin
 
   If specified, the metadata that is retrieved from the Salesforce organization is committed to the Git repository as-is. The OrgFlow CLI will make no attempt to merge the changes in the Salesforce organization with the changes in Git (if any).
 
-  The end result is that the metadata in the Git repository will match the metadata in the Salesforce organization, but any changes to the metadata that are in Git but not the Salesforce organization will be lost.
+  The end result is that the metadata in the Git repository will match the metadata in the Salesforce organization, but any change to the metadata that is in Git but not in the Salesforce organization will be lost.
 
   This has the side effect of removing all @concept_undeployablecomponents from the state store for this specific environment.
 

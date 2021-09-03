@@ -51,9 +51,9 @@ The following options are global across all commands:
 
 - **`--tempDir=<directoryPath>`**
 
-  If specified, sets the location to use as storage for files that may need to stored on disk temporarily during command execution. For example, the location on disk where zip files containing metadata from Salesforce are downloaded to before they are unzipped.
+  If specified, sets the location to use as storage for files that may need to be stored on disk temporarily during command execution. For example, the location on disk where zip files containing metadata from Salesforce are downloaded to before they are unzipped.
 
-  If not specified, the CLI will automatically choose an appropriate location on disk (usually in the current user's temporary storage location). This automatically chosen location may be deeply nested within a drive, which may be problematic if the operating system imposes limits on file path lengths and the files placed in to temporary storage have particularly long paths or names.
+  If not specified, the CLI will automatically choose an appropriate location on disk (usually in the current user's temporary storage location). This automatically chosen location may be deeply nested within a drive, which may be problematic if the operating system imposes limits on file path lengths and the files placed into temporary storage have particularly long paths or names.
 
 - **`--output=[Pretty|Flat|Json]`**
 
