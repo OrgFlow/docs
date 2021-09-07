@@ -161,7 +161,7 @@ Whenever authentication is required, OrgFlow will open a browser window that wil
 
 When the browser window opens, enter the password for your Salesforce user, and then complete any further challenges that Salesforce might ask for. Once Salesforce has verified your identity, it will give a token back to OrgFlow. This token can be remembered and re-used by OrgFlow for as long as it if valid for. This reduces the amount of times that Salesforce requires you to enter your password.
 
-![Salesforce's OAuth dialog](images/oauth.jpg)
+![Salesforce's OAuth dialog](images/oauth-blur.jpeg)
 
 ### Monitoring progress
 
