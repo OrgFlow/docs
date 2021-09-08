@@ -23,7 +23,7 @@ For example: Use encryption key `A` when setting base credentials with the @comm
 
 You may also wish to consider restricting access to the @concept_backinggitbranch for sensitive environments. This would prevent someone from bypassing OrgFlow entirely and pushing changes directly to the branch.
 
-Git doesn't natively support this kind of functionality, but a lot of Git services add this feature in one way or another (usually by allowing policies to be configure that restrict who can make changes to particular branches):
+Git doesn't natively support this kind of functionality, but a lot of Git services add this feature in one way or another (usually by allowing policies to be configured that restrict who can make changes to particular branches):
 
 - GitHub calls it a [branch protection rule](https://docs.github.com/en/github/administering-a-repository/managing-a-branch-protection-rule)
 - Azure DevOps calls it a [branch policy](https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops)

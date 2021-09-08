@@ -7,7 +7,7 @@ OrgFlow allows you to store credentials in the @concept_statestore. This allows 
 
 The credentials are encrypted with an encryption key before they are sent to the state store for storage. It is only possible to decrypt the credentials if you are in possession of the encryption key. The encryption key is never sent to OrgFlow's servers or state store, so this prevents third parties (including OrgFlow) from decrypting your saved credentials.
 
-You can use the @command_auth_key_create command to generate a new encryption key. The key is generated on the machine that is running the OrgFlow process, and it is never transmitted over a network or leaves that machine. However, you don't need to use this command to generate a new key if you;d prefer not to. Instead, you can generate your own key so long as it meets the criteria:
+You can use the @command_auth_key_create command to generate a new encryption key. The key is generated on the machine that is running the OrgFlow process, and it is never transmitted over a network or leaves that machine. However, you don't need to use this command to generate a new key if you'd prefer not to. Instead, you can generate your own key so long as it meets the criteria:
 
 - Must be exactly 64 characters long
 - Must contain only hexadecimal characters
