@@ -1,6 +1,72 @@
 - name: Concepts
-  href: concepts/
+  items:
+  - name: "Salesforce + Git"
+    topicUid: guide_git_overview
+  - name: "Security"
+    items:
+      - topicUid: guide_git_authentication
 - name: Tutorials
-  href: tutorials/
+  items:
+  - name: "Getting Started"
+    items:
+      - topicUid: guide_gettingstarted
+      - topicUid: guide_inspectingtheremotegitrepository
+      - topicUid: guide_addingnewenvironments
+      - topicUid: guide_flowingchangesin
+      - topicUid: guide_flowingchangesout
+      - topicUid: guide_flowingchangesbetweenenvironments
+      - topicUid: guide_controllingincludedmetadata
+  - name: "Continuous Integration"
+    items:
+      - topicUid: guide_ci_overview
+      - topicUid: guide_ci_github
 - name: Reference
-  href: reference/
+  items:
+  - name: Commands
+    items:
+      - topicUid: command_help
+      - topicUid: command_version
+      - name: Process Commands
+        items:
+          - topicUid: command_auth_git_credentialhelper
+          - topicUid: command_auth_git_save
+          - topicUid: command_auth_key_create
+          - topicUid: command_auth_key_save
+          - topicUid: command_auth_salesforce_save
+          - topicUid: command_env_create
+          - topicUid: command_env_delete
+          - topicUid: command_env_flowin
+          - topicUid: command_env_flowmerge
+          - topicUid: command_env_flowout
+          - topicUid: command_env_list
+          - topicUid: command_env_test
+          - topicUid: command_env_unlock
+          - topicUid: command_stack_delete
+          - topicUid: command_stack_create
+          - topicUid: command_stack_list
+          - topicUid: command_stack_setdefault
+  - name: Glossary
+    items:
+      - topicUid: concept_diagnosticbundle
+      - topicUid: concept_deltaarchive
+      - topicUid: concept_includespecs
+      - topicUid: concept_passthrougharguments
+      - topicUid: concept_licensekey
+      - topicUid: concept_stackbasedcommands
+      - topicUid: concept_flowin
+      - topicUid: concept_flowout
+      - topicUid: concept_stack
+      - topicUid: concept_defaultstack
+      - topicUid: concept_environment
+      - topicUid: concept_productionenvironment
+      - topicUid: concept_environmentstate
+      - topicUid: concept_undeployablecomponents
+      - topicUid: concept_statestore
+      - topicUid: concept_accesscontrol
+      - topicUid: concept_mergebasedcommitstrategy
+      - topicUid: concept_credentialinference
+      - topicUid: concept_encryptionkey
+      - topicUid: concept_remotegitrepository
+      - topicUid: concept_backinggitbranch
+      - topicUid: concept_orgflowincludefile
+      - topicUid: concept_orgbasedcommands

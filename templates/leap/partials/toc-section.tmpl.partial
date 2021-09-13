@@ -1,10 +1,10 @@
 <div class="mb-3 mb-md-4">
-	<h6 class="mb-2 text-uppercase">{{name}}</h6>
-	{{#items.length}}
+	<h4 class="mb-2 text-uppercase">{{name}}</h4>
+	{{#hasChildren}}
 	<ul class="nav flex-column">
 		{{#items}}
 		{{>partials/toc-item}}
 		{{/items}}
 	</ul>
-	{{/items.length}}
+	{{/hasChildren}}
 </div>

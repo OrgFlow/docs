@@ -1,16 +1,17 @@
 <li class="nav-item {{#active}}active{{/active}}">
-	<a href="{{#active}}#{{/active}}{{^active}}{{href}}{{/active}}" class="nav-link {{#active}}active{{/active}}">{{name}}</a>
-
-	<!-- If we ever have 3rd level items:
-	<a href="#navs-bars-collapse-{{token}}" class="nav-link text-small" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navs-bars-collapse">{{name}}</a>
-	{{#items.length}}
-	<ul class="nav flex-column collapse pl-2" id="navs-bars-collapse-{{token}}">
+	{{#href}}
+		<a href="{{#active}}#{{/active}}{{^active}}{{href}}{{/active}}" class="nav-link {{#active}}active{{/active}}">{{name}}</a>
+	{{/href}}
+	{{^href}}
+		<a class="nav-link text-uppercase {{#active}}active{{/active}}">{{name}}</a>
+	{{/href}}
+	{{#hasChildren}}
+	<ul class="nav flex-column pl-2">
 		{{#items}}
 		<li class="nav-item">
-			<a href="{{#active}}#{{/active}}{{^active}}{{href}}{{/active}}" class="nav-link text-small {{#active}}active{{/active}}">{{name}}</a>
+			{{>partials/toc-item}}
 		</li>
 		{{/items}}
 	</ul>
-	{{/items.length}}
-	-->
+	{{/hasChildren}}
 </li>

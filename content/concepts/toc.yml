@@ -1,5 +1,0 @@
-- name: "Salesforce + Git"
-  topicUid: guide_git_overview
-- name: "Security"
-  items:
-    - topicUid: guide_git_authentication
