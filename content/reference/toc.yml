@@ -1,4 +1,4 @@
-- name: "Getting Started"
+- name: "Glossary"
   items:
     - topicUid: guide_gettingstarted
     - topicUid: guide_inspectingtheremotegitrepository
@@ -7,11 +7,11 @@
     - topicUid: guide_flowingchangesout
     - topicUid: guide_flowingchangesbetweenenvironments
     - topicUid: guide_controllingincludedmetadata
-- name: "OrgFlow & Git"
-  items:
-    - topicUid: guide_git_overview
-    - topicUid: guide_git_authentication
-- name: "Salesforce DevOps and Automation"
+- name: "Commands"
   items:
     - topicUid: guide_ci_overview
     - topicUid: guide_ci_github
+- name: "Include Specs"
+  topicUid: concept_includespecs
+- name: "Advanced Settings"
+  topicUid: concept_passthrougharguments

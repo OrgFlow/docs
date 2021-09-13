@@ -1,6 +1,6 @@
 ---
 uid: guide_git_overview
-title: Overview
+title: Salesforce & Git
 ---
 
 One of the benefits of OrgFlow is that you can keep your Salesforce metadata in any Git repository that you choose. This could be GitHub, Azure DevOps, Bitbucket, any other hosted Git provider, or even a private self-hosted Git repository on your company's internal network.
