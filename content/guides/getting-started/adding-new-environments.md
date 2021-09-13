@@ -103,4 +103,4 @@ You'll notice that there are now two new branches:
 
 Those branches were created by the @command_env_create commands that we executed. They were created (branched) from the head of the branch that backs the production environment, so their content should be the same as that branch.
 
-The contents of each branch were then deployed to the corresponding newly created sandbox. However, in this case, the sandboxes already contained the same metadata as the branch so no changes were deployed (you should be able to see this reflected in the output of the command).
+The content of each branch was then deployed to the corresponding newly created sandbox. However, in this case, the sandboxes already contained the same metadata as the branch so no changes were deployed (you should be able to see this reflected in the output of the command).
