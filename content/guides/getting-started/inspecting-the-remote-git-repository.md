@@ -29,7 +29,7 @@ This would be a good time to have a look at the remote Git repository. Remember-
 
 There's some files and folders in there that weren't there before.
 
-Open up the `unpackaged` folder. This folder contains all your the unpackaged metadata that you flowed in during `stack:create`. Remember that we picked `CustomObjectsOnly` when choosing which metadata types to include? You should be able to see all (and only) your objects in the Git repository. If you open up one of the object files, you will be able to see the contents of it- an XML file that contains nodes that describe your object.
+Open up the `unpackaged` folder. This folder contains all the unpackaged metadata that you flowed in during `stack:create`. Remember that we picked `CustomObjectsOnly` when choosing which metadata types to include? You should be able to see all (and only) your objects in the Git repository. If you open up one of the object files, you will be able to see the contents of it- an XML file that contains nodes that describe your object.
 
 > [!TIP]
 > If you can't see anything, make sure that you've got the correct branch selected. The metadata will have been committed to whatever branch name you gave during `stack:create`.

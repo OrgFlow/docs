@@ -73,7 +73,7 @@ The `stack:create` command will create a stack that contains the minimum amount 
   - `CustomObjectsOnly`: Custom objects (and their nested types, such as fields, layouts etc.) are included.
   - `ProductionImmutable`: Only metadata that cannot be changed directly in the production Salesforce organization is included. For example: Apex classes and triggers.
   - `Nothing`: Nothing is included. This is useful because it allows you to initialize a stack without pulling any metadata in to the Git repository. Once the stack is initialized, you can manually update the `.orgflowinclude` file to include the metadata types and items that you choose before running @command_env_flowin on the production environment to pull the metadata into your Git repository.
-  - `UseExisting`: Use a @concept_orgflowincludefile that already exist in the remote Git repository. This option is only valid if the remote Git repository already contains a valid `.orgflowinclude` file. If the branch specified by `--gitBranch` already exists then this file must exist in that branch; if the branch doesn't already exist, then the file must present in the head of the default branch.
+  - `UseExisting`: Use a @concept_orgflowincludefile that already exist in the remote Git repository. This option is only valid if the remote Git repository already contains a valid `.orgflowinclude` file. If the branch specified by `--gitBranch` already exists then this file must exist in that branch; if the branch doesn't already exist, then the file must be present in the head of the default branch.
 
 - **`-su|--signInUrl=<url>`**
 

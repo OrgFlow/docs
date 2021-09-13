@@ -3,7 +3,7 @@ uid: guide_ci_github
 title: GitHub Actions
 ---
 
-The purpose of this guide is to provide a few examples of the things you can do with OrgFlow and GitHub Actions. It's by no means an exhaustive list, but instead is a good starting point for you to implement your own workflows and processes. For simplicity, This guide assumes that the GitHub workflows are contained within the same repository as your Salesforce metadata (although this is not necessity).
+The purpose of this guide is to provide a few examples of the things you can do with OrgFlow and GitHub Actions. It's by no means an exhaustive list, but instead is a good starting point for you to implement your own workflows and processes. For simplicity, this guide assumes that the GitHub workflows are contained within the same repository as your Salesforce metadata (although this is not a necessity).
 
 ## Recommended approach
 

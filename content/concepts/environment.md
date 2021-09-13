@@ -9,7 +9,7 @@ Some @concept_stackbasedcommands (such as @command_env_flowin, @command_env_flow
 
 Every stack must contain a single @concept_productionenvironment. This environment is created for you when a stack is initialised with the @command_stack_create command. You can then use the @command_env_create and @command_env_delete commands to add or remove environments to or from your stack.
 
-Environments are specific to a stack. Environment names must be unique (case in-sensitive) within a stack. If you have multiple stacks, you can call multiple environments by the same name provided each environment with the same name is in a different stack.
+Environments are specific to a stack. Environment names must be unique (case in-sensitive) within a stack.
 
 > [!TIP]
 > The @command_env_list command can be used to list all of the environments in a given stack.

@@ -5,7 +5,7 @@ title: Credential Inference
 
 OrgFlow is able to infer sandbox Salesforce credentials and login URLs if it knows the equivalent values for the production organisation.
 
-For example: if OrgFlow knows that there is a production account with the username `allan@mycompany.com`, then it is able to infer that the username to login in to a sandbox called `dev` would be `allan@mycompany.com.dev`.
+For example: if OrgFlow knows that there is a production account with the username `allan@mycompany.com`, then it is able to infer that the username to login to a sandbox called `dev` would be `allan@mycompany.com.dev`.
 
 ## When will OrgFlow infer credentials?
 
@@ -38,11 +38,11 @@ Salesforce usernames and passwords can be stored either in the @concept_statesto
 
 ## How are sign in URLs inferred?
 
-OrgFlow will apply the following steps to try to determine the sign in URL. If OrgFlow is able to determine at sign in URL at a particular step then it will use that sign in URL, otherwise it will move on to the next step:
+OrgFlow will apply the following steps to try to determine the sign-in URL. If OrgFlow is able to determine a sign-in URL at a particular step then it will use that sign-in URL, otherwise, it will move on to the next step:
 
-1. If the sign in URL is set on the @concept_environment record then that value will be used. The sign in URL can be set when running @command_env_create by using the `--signInUrl` option.
-1. If the base sign in URL on the @concept_stack record is set, then it will be transformed into the correct format for the environment in question:
+1. If the sign-in URL is set on the @concept_environment record then that value will be used. The sign-in URL can be set when running @command_env_create by using the `--signInUrl` option.
+1. If the base sign-in URL on the @concept_stack record is set, then it will be transformed into the correct format for the environment in question:
 
 - `https://login.salesforce.com` will be transformed into `https://test.salesforce.com` if connecting to a sandbox, or will be left as `https://test.salesforce.com` if connecting to the production environment.
-- A 'My Domain' Salesforce sign in URL (for example `https://myorganisation.my.salesforce.com`) will be transformed into the sandbox equivalent (for example `https://myorganisation--mysandbox.my.salesforce.com`) if connecting to a sandbox, r will be left as is if connecting to the production environment.
-- Finally, if no base or environment sign in URL is available, then `https://login.salesforce.com` will be used for production, and `https://test.salesforce.com` will be used for sandboxes.
+- A 'My Domain' Salesforce sign-in URL (for example `https://myorganisation.my.salesforce.com`) will be transformed into the sandbox equivalent (for example `https://myorganisation--mysandbox.my.salesforce.com`) if connecting to a sandbox, r will be left as is if connecting to the production environment.
+- Finally, if no base or environment sign-in URL is available, then `https://login.salesforce.com` will be used for production, and `https://test.salesforce.com` will be used for sandboxes.

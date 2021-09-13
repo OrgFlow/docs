@@ -22,7 +22,7 @@ Most OrgFlow commands will interact with your remote Git repository in one way o
 >[!TIP]
 > OrgFlow assumes that the Git executable is available at `git`. If this is not the case then you can change this by setting the `ORGFLOW_GIT_EXECUTABLEPATH` environment variable. See @concept_passthrougharguments#git for more information.
 
-If you are already able to clone your remote Git repository through Git (without Git prompting for credentials), then OrgFlow will be able to do so too. If not, or if you're wanting to run OrgFlow elsewhere (such as an ephemeral environment like a Docker container, or a CI/CD agent), then you will need to make sure that you have the correct [git authentication](xref:guide_git_authentication) available.
+If you are already able to clone your remote Git repository through Git (without Git prompting for credentials), then OrgFlow will be able to do so, too. If not, or if you want to run OrgFlow elsewhere (such as an ephemeral environment like a Docker container, or a CI/CD agent), then you will need to make sure that you have the correct [git authentication](xref:guide_git_authentication) available.
 
 ## Advanced configuration options
 
