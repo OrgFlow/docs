@@ -16,6 +16,6 @@ The metadata in a Salesforce organisation can be committed to the backing Git br
 
 ## Creating a backing Git branch
 
-Bt default, the backing Git branch is created by the @command_env_create command. The branch will be created from the `HEAD` of the branch that backs the source environment used by that command (by default this will be the @concept_productionenvironment, but this can be changed by the options available on that command).
+By default, the backing Git branch is created by the @command_env_create command. The branch will be created from the `HEAD` of the branch that backs the source environment used by that command (by default this will be the @concept_productionenvironment, but this can be changed by the options available on that command).
 
 You can avoid this default functionality by manually creating the backing Git branch in the remote Git repository *before* running the @command_env_create command. See the [env:create command documentation](xref:command_env_create) for details on how to do this.

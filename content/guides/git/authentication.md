@@ -16,7 +16,7 @@ These Git authentication techniques are recommended for devices that are long-li
 
 ### Manual authentication configuration
 
-The preferred (and simplest) method for long-lived devices is to manually authenticate once, and then rely on Git to re-use your credentials. The key here is to get Git to a point where it can authenticate *without* having to prompt for credentials (OrgFlow cannot relay these prompt to you).
+The preferred (and simplest) method for long-lived devices is to manually authenticate once, and then rely on Git to re-use your credentials. The key here is to get Git to a point where it can authenticate *without* having to prompt for credentials (OrgFlow cannot relay these prompts to you).
 
 #### SSH key
 
@@ -32,9 +32,9 @@ How you do these steps (especially the last step) will depend on the provider of
 
 Another option you have is to use a Git credential helper. A Git credential helper is a small piece of software that can tell Git your credentials for a remote Git repository (if it knows them). Git ships with two credential helpers- `cache` and `store`, however these are not recommended because they are less secure than some other options available.
 
-Other credential helpers (usually from third parties) are favoured because they are more secure, and have better support for native authentication experiences (such as opening up an OAuth dialog to log in to your Git provider etc.).
+Other credential helpers (usually from third parties) are favoured because they are more secure, and have better support for native authentication experiences (such as opening up an OAuth dialog to log in to your Git provider, etc.).
 
-[Git Credential Manager Core](https://github.com/microsoft/Git-Credential-Manager-Core) is a cross platform Git credential helper from Microsoft. Other, platform specific credential helpers include **Keychain** for macOS, or **Secret Service** or **pass** for Linux.
+[Git Credential Manager Core](https://github.com/microsoft/Git-Credential-Manager-Core) is a cross-platform Git credential helper from Microsoft. Other, platform-specific credential helpers include **Keychain** for macOS, or **Secret Service** or **pass** for Linux.
 
 Installation and configuration of these credential helpers are well documented, and your favorite search engine should be able to help you find a good guide.
 
@@ -62,7 +62,7 @@ The techniques are listed in order: most recommended to least recommended. The m
 
 This technique involves using the authentication mechanism that is natively provided by the platform that is orchestrating your OrgFlow workflows. This should be your first choice when it comes to remote Git repository authentication, but not all platforms provide a way to do this, so be prepared to have to fall back to one of the other techniques if need be.
 
-This authentication method relies on an assumption that you are running OrgFlow via a platform that already has a built in mechanism for cloning repositories. This is common for CI/CD tools that would first clone a repository and then build or test it etc. Some of these platforms allow you to re-use their remote Git repository authentication mechanism for later re-use. Although you may have to perform a couple of steps to be able to do this.
+This authentication method relies on an assumption that you are running OrgFlow via a platform that already has a built-in mechanism for cloning repositories. This is common for CI/CD tools that would first clone a repository and then build or test it etc. Some of these platforms allow you to re-use their remote Git repository authentication mechanism for later re-use. Although you may have to perform a couple of steps to be able to do this.
 
 You should consult the documentation for your particular build platform, but we've provided a couple of examples below to help with understanding the requirements:
 
@@ -98,15 +98,15 @@ Of course, for this to work, your remote Git repository must support authenticat
 If all else fails, OrgFlow provides the @command_auth_git_credentialhelper command for you to fall back on. This is a [Git Credential Helper](https://git-scm.com/docs/gitcredentials) that can be added to Git's configuration to allow Git to query OrgFlow for a username and password (or an access token):
 
 1. Run the @command_auth_git_save command to save the credentials required for access to the remote Git repository. Make sure that you keep a copy of the encryption key that you used (you'll need it later).
-1. Add @command_auth_git_credentialhelper as a Git Credential Helper every time you spin up an ephemeral device to run OrgFlow, passing in the encryption key used in step 1 to that your credentials can be decrypted (you'll need to do this before you run any other OrgFlow commands) `config --global credential.helper "!orgflow auth:git:credentialhelper -k=<encryptionKey>"`.
+1. Add @command_auth_git_credentialhelper as a Git Credential Helper every time you spin up an ephemeral device to run OrgFlow, passing in the encryption key used in step 1 so that your credentials can be decrypted (you'll need to do this before you run any other OrgFlow commands) `config --global credential.helper "!orgflow auth:git:credentialhelper -k=<encryptionKey>"`.
 
 >[!WARNING]
 > If a Git Credential Helper is able to provide valid credentials for a particular remote Git repository, then Git will try to propagate those credentials to all other registered Credential Helpers.
 >
 > This can sometimes be useful (e.g. to push valid credentials into the `cache` Credential Helper), but you should be careful to avoid accidentally overwriting credentials in one Credential Helper with those in another. The best way to do this is to make sure that you only configure the Credential Helpers that you actually need.
 >
-> Some Credential Helpers are readonly (including OrgFlow's), so this propagation will have no effect on them. However, some other Credential Helpers also allow Git to write credentials to their stores. This is one of the reasons that we don't recommend using OrgFlow's Git Credential Helper on personal devices that are likely to have other Credential Helpers already installed.
+> Some Credential Helpers are read-only (including OrgFlow's), so this propagation will have no effect on them. However, some other Credential Helpers also allow Git to write credentials to their stores. This is one of the reasons that we don't recommend using OrgFlow's Git Credential Helper on personal devices that are likely to have other Credential Helpers already installed.
 
 ## Other options
 
-As a general rule, if you can use `git` to read from and write to your remote Git repository on a particular device (without `git` prompting for your credentials), then OrgFlow will be able to do so too. Feel free to achieve this is any way that best suits your use case. Here's a [fairly comprehensive guide](https://coolaj86.com/articles/vanilla-devops-git-credentials-cheatsheet/) covering this topic.
+As a general rule, if you can use `git` to read from and write to your remote Git repository on a particular device (without `git` prompting for your credentials), then OrgFlow will be able to do so too. Feel free to achieve this in any way that best suits your use case. Here's a [fairly comprehensive guide](https://coolaj86.com/articles/vanilla-devops-git-credentials-cheatsheet/) covering this topic.

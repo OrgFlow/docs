@@ -14,8 +14,8 @@ At the end of this guide, you'll have:
 - created your first @concept_stack and added an @concept_environment
 - looked at your metadata in the @concept_remotegitrepository
 - flowed metadata from your sandbox to your remote Git repository, and vice versa
-- explore ways to move metadata changes between [Environments](xref:concept_environment)
-- learn how to change which metadata types and records are handled by OrgFlow
+- explored ways to move metadata changes between [Environments](xref:concept_environment)
+- learned how to change which metadata types and records are handled by OrgFlow
 
 OrgFlow is extremely versatile, which means that there will usually be more than one way to build out your processes and workflows. These guides will keep things simple and take you through techniques and concepts one at a time. As you work through the guides and build up your knowledge, you should begin to feel confident to design OrgFlow-based processes that are best suited to your requirements.
 
@@ -159,7 +159,7 @@ OrgFlow will use OAuth to authenticate with Salesforce.
 
 Whenever authentication is required, OrgFlow will open a browser window that will prompt you to log in to Salesforce. This ensures that OrgFlow never knows your password, and it also allows advanced authorization techniques (such as MFA) to be utilized by Salesforce.
 
-When the browser window opens, enter the password for your Salesforce user, and then complete any further challenges that Salesforce might ask for. Once Salesforce has verified your identity, it will give a token back to OrgFlow. This token can be remembered and re-used by OrgFlow for as long as it if valid for. This reduces the amount of times that Salesforce requires you to enter your password.
+When the browser window opens, enter the password for your Salesforce user, and then complete any further challenges that Salesforce might ask for. Once Salesforce has verified your identity, it will give a token back to OrgFlow. This token can be remembered and re-used by OrgFlow for as long as it is valid. This reduces the number of times that Salesforce requires you to enter your password.
 
 ![Salesforce's OAuth dialog](images/oauth-blur.jpeg)
 

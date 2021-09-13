@@ -13,7 +13,7 @@ We know that we can use the @command_env_flowout to move metadata changes from a
 
 Before we begin, we need to make sure that the metadata in each backing Git branch matches the metadata that is in each Salesforce sandbox. If you've followed the previous steps of this guide, then you know that this is already the case. However, if you're unsure whether this is the case or not, you can run @command_env_flowin on both environments to make sure.
 
-Anyone that's familiar with Git will know that there's a few ways to do this. But because we're using GitHub for our remote Git repository, we're going to simply create a pull request, and then merge the changes via the pull request. However, if you're confident enough with Git and want to do this another way, feel free to do so.
+Anyone familiar with Git will know that there are a few ways to do this. But because we're using GitHub for our remote Git repository, we're going to simply create a pull request, and then merge the changes via the pull request. However, if you're confident enough with Git and want to do this another way, feel free to do so.
 
 >[!TIP]
 > Pull requests provide a good opportunity for changes to be peer-reviewed before they are merged into another environment.
@@ -57,12 +57,12 @@ Once the @command_env_flowout command has completed, you should be able to log i
 
 ## Using the env:flowmerge command to move metadata changes
 
-Using Git (as in the previous section) is one way of moving metadata between environments. But in order for that method to be effective, you need to first make sure that the backing Git branches is up to date with the metadata in each Salesforce organization, and then you need to manually merge the changes in Git, and then you need to run the @command_env_flowout command if you wish to deploy the result of the merge.
+Using Git (as in the previous section) is one way of moving metadata between environments. But in order for that method to be effective, you need to first make sure that the backing Git branches are up to date with the metadata in each Salesforce organization, and then you need to manually merge the changes in Git, and then you need to run the @command_env_flowout command if you wish to deploy the result of the merge.
 
 The @command_env_flowmerge command wraps all of these steps up for you, and so it can be a simpler option if:
 
 - You do not necessarily know that your backing Git branches are up to date with your Salesforce organizations
-- You do not need to have code changes peer reviewed (pull requests) before merging
+- You do not need to have code changes peer-reviewed (pull requests) before merging
 - You want to merge environments with as little effort as possible
 
 ### Making changes to the metadata
@@ -102,8 +102,8 @@ Flow out Env1
 This command may take a couple of minutes to complete, so let's go through what OrgFlow is doing while we wait:
 
 - The metadata from both sandboxes is flowed in to the respective backing Git branches (in parallel)
-- Once that has completed, the source backing Git branch is merged into the target backing Git branch
-- The result of that merge is the flowed out to the target Salesforce organization
+- Once that has been completed, the source backing Git branch is merged into the target backing Git branch
+- The result of that merge is then flowed out to the target Salesforce organization
 - The updated backing Git branch for the target environment is then pushed back up to the remote Git repository
 
 ### Verifying the merge
