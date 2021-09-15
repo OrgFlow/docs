@@ -4,11 +4,8 @@
 			{
 				"src": "content",
 				"files": [
-					"guides/**/**.md",
-					"commands/*.md",
-					"concepts/**.md",
 					"**/toc.yml",
-					"*.md"
+					"**/**.md"
 				],
 				"exclude": [
 					"obj/**"
@@ -31,7 +28,7 @@
 			{
 				"src": "content",
 				"files": [
-					"guides/**/images/**"
+					"tutorials/**/images/**"
 				]
 			}
 		],

@@ -1,7 +1,9 @@
 {{#_toc}}
-<div id="docs-index" class="collapse">
+<div id="docs-index">
 	{{#items}}
-	{{>partials/toc-section}}
+		{{#displayInSideMenu}}
+			{{>partials/toc-section}}
+		{{/displayInSideMenu}}
 	{{/items}}
 </div>
 {{/_toc}}

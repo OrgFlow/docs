@@ -11,13 +11,13 @@
 
 			<div class="collapse navbar-collapse justify-content-between">
 				<div class="py-2 py-lg-0">
-					{{#_nav}}
+					{{#_toc}}
 					<ul class="navbar-nav">
 						{{#items}}
 						{{>partials/navbar-li}}
 						{{/items}}
 					</ul>
-					{{/_nav}}
+					{{/_toc}}
 				</div>
 				<a href="https://www.orgflow.io" class="btn btn-primary-2 ml-lg-3">
 					<span>Main product site</span>
