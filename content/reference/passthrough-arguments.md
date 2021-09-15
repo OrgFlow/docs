@@ -1,5 +1,5 @@
 ---
-uid: concept_passthrougharguments
+uid: reference_passthrougharguments
 title: Passthrough Arguments
 ---
 

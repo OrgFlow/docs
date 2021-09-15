@@ -63,10 +63,13 @@
       - topicUid: concept_licensekey
       - topicUid: concept_mergebasedcommitstrategy
       - topicUid: concept_orgbasedcommands
-      - topicUid: concept_passthrougharguments
       - topicUid: concept_productionenvironment
       - topicUid: concept_remotegitrepository
       - topicUid: concept_stack
       - topicUid: concept_stackbasedcommands
       - topicUid: concept_statestore
       - topicUid: concept_undeployablecomponents
+  - name: Advanced Configuration
+    topicUid: reference_passthrougharguments
+  - name: Include Specs Syntax
+    topicUid: reference_includespecssyntax

@@ -3,7 +3,10 @@ uid: concept_orgflowincludefile
 title: .orgflowinclude File
 ---
 
-The .orgflowinclude file contains the @concept_includespecs for @concept_stackbasedcommands. It can be found at the root of your @concept_remotegitrepository (i.e. `/.orgflowinclude'), which means that a full change history for this file will be available in Git should you ever need it.
+The .orgflowinclude file contains the @concept_includespecs for @concept_stackbasedcommands. It can be found at the root of your @concept_remotegitrepository (i.e. `/.orgflowinclude`), which means that a full change history for this file will be available in Git should you ever need it.
+
+> [!TIP]
+> See @reference_includespecssyntax for more information on the syntax of include specs.
 
 - Each include spec is placed on its own line.
 - The `#` character can be used to indicate the start of a comment.
