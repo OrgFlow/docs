@@ -15,22 +15,23 @@ exports.postTransform = function (model) {
 		item.isTopLevel = true;
 		item.firstChildHref = getFirstChildHref(item);
 
-		traverseItems(model.uid, item);
+		traverseItems(model.uid, model.isHomepage, item);
 	}
 
 	return model;
 }
 
-function traverseItems(uid, item) {
+function traverseItems(uid, isHomepage, item) {
 	var isActive = uid && item.topicUid === uid;
 
 	item.hasChildren = item.items.length > 0;
 
 	for (var i = 0; i < item.items.length; i++) {
-		isActive = traverseItems(uid, item.items[i]) || isActive;
+		isActive = traverseItems(uid, isHomepage, item.items[i]) || isActive;
 	}
 
 	item.active = isActive;
+	item.displayInSideMenu = isActive || isHomepage;
 
 	return isActive;
 }

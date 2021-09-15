@@ -1,5 +1,5 @@
-// 
-// 
+//
+//
 // docs.scss
 //
 // Simply to style the documentation, feel free to remove.
@@ -9,7 +9,7 @@ $docs-layout-height: calc(100vh - 4.5625rem);
 @include media-breakpoint-up(md){
 	.docs-sidebar{
 		height: $docs-layout-height;
-		overflow-y: scroll;
+		overflow-y: auto;
 		position: -webkit-sticky;
 		position: sticky;
 		top: 4.5625rem;

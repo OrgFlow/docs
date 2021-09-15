@@ -1,9 +1,9 @@
-{{#_nav}}
+{{#_toc}}
 <div id="docs-index">
 	{{#items}}
-		{{#active}}
+		{{#displayInSideMenu}}
 			{{>partials/toc-section}}
-		{{/active}}
+		{{/displayInSideMenu}}
 	{{/items}}
 </div>
-{{/_nav}}
+{{/_toc}}
