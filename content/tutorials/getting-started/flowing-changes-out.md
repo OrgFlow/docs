@@ -11,8 +11,8 @@ Now, we're going to move metadata in the other direction- from the remote Git re
 
 We need to make a change to the metadata in the remote Git repository in order to then deploy it. How you do this is up to you. We're using GitHub in this guide, so we'll just go-ahead and make the change directly in there.
 
-1. Find the `Vehicle__c.object` file and click to edit, so that we can update the description of this object.
-1. Find the line with the `<description></description>` tags, and update it so that there is some text between those tags (`<description>This is the description of the Vehicle object</description>`).
+1. Find the `Vehicle__c.object` file and click to edit, so that you can change the description of this object.
+1. Find the line with the `<description>This is the description</description>` tags, and modify it by adding additional text between those tags (`<description>This is the description of the Vehicle object</description>`).
 
 ## Execute the command
 
