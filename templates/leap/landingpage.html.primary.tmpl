@@ -1,0 +1,76 @@
+{{!master('layout/_landing.tmpl')}}
+
+<section class="has-divider bg-primary-3">
+	<div class="container pb-3">
+		<div class="row align-items-center">
+			<div class="col text-light">
+				<h1 class="display-3">{{title}}</h1>
+				<p class="lead">{{description}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="divider">
+		<img class="bg-white" src="assets/img/dividers/divider-1.svg" alt="graphical divider" data-inject-svg />
+	</div>
+</section>
+
+{{#sections}}
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col">
+				<h2>{{title}}</h2>
+				<div class="row">
+					{{#badgeCards}}
+					{{#children}}
+					<a href="{{href}}" class="col-md-6 col-lg-4 d-flex">
+						<div class="card card-icon-3 card-body justify-content-between hover-shadow-sm">
+							{{#icon}}
+							<div class="icon-round mb-3 mb-md-4 bg-primary">
+								<img class="icon" src="{{icon}}" alt="{{icon-alt}}" data-inject-svg />
+							</div>
+							{{/icon}}
+							{{#badge}}
+							<span class="badge badge-primary">{{badge}}</span>
+							{{/badge}}
+							<div>
+								<h3>{{text}}</h3>
+								<p class="lead">
+									{{subtext}}
+								</p>
+							</div>
+						</div>
+					</a>
+					{{/children}}
+					{{/badgeCards}}
+
+					{{#smallIconCards}}
+					{{#children}}
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<a href="{{href}}" class="card card-sm card-body flex-row align-items-center hover-shadow-3d">
+							<img class="" src="{{icon}}" alt="{{text}}" data-inject-svg />
+							<div class="ml-3">
+								<h5 class="mb-0">{{text}}</h5>
+								{{#subtext}}<span>{{subtext}}</span>{{/subtext}}
+							</div>
+						</a>
+					</div>
+					{{/children}}
+					{{/smallIconCards}}
+
+					{{#contentCards}}
+					{{#children}}
+					<div class="col-md-6 col-lg-4 d-flex">
+						<div class="card card-body">
+							<div class="flex-grow-1">
+								{{{content}}}
+							</div>
+							<a href="{{href}}" class="hover-arrow">{{subtext}}</a>
+						</div>
+					</div>
+					{{/children}}
+					{{/contentCards}}
+				</div>
+			</div>
+		</div>
+	</div>
+{{/sections}}
