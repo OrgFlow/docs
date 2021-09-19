@@ -1,0 +1,22 @@
+{{!include(/^assets/.*/)}}
+
+<!DOCTYPE html>
+
+<html>
+{{>partials/head}}
+
+<body data-smooth-scroll-offset="120">
+	<div class="loader">
+		<div class="loading-animation"></div>
+	</div>
+
+	{{^_disableNavbar}}
+	{{>partials/navbar}}
+	{{/_disableNavbar}}
+
+	{{ !body }}
+
+	{{>partials/scripts}}
+</body>
+
+</html>

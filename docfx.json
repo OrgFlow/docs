@@ -5,7 +5,8 @@
 				"src": "content",
 				"files": [
 					"**/toc.yml",
-					"**/**.md"
+					"**/**.md",
+					"index.yml"
 				],
 				"exclude": [
 					"obj/**"

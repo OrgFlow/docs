@@ -1,0 +1,53 @@
+{
+    "$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+    "version": "1.0.0",
+    "id": "https://github.com/dotnet/docfx/schemas/landingpage.schema.json",
+    "title": "landingpage",
+    "description": "The schema for landing page",
+    "type": "object",
+    "xrefProperties": [ "title", "description" ],
+    "properties": {
+        "uid": {
+            "type": "string",
+            "contentType": "uid"
+        },
+        "sections": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "type": "string",
+                                    "contentType": "href"
+                                },
+                                "xref": {
+                                    "type": "string",
+                                    "contentType": "xref"
+                                },
+                                "text": {
+                                    "type": "string"
+                                },
+                                "content": {
+                                    "type": "string",
+                                    "contentType": "markdown"
+                                }
+                            }
+                        }
+                    },
+                    "title": {
+                        "type": "string",
+                        "mergeType": "key"
+                    }
+                }
+            }
+        },
+        "title": {
+            "type": "string"
+        }
+    }
+}
