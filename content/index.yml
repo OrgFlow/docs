@@ -20,7 +20,7 @@ sections:
   smallIconCards: true
   children:
   - text: GitHub
-    icon: assets/img/icons/logos/github.svg
+    icon: assets/img/logos/github.svg
     href: /tutorials/continuous-integration/github-actions.html
 - title: Reference
   contentCards: true
