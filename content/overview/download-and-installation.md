@@ -39,7 +39,7 @@ This is useful for cases where you may want to script or automate installation, 
 
 ### Docker Image
 
-Our official [orgflow/cli](https://hub.docker.com/r/orgflow/cli) Docker images are ideal for automation scenarios. Most CI/CD tool support running workflows or processes within a container, and we would recommend taking this approach with automation when you can.
+Our official [orgflow/cli](https://hub.docker.com/r/orgflow/cli) Docker images are ideal for automation scenarios. Most CI/CD tools support running workflows or processes within a container, and we would recommend taking this approach with automation when you can.
 
 Of course, you could also use the Docker image locally on your own device, but this would come with an overhead of waiting for the container to be spun up, as well as additional configuration steps that you may have to perform.
 
@@ -85,11 +85,11 @@ Follow the process through until it has completed. The installer packages can op
 
 #### macOS
 
-Once downloaded, **right click** the `.pkg` file, and select `Open` from the context enu that appears. Then, click the `Open` button in the dialog box that appears.
+Once downloaded, **right-click** the `.pkg` file, and select `Open` from the context menu that appears. Then, click the `Open` button in the dialog box that appears.
 
 > [!NOTE]
-> We are working on getting our installers signed, but until we do, you may not be able to run the `.pkg` installer package simply by double clicking it.
-> Right clicking the installer package indicates to macOS that you trust the `.pkg` file.
+> We are working on getting our installers signed, but until we do, you may not be able to run the `.pkg` installer package simply by double-clicking it.
+> Right-clicking the installer package indicates to macOS that you trust the `.pkg` file.
 
 Follow the process through until it has completed. The installer packages can optionally add the installation directory to your PATH. We recommend that you do this so that you can run OrgFlow from any location on disk.
 

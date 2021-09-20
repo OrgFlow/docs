@@ -23,9 +23,9 @@ Deployments are as simple as [merging one environment into another](xref:command
 
 ## What does OrgFlow **not** do?
 
-There are already a load of great tools to help you do some of the more mundane DevOps tasks. OrgFlow focusses on being the glue between Salesforce and these tools.
+There are already a load of great tools to help you do some of the more mundane DevOps tasks. OrgFlow focuses on being the glue between Salesforce and these tools.
 
-Change tracking, pull requests, work item ticketing, automation and scheduling, and inspecting test results are all critical parts of the DevOps process. OrgFlow doesn't come with these features out of the box. This is a good thing, because it means that you are free to use any of the already great tools that already do this far better than we ever could.
+Change tracking, pull requests, work item ticketing, automation and scheduling, and inspecting test results are all critical parts of the DevOps process. OrgFlow doesn't come with these features out of the box. This is a good thing, because it means that you are free to use any of the great tools that already do this far better than we ever could.
 
 We don't force you to use our ticketing system. We don't force you to use our automation and scheduling tools. We don't force you to use our diff tools. Want to ticket with Jira, pull request with GitHub, analyze test results with Jenkins, and then deploy with Octopus Deploy? OrgFlow allows you to do this.
 
@@ -37,7 +37,7 @@ We have some other documentation that we recommend as good starting points:
 
 - Our [getting started guide](xref:guide_gettingstarted) is a good way to learn the basics of running OrgFlow on your own device.
 - Our reference section contains a list of all the [OrgFlow commands](xref:command_help), as well as a [glossary of terms](xref:concept_accesscontrol).
-- Want to learn about automation and integration? Our [continuous integration guide](xref:guide_ci_overview) has you covered.
+- Want to learn about automation and integration? Our [continuous integration guide](xref:guide_ci_overview) covers that for you.
 - Need help? Join our [Slack workspace](https://www.orgflow.io/slack) for the quickest response.
 
 ## FAQs
@@ -60,13 +60,13 @@ OrgFlow can merge the changes, so that you don't end up overwriting one person's
 
 ### How much does it cost?
 
-We're clear an up-front about our pricing on the [pricing page](https://www.orgflow.io/pricing) of our website.
+We're clear and up-front about our pricing on the [pricing page](https://www.orgflow.io/pricing) of our website.
 
 We have flexible plans that can scale with your usage. We don't charge per user, or based on your Salesforce edition. We think that it's only fair to pay based on how much use you get out of OrgFlow.
 
 ### Which tools does OrgFlow integrate with?
 
-OrgFlow is a command line interface (CLI), which means that it can integrate with any tool that allows you script commands. Some common tools that you can integrate OrgFlow into are:
+OrgFlow is a command-line-interface (CLI), which means that it can integrate with any tool that allows you to script commands. Some common tools that you can integrate OrgFlow into are:
 
 - [GitHub Actions](https://github.com/features/actions)
 - [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)
@@ -76,4 +76,4 @@ OrgFlow is a command line interface (CLI), which means that it can integrate wit
 - [Travis CI](https://www.travis-ci.com/)
 - [Atlassian](https://www.atlassian.com/software/bamboo)
 - [Octopus Deploy](https://octopus.com/)
-- Anything else that allows you to automate scripting...
+- Anything else that allows you to script tasks...
