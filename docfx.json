@@ -29,6 +29,7 @@
 			{
 				"src": "content",
 				"files": [
+					"overview/**/images/**",
 					"tutorials/**/images/**"
 				]
 			}
