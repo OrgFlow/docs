@@ -22,6 +22,9 @@ sections:
   - text: GitHub
     icon: assets/img/logos/github.svg
     href: /tutorials/continuous-integration/github-actions.html
+  - text: Azure DevOps
+    icon: assets/img/logos/azure-devops.svg
+    href: /tutorials/continuous-integration/azure-devops-pipelines.html
 - title: Reference
   contentCards: true
   children:
