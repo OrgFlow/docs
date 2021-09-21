@@ -24,6 +24,7 @@
     items:
       - topicUid: guide_ci_overview
       - topicUid: guide_ci_github
+      - topicUid: guide_ci_azuredevops
 - name: Reference
   items:
   - name: Commands
