@@ -7,7 +7,7 @@ The purpose of this guide is to provide a few examples of the things you can do 
 
 ## Recommended approach
 
-We recommend that you use the [OrgFlow CLI docker image](https://hub.docker.com/r/orgflow/cli) as the container to run your pipelines. This image is pre-configured to allow you to get up and running with OrgFlow in a matter of minutes. We recommend that you save your @concept_licensekey as a pipeline variable, and then pass the variables value as an environment variable (`ORGFLOW_LICENSEKEY`) when creating the container. For process commands that require a stack, we recommend that you create a pipeline variable to hold your stack name and pass the value to to the Docker container as an environment variable (`ORGFLOW_STACKNAME`)
+We recommend that you use the [OrgFlow CLI docker image](https://hub.docker.com/r/orgflow/cli) as the container to run your pipelines. This image is pre-configured to allow you to get up and running with OrgFlow in a matter of minutes. We recommend that you save your @concept_licensekey as a pipeline variable, and then pass the variable's value as an environment variable (`ORGFLOW_LICENSEKEY`) when creating the container. For process commands that require a stack, we recommend that you create a pipeline variable to hold your stack name and pass the value to the Docker container as an environment variable (`ORGFLOW_STACKNAME`)
 
 ### Salesforce authentication
 
@@ -39,7 +39,19 @@ The method you choose will likely come down to the approach that you feel most c
 
 A lot of OrgFlow commands need to be able to clone a remote Git repository. To do this over HTTPS, Git needs a username and a token/password. When running a pipeline, Azure DevOps [provides an access token for the repository](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/access-tokens?view=azure-devops&tabs=yaml) that the pipeline belongs to. We recommend that you use this token for authentication with the repository. The token is available via the `$(System.AccessToken)` variable, but you must assign it to an environment variable to access it (as with any secret in Azure DevOps pipelines).
 
-To allow Git to use the token, we recommend using `git config` to provide Git with an alternative repo URL that contains the token. The other two config value that you will need to set are `user.name` and `user.email`. Git simply requires that these values are set before it allows you to commit any changes, but their value is insignificant (feel free to set these two values to anything you like).
+Some OrgFlow commands also need to be able to push back up to the remote repository. These commands include @command_stack_create, @command_env_create, @command_env_flowin, and @command_env_flowmerge. For these commands to succeed, you must ensure that the pipelines user has the correct permissions to do this:
+
+1. Go to **Project Settings**.
+1. Click **Repositories**, then your repository's name, then click the **Security** tab.
+1. Find the user called **Project Collection Build Service (XXX)** (where XXX is the name of your DevOps organization).
+1. Make sure the **Contribute** permission is set to **Allow**
+
+> [!TIP]
+> If your job fails, and you can see the message `TF401027: You need the Git 'GenericContribute' permission to perform this action. Details: identity 'Build\<unique ID>', scope 'repository'.` in the step output, then that means that the permissions are not correct.
+>
+> You can copy the `<unique ID>` value from the message and paste it into the user search box on the repository security page to verify that you have assigned the correct permissions to the correct account.
+
+To allow Git to use the token, we recommend using `git config` to provide Git with an alternative repo URL that contains the token. The other two config values that you will need to set are `user.name` and `user.email`. Git simply requires that these values are set before it allows you to commit any changes, but their value is insignificant (feel free to set these two values to anything you like).
 
 >[!NOTE]
 > This technique will only work when communicating with the remote repository via HTTPS; the token will not work with other protocols (such as SSH). OrgFlow will use whatever URL you have set on the stack, so be sure that the correct URL has been saved on the stack. You can use the @command_auth_git_save to change the remote Git repository URL if you need to.
@@ -87,7 +99,7 @@ jobs:
   # Use the pre-defined container definition that we created a little further up:
   container: orgflow
   steps:
-  # OrgFlow checkouts the repo, so we don't have to:
+  # OrgFlow checksout the repo, so we don't have to:
   - checkout: none
   - script: echo $(matrix)
   # Take the Salesforce credentials from DevOps variables, and save them to the stack to support credential inference:
