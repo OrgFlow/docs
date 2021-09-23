@@ -9,6 +9,9 @@ The purpose of this guide is to provide a few examples of the things you can do 
 
 We recommend that you use the [OrgFlow CLI docker image](https://hub.docker.com/r/orgflow/cli) as the container to run your workflows. This image is pre-configured to allow you to get up and running with OrgFlow in a matter of minutes. We recommend that you save your @concept_licensekey as a repository secret, and then pass the secret's value as an environment variable (`ORGFLOW_LICENSEKEY`) when creating the container.
 
+> [!TIP]
+> We've set up a [template repository](https://github.com/OrgFlow-Actions/demo) that demonstrates some common use cases. You can use this repository to learn about OrgFow, and how it can be integrated into a CI/CD environment.
+
 ### Salesforce authentication
 
 OrgFlow will need to be able to authenticate with Salesforce in order to interact with it. Interactive authentication flows (such as OAuth) are not a viable option in automation contexts, so you will need to rely on username and password authentication. There are two ways to achieve this:
@@ -17,12 +20,9 @@ OrgFlow will need to be able to authenticate with Salesforce in order to interac
    - Run @command_auth_salesforce_save with `--location=StateStore` for the stack you're automating. You only need to do this once per stack (and you don't necessarily need to run this command in the container either), as the Salesforce credentials will be saved in the state store which is persistent.
    - Store the encryption key that you used in the previous step as a repository secret.
    - Pass the encryption key secret's value as an environment variable (`ORGFLOW_ENCRYPTIONKEY`) when creating the container or running OrgFlow commands.
-2. Save the username and password as repository secrets, and add a step to your workflow to save the values in the container every time you spin it up. You'll need to do these steps every time you spin up a container, as the Salesforce credentials and encryption key will be saved on disk in the container, which is ephemeral.
-   - Use @command_auth_key_create to create a new encryption key and then assign it to a variable (``encryptionKey=`orgflow auth:key:create --output=flat` ``).
-   - Run @command_auth_key_save to save the key to the container (`orgflow auth:key:save -k=$encryptionKey`).
-   - Run @command_auth_salesforce_save with `--location=Local`, passing in your Salesforce username and password from repository secrets.
+1. Save your Salesforce username and password as pipeline variables and use the `orgflow-actions/set-salesforce-auth` action from the GitHub marketplace. Save the username and password as repository secrets, and create a step to pass these values into that action (see the example below). You'll need to do these steps every time you spin up a container, as the Salesforce credentials and encryption key will be saved on disk in the container, which is ephemeral.
 
-The method you choose will likely come down to the approach that you feel most comfortable with, but we recommend the second option. You can use the `orgflow-action/set-salesforce-auth` action in the GitHub marketplace to handle this for you.
+The method you choose will likely come down to the approach that you feel most comfortable with, but we recommend the second option.
 
 ### Git authentication
 
@@ -52,6 +52,7 @@ on:
   # This action is manually executed.
   workflow_dispatch:
 
+# Request a token that can push back to the repo:
 permissions:
   contents: write
 
@@ -77,4 +78,68 @@ jobs:
       - name: flow:in
         run: |
           orgflow env:flowin -e=Production
+```
+
+## Advanced scenarios
+
+### Running jobs for every environment in your stack
+
+You may have workflows that you want to run against multiple environments. For example, a workflow that flows in all of your environments on a daily schedule.
+
+Instead of copying and pasting the job for each environment, you can take advantage of the @command_env_list command to retrieve all of the environment names in a stack. Then you can use a matrix strategy to run the job once per environment.
+
+The trick here is to use a tool called [jq](https://stedolan.github.io/jq/) to transform the output from @command_env_list into the format that GitHub actions expect for a matrix definition. The correct jq syntax for this is `[.[] | .name]`. On top of this, jq offers a robust filtering syntax, for example if you only wanted to include some environments.
+
+jq is included in the official OrgFlow docker image.
+
+```yaml
+name: Flow in all environments
+on:
+  schedule:
+    - cron:  '0 1 * * *' # Runs nightly at 1am.
+
+# The env:flowin command needs to be able to push changes back to the repo.
+permissions:
+  contents: write
+
+jobs:
+  create-matrix:
+    name: "Get Environments"
+    runs-on: ubuntu-latest
+    container:
+      image: orgflow/cli:latest
+    env:
+      # ORGFLOW_ACCEPTEULA: true #Uncomment to signify that you accept the End User License Agreement.
+      ORGFLOW_STACKNAME: ${{ secrets.ORGFLOW_STACKNAME }}
+      ORGFLOW_LICENSEKEY: ${{ secrets.ORGFLOW_LICENSEKEY }}
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+    # Use jq to transform the output from env:list into the format expected for a matrix strategy:
+    - id: set-matrix
+      run: echo "::set-output name=matrix::`orgflow env:list --output=json | jq '[.[] | .name]' -c`"
+
+  flow-in:
+    name: "Flow In Environment"
+    needs: create-matrix
+    runs-on: ubuntu-latest
+    container:
+      image: orgflow/cli
+      credentials:
+    env:
+      # ORGFLOW_ACCEPTEULA: true #Uncomment to signify that you accept the End User License Agreement.
+      ORGFLOW_STACKNAME: ${{ secrets.ORGFLOW_STACKNAME }}
+      ORGFLOW_LICENSEKEY: ${{ secrets.ORGFLOW_LICENSEKEY }}
+      SALESFORCE_USERNAME: ${{ secrets.SALESFORCE_USERNAME }}
+      SALESFORCE_PASSWORD: ${{ secrets.SALESFORCE_PASSWORD }}
+    strategy:
+      fail-fast: false # If one environment fails, don't allow GitHub to cancel the jobs for all the rest.
+      matrix:
+        environmentName: ${{fromJson(needs.create-matrix.outputs.matrix)}}
+
+    # These steps will run once per environment:
+    steps:
+      .
+      .
+      .
 ```
