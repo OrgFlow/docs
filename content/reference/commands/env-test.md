@@ -35,7 +35,7 @@ List every @concept_environment in the selected @concept_stack.
 
   If specified, every test will be executed (even those in managed packages). Otherwise, only local tests will be executed.
 
-- **`--testResultsTo=<filePath>`**
+- **`--jUnitTo=<filePath>`**
 
   If specified, the OrgFlow CLI will output the results of the test run to a JUnit format file. This file can be read by many CI/CD tools to report on the results of the test run.
 

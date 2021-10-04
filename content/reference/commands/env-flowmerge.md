@@ -18,19 +18,19 @@ Merges metadata from one @concept_environment into another.
 [!include[StackOption](partials/stack-option.md)]
 
 - **`-f|--from=<environmentName>`**
-  
+
   Required. Prompted for when not specified, and possible to do so.
 
   The name of the environment to merge from. Environment names are case-insensitive.
 
 - **`-i|--into=<environmentName>`**
-  
+
   Required. Prompted for when not specified, and possible to do so.
 
   The name of the environment to merge into. Environment names are case-insensitive.
 
   The metadata changes from the environment specified to the `--from` option will be merged into the metadata in the `--into` environment.
-  
+
 [!include[EncryptionKeyOption](partials/encryption-key-option.md)]
 
 - **`--noSourceIn`**
@@ -62,12 +62,36 @@ Merges metadata from one @concept_environment into another.
 
 [!include[CheckOnlyDeployWarning](partials/check-only-deploy-warning.md)]
 
+- **`--testLevel=[NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]`**
+
+  If specified, indicates the tests that should be executed as part of the deployment to Salesforce:
+  - `NoTestRun`: No tests are executed.
+  - `RunSpecifiedTests`: Only the test classes specified by `--tests` are executed.
+  - `RunLocalTests`: All tests in the organization that do not originate from managed packages are executed.
+  - `RunAllTestsInOrg`: Every test in the organization (including those in managed packages) are executed.
+
+  All deployments are subject to Salesforce's minimum test requirements (e.g. code coverage etc.), regardless of the value that you specify for this option.
+
+  If omitted, Salesforce will automatically determine the tests to execute:
+  - If deploying to a sandbox, then no tests are run.
+  - If deploying to a production organization and the deployment contains changes to Apex classes or triggers, then `RunLocalTests`.
+
+- **`--tests=<testClassNames>`**
+
+  Only valid (and required) if `--testLevel=RunSpecifiedTests`.
+
+  A comma separated list of test class names to execute. Example: `--test=MyControllerTests,MyTriggerTests`
+
+- **`--jUnitTo=<filePath>`**
+
+  If specified, the OrgFlow CLI will output the results of the test run to a JUnit format file. This file can be read by many CI/CD tools to report on the results of the test run.
+
 - **`--keepZipFiles=<directoryPath>`**
-  
+
   If specified, the OrgFlow CLI will retain the zip files containing the metadata items that are retrieved from Salesforce. The zip files will be placed into the directory specified. This can be useful in scenarios where you need to troubleshoot problems.
 
 - **`--keepDelta=<directoryPath>`**
-  
+
   If specified, the OrgFlow CLI will retain the delta deployment archives that are uploaded to Salesforce as part of the deployment process. The delta archives will be placed into the directory specified. This can be useful in scenarios where you need to troubleshoot deployment problems.
 
 [!include[HostOptions](partials/host-options.md)]
