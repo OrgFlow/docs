@@ -16,7 +16,34 @@ The following options are global across all commands:
 
 - **`--logTo=<filePath>`**
 
-  If specified, a log file is written to the location given.
+  If specified, a log file is written to the specified path.
+
+  The specified path can optionally contain one or more of the following tokens:
+
+  | Token                               | Result
+  | ------------------------------------|--------------------------------------------------
+  | `{C}` or `{command}`                | Name of command being executed, e.g. `env:flowin`
+  | `{T:format}` or `{time:format}`     | Local date and time of current command invocation (see below)
+  | `{U}` or `{user}`                   | Current local username
+  | `{M}` or `{machine}`                | Name of local machine/computer
+
+  The same token can be specified more than once if needed.
+
+  Tokens can be very useful when you want to vary the log file location and/or name based on things that vary, without having to specify a different value each time. This is most useful when specifying the log file path as a user setting or an environment variable, rather than directly as a command argument.
+
+  [//]: # (TODO: Add and link to article about configuration)
+
+  The `{T}`/`{time}` token needs to be specified with a format string that controls how the date is formatted into the log file path. Any standard or custom .NET DateTime format string is supported. Date and time formatting is performed using the current system locale, and the local time according to the current system time zone configuration is used. For more information, see:
+  - [Standard date and time format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+  - [Custom date and time format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+
+  For example, the following `--logTo` argument:
+
+  `--logTo=/orgflow/{user}/logs/{time:yyyy-MM-dd}/{command}-{time:HHmm}.log`
+
+  would log to a file path similar to:
+
+  `/orgflow/richard/logs/2021-10-06/env-flowin-1648.log`
 
 - **`--logLevel=[Verbose|Debug|Information|Warning|Error|Fatal]`**
 
