@@ -16,9 +16,9 @@ In the @guide_gettingstarted guide, we installed OrgFlow, and created a @concept
 
 To start, we need to make a change to the metadata in order to have something to flow in. The @concept_stack that we created during the @guide_gettingstarted guide only included custom objects and their nested types (such as fields and actions etc.). We need to make sure that whatever object we change is included in the metadata that OrgFlow will process.
 
-Log in to the `OrgFlowSB1` sandbox that you created, and add an object called `Vehicle`:
+Log in to the `OrgFlowSB1` sandbox that you created, and add an object called `Vehicle`. Set the description to `This is the description`:
 
-![Add vehicle object](images/add-object.jpg)
+![Add vehicle object](images/add-object.png)
 
 ## Execute the command
 
