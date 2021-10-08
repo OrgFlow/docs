@@ -3,6 +3,8 @@ uid: reference_configuration
 title: Configuration
 ---
 
+This topic describes the ways in which you can control OrgFlow's various options and settings.
+
 ## Passthrough arguments
 
 Passthrough arguments are a way to provide advanced configuration options to OrgFlow. They can be provided to every command, even if they might not affect every command (for example, Git specific options would not affect the operation of a command that does not interact with Git).
