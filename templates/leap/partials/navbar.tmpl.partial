@@ -34,6 +34,9 @@
 							<a href="/tutorials/getting-started/getting-started.html" title="Tutorials" class="nav-link">Tutorials</a>
 						</li>
 						<li class="nav-item">
+							<a href="troubleshooting/logging.html" title="Troubleshooting" class="nav-link">Troubleshooting</a>
+						</li>
+						<li class="nav-item">
 							<a href="/reference/commands/help.html" title="Reference" class="nav-link">Reference</a>
 						</li>
 					</ul>
