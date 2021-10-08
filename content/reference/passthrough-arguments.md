@@ -1,13 +1,15 @@
 ---
-uid: reference_passthrougharguments
-title: Passthrough Arguments
+uid: reference_configuration
+title: Configuration
 ---
 
-Passthrough arguments are a way to provide advanced configuration options to OrgFlow. They can be provided to every command, even if they might not affect every command (for example- Git specific options would not affect the operation of a command that does not interact with Git).
+## Passthrough arguments
 
-You can provide a passthrough argument either as an environment variable, or as an option to the command itself (for example `orgflow <command name> <passthrough argument>`). The following passthrough arguments are available:
+Passthrough arguments are a way to provide advanced configuration options to OrgFlow. They can be provided to every command, even if they might not affect every command (for example, Git specific options would not affect the operation of a command that does not interact with Git).
 
-## Git
+You can provide a passthrough argument either as an environment variable, or as a command line argument (for example `orgflow <command> <passthrough argument>`). The following passthrough arguments are available:
+
+### Git
 
 | Environment Variable | Command Option | Description | Default Value |
 |---|---|---|---|
