@@ -3,7 +3,7 @@ uid: guide_controllingincludedmetadata
 title: Controlling included metadata
 ---
 
-So far, we've only been flowing custom objects and their nested types (fields, etc.). If you remember right back to the @guide_initializingastack guide, we were asked by the @command_stack_create command which types we wanted to include. The selection we made here was used to create a @concept_orgflowincludefile, which in turn was committed to the root of the @concept_remotegitrepository. This file holds the key to which metadata types we include and exclude from our @concept_stackbasedcommands.
+So far, we've only been flowing custom objects and their nested types (fields, etc.). If you remember right back to the @guide_initializingastack guide, we were asked by the @command_stack_create command which categories of metadata we wanted to include. The selection we made here was used to create a @concept_orgflowincludefile, which in turn was committed to the root of the @concept_remotegitrepository. This file holds the key to which metadata types we include and exclude when flowing changes using our @concept_stackbasedcommands.
 
 ## The .orgflowinclude file
 

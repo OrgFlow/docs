@@ -53,7 +53,7 @@ The `stack:create` command will create a stack that contains the minimum amount 
 
 - **`-b|--gitBranch=<branchName>`**
 
-  Required. Prompted for when not specified, and possible to do so. Defaults to `Master` if not specified.
+  Required. Prompted for when not specified, and possible to do so. Defaults to `master` if not specified.
 
   The name of the branch to back the production environment. Metadata that is retrieved from the production organisation is committed to this branch, and metadata changes made in this branch can be deployed to the production Salesforce organisation. The branch will be created from the head of the default branch (only if the branch does not already exist on the remote).
 
@@ -63,17 +63,26 @@ The `stack:create` command will create a stack that contains the minimum amount 
 
   The path relative to the root of the repository that Salesforce metadata will be committed to. For example, specify `--archivePath=/` to put the metadata at the root fo the repo, or `--archivePath=src/` to put the metadata into a folder called `src`.
 
-- **`-i|--include=[All|AllSafe|CustomObjectsOnly|ProductionImmutable|Nothing|UseExisting]`**
+- **`-i|--include=<category>[,<category>,...]`**
 
-  Required. Prompted for when not specified, and possible to do so. Defaults to `AllSafe` if not specified.
+  Prompted for when not specified, and possible to do so.
 
-  The metadata types and items that should be included when flowing metadata between Salesforce and your Git repository. See @concept_includespecs for more information.
-  - `All`: Everything is included. This should be used with caution, because some metadata types (such as Profiles) are hard to deploy reliably.
-  - `AllSafe`: Almost everything is included. The types that we know to be difficult to reliable deploy are excluded.
-  - `CustomObjectsOnly`: Custom objects (and their nested types, such as fields, layouts etc.) are included.
-  - `ProductionImmutable`: Only metadata that cannot be changed directly in the production Salesforce organization is included. For example: Apex classes and triggers.
-  - `Nothing`: Nothing is included. This is useful because it allows you to initialize a stack without pulling any metadata in to the Git repository. Once the stack is initialized, you can manually update the `.orgflowinclude` file to include the metadata types and items that you choose before running @command_env_flowin on the production environment to pull the metadata into your Git repository.
-  - `UseExisting`: Use a @concept_orgflowincludefile that already exist in the remote Git repository. This option is only valid if the remote Git repository already contains a valid `.orgflowinclude` file. If the branch specified by `--gitBranch` already exists then this file must exist in that branch; if the branch doesn't already exist, then the file must be present in the head of the default branch.
+  The categories of metadata types that should added to the initial `.orgflowinclude` for the new stack (see @concept_orgflowincludefile for more information) and included when flowing changes between Salesforce and your Git repository.
+
+  The following categories are supported:
+
+  - `code`: Apex and VisualForce code components (cannot be modified in production)
+  - `process`: Process customizations (rules, approval processes, flows and workflows)
+  - `general`: Most commonly used point-and-click customizable configuration
+  - `user`: Common user-created metadata such as reports, dashboards and documents (can significantly increase flow times)
+  - `einstein`: Most commonly used Einstein AI component types
+  - `tableau`: Most commonly used Tableau CRM analytics and BI component types
+  - `sc`: Most commonly used Service Cloud component types
+  - `ec`: Most commonly used Experience Cloud component types
+
+  To create the stack with an empty `.orgflowinclude` file and manually add rules to it later, omit this argument and select no categories if prompted.
+
+  If there is already a `.orgflowinclude` file in the Git repository, any existing rules will be preserved. Any new types specified by this argument will be **prepended** to the existing file so that any existing rules will take precedence.
 
 - **`-su|--signInUrl=<url>`**
 

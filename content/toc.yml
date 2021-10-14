@@ -25,6 +25,9 @@
       - topicUid: guide_ci_overview
       - topicUid: guide_ci_github
       - topicUid: guide_ci_azuredevops
+- name: Troubleshooting
+  items:
+  - topicUid: troubleshooting_logging
 - name: Reference
   items:
   - name: Commands
@@ -74,7 +77,7 @@
       - topicUid: concept_stackbasedcommands
       - topicUid: concept_statestore
       - topicUid: concept_undeployablecomponents
-  - name: Advanced Configuration
-    topicUid: reference_passthrougharguments
+  - name: Configuration
+    topicUid: reference_configuration
   - name: Include Specs Syntax
     topicUid: reference_includespecssyntax
