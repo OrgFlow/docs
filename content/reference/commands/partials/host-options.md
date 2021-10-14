@@ -16,7 +16,7 @@ The following options are global across all commands:
 
 - **`--logTo=<filePath>`**
 
-  If specified, a log file is written to the location given.
+  If specified, a log file is written to the specified path. The specified path may contain one or more tokens; see @troubleshooting_logging for more information.
 
 - **`--logLevel=[Verbose|Debug|Information|Warning|Error|Fatal]`**
 
