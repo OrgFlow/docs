@@ -120,7 +120,7 @@ This will start the @command_stack_create command in interactive mode. You'll be
   >[!CAUTION]
   > Your Salesforce metadata will be committed to this repository, so be careful not to accidentally use a public repository if you are not comfortable making your Salesforce metadata visible to the public.
 
-- The type of metadata that you want to include in your stack. We'll cover this in more detail later on, but for now pick `CustomObjectsOnly`.
+- The categories of metadata types that you want to include in your stack. We'll cover this in more detail later on, but for now pick `General customization`.
 - The name of your @concept_productionenvironment. Leave the default value in place (`Production`).
 - The name of the @concept_backinggitbranch for your production environment. Again, just leave the default value in place.
 - Your Salesforce username for the production organization. Enter your Salesforce username here. Don't worry- OrgFlow does not store this username anywhere.
@@ -136,8 +136,8 @@ $ orgflow
 =OrgFlowGuide
 ?Enter URL of remote Git repository:
 =https://yourrepo.com/repo.git
-?Which kinds of metadata:
-=CustomObjectsOnly
+?Which categories of metadata types:
+=General customization
 ?Enter name for production environment:
 =Production
 ?Enter name of Git branch:
