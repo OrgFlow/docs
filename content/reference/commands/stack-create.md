@@ -105,7 +105,7 @@ The `stack:create` command will create a stack that contains the minimum amount 
   If specified, the credentials for Salesforce will be saved so that they can be re-used.
 
   - `Local`: The credentials are saved on (and can only be re-used by) the current device.
-  - `StateStore`: The credentials are saved in the state store, and can be re-sued by anyone with access to the encryption key and current stack.
+  - `StateStore`: The credentials are saved in the state store, and can be re-used by anyone with access to the encryption key and current stack.
 
   If not specified (and possible to do so), the CLI will guide the user through storing credentials for re-use. This will happen *after* the stack initialization process has completed.
 
