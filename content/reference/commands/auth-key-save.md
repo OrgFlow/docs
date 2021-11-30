@@ -15,9 +15,9 @@ Saves an @concept_encryptionkey locally so that it can automatically be applied 
 
 - **`-k|--encryptionKey=<key>`**
 
-  Required if `--clear` is not specified. Prompted for when not specified, and possible to do so.
+  Prompted for when not specified, and possible to do so. Must be a valid encryption key (see @command_auth_key_create to create a new key).
 
-  The key to be saved.
+  The key to be saved (if specified), otherwise clears out the saved key (if any).
 
 - **`--environment=<environmentName>`**
 
@@ -26,12 +26,6 @@ Saves an @concept_encryptionkey locally so that it can automatically be applied 
   This is useful in cases where you want to restrict access to particular environments. For example- you could create a key that is specific to your production environment, and only disseminate the key to members of your team who should have access to production.
 
   Environment names are case-insensitive.
-
-- **`--clear`**
-
-  Not valid if `-k|--encryptionKey` is specified.
-
-  Clears out the saved key (if any). This action is specific to the stack or environment level, as indicated by `--environment`.
 
 [!include[HostOptions](partials/host-options.md)]
 
@@ -49,4 +43,12 @@ Save an encryption key that is specific to and environment called 'QA' for re-us
 
 ```bash
 orgflow auth:key:save --encryptionKey=ABCDEFGHIJKLM --environment=QA
+```
+
+***
+
+Clear a previously saved encryption key:
+
+```bash
+orgflow auth:key:save --encryptionKey=
 ```
