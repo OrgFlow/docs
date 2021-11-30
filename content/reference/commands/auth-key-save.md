@@ -17,7 +17,7 @@ Saves an @concept_encryptionkey locally so that it can automatically be applied 
 
   Prompted for when not specified, and possible to do so. Must be a valid encryption key (see @command_auth_key_create to create a new key).
 
-  The key to be saved (if specified), otherwise clears out the saved key (if any).
+  The key to be saved (if specified), otherwise leave empty to clear out the saved key (if any).
 
 - **`--environment=<environmentName>`**
 
