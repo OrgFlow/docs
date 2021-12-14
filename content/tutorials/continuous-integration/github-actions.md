@@ -10,7 +10,7 @@ The purpose of this guide is to provide a few examples of the things you can do 
 We recommend that you use the [OrgFlow CLI docker image](https://hub.docker.com/r/orgflow/cli) as the container to run your workflows. This image is pre-configured to allow you to get up and running with OrgFlow in a matter of minutes. We recommend that you save your @concept_licensekey as a repository secret, and then pass the secret's value as an environment variable (`ORGFLOW_LICENSEKEY`) when creating the container.
 
 > [!TIP]
-> We've set up a [template repository](https://github.com/OrgFlow-Actions/demo) that demonstrates some common use cases. You can use this repository to learn about OrgFow, and how it can be integrated into a CI/CD environment.
+> We've set up a [template repository](https://github.com/OrgFlow-Actions/demo) that demonstrates some common use cases. You can use this repository to learn about OrgFlow, and how it can be integrated into a CI/CD environment.
 
 ### Salesforce authentication
 
