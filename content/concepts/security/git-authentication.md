@@ -68,23 +68,22 @@ You should consult the documentation for your particular build platform, but we'
 
 #### GitHub Actions
 
-GitHub Actions have access to a secret called [`GITHUB_TOKEN`](https://docs.github.com/en/actions/reference/authentication-in-a-workflow). This secret contains a an ephemeral token (it is created when the workflow begins, and then rescinded when the workflow ends) that can be used to authenticate with the current GitHub repository over HTTPS. Because it it ephemeral, you cannot use this token with the @command_auth_git_save command. Instead, you can configure Git to always use the token when authenticating with your repository.
+GitHub Actions have access to a secret called [`GITHUB_TOKEN`](https://docs.github.com/en/actions/reference/authentication-in-a-workflow). This secret contains a an ephemeral token (it is created when the workflow begins, and then rescinded when the workflow ends) that can be used to authenticate with the current GitHub repository over HTTPS. Because it it ephemeral, you cannot store this token in the state store. Instead, you should use the @command_auth_git_save command to cache the token locally and then add OrgFlow as a Git credential helper.
 
-> [!NOTE]
-> This token will only work if the remote Git repository URL that is saved on your stack is HTTPS. If it is SSH (or anything else), you have the option of using the @command_auth_git_save to change it to HTTPS.
-
-We provide a GitHub Action [(orgflow-actions/configure-git)](https://github.com/OrgFlow-Actions/configure-git) that will take your token as input, and configure Git as required:
+We provide a GitHub Action [(orgflow-actions/configure-git)](https://github.com/OrgFlow-Actions/configure-git) that can do this for you:
 
 ```yaml
-- uses: orgflow-actions/configure-git@v1
+- uses: orgflow-actions/configure-git@v2
   with:
+    stack-name: ${{ secrets.ORGFLOW_STACKNAME }}
     token: ${{ secrets.GITHUB_TOKEN }}
+    license-key: ${{ secrets.ORGFLOW_LICENSEKEY }}
 ```
 
 Some OrgFlow commands need to be able to push changes back to the remote Git repository. You will need to ensure that GitHub issues a token that allows this if you want to use these commands. There are two ways to do this:
 
 1. From the Web UI for your GitHub repository, go to `SETTINGS` > `ACTIONS` > `WORKFLOW PERMISSIONS`, and make sure that `READ & WRITE PERMISSIONS` is selected.
-1. Add the [permissions section](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#permissions) to your workflow's YAML:
+2. Add the [permissions section](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#permissions) to your workflow's YAML:
 
   ```yaml
   permissions:
