@@ -10,7 +10,7 @@ Deep integration means that you can be very flexible with your OrgFlow processes
 - Backing up Salesforce metadata to a Git repository on a regular schedule.
 - Running tests in a Salesforce org (production or sandbox) on a nightly basis and reporting the test results back to the CI platform for reporting purposes.
 - Automatically deploying metadata changes from a Git branch into a Salesforce org (production or sandbox) whenever changes are committed to a Git branch.
-- Supporting popular DevOps patterns and practices (for example, [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)).
+- Supporting popular DevOps patterns and practices (for example, [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)).
 - Linking work items to commits for traceability and velocity tracking.
 - Using static code analysis tools to spot anti-patterns and bad code formatting before they make it into your production org.
 - Allowing peer code reviews by integrating pull requests into your working patterns.

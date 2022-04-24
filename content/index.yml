@@ -19,7 +19,7 @@ sections:
 - title: Integration guides
   smallIconCards: true
   children:
-  - text: GitHub
+  - text: GitHub Actions
     icon: assets/img/logos/github.svg
     href: /tutorials/continuous-integration/github-actions.html
   - text: Azure DevOps
