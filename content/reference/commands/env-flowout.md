@@ -45,7 +45,7 @@ This command can also be used to validate a deployment without actually making a
 
   Only valid (and required) if `--testLevel=RunSpecifiedTests`.
 
-  A comma separated list of test class names to execute. Example: `--test=MyControllerTests,MyTriggerTests`
+  A comma separated list of test class names to execute. Example: `--tests=MyControllerTests,MyTriggerTests`
 
 - **`--jUnitTo=<filePath>`**
 
@@ -67,8 +67,8 @@ orgflow env:flowout
 
 ***
 
-Flow an environment called `UAT` out, execute all the local tests, and publish the test results to a file on disk so that another application can publish the test results:
+Flow an environment called `UAT` out, execute all the local tests, and publish the test results to a file on disk so that another application can read the test results:
 
 ```bash
-orgflow env:flowout --environment=uat --tests=RunLocalTests --jUnitTo="C:\TestResults\MyTestResult.xml"
+orgflow env:flowout --environment=uat --testLevel=RunLocalTests --jUnitTo="C:\TestResults\MyTestResult.xml"
 ```

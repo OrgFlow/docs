@@ -44,7 +44,7 @@ Where credentials are saved is controlled by the `--location` and `--environment
   > - If you save credentials at the stack level, then the username needs to be ***user@orgflow.io***. OrgFlow will automatically append ***.sandboxa*** to this username when connecting to *SandboxA* because it expects production credentials to be stored at the stack level, which in turn allows them to be transformed to sandbox credentials.
   > - If you save credentials at the stack level, but use a sandbox specific username (e.g. ***user@orgflow.io.sandboxa***), then OrgFlow will transform this username to ***user@orgflow.io.sandboxa.sandboxa*** when connecting to *SandboxA*. This is probably not what you want, and authentication will probably fail.
   >
-  > See @concept_credentialinferrence for more details.
+  > See @concept_credentialinference for more details.
 
   Environment names are case-insensitive.
 
