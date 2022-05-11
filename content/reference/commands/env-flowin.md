@@ -51,6 +51,8 @@ title: env:flowin
 
   If specified, the OrgFlow CLI will retain the zip files containing the metadata items that are retrieved from Salesforce. The zip files will be placed into the directory specified. This can be useful in scenarios where you need to troubleshoot problems.
 
+[!include[WaitForLockOption](partials/wait-for-lock-option.md)]
+
 [!include[HostOptions](partials/host-options.md)]
 
 ## Examples

@@ -94,6 +94,8 @@ Merges metadata from one @concept_environment into another.
 
   If specified, the OrgFlow CLI will retain the delta deployment archives that are uploaded to Salesforce as part of the deployment process. The delta archives will be placed into the directory specified. This can be useful in scenarios where you need to troubleshoot deployment problems.
 
+[!include[WaitForLockOption](partials/wait-for-lock-option.md)]
+
 [!include[HostOptions](partials/host-options.md)]
 
 ## Examples
