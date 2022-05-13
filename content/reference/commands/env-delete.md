@@ -33,6 +33,8 @@ Remove any non-production @concept_environment and the associated @concept_envir
 
 [!include[EncryptionKeyOption](partials/encryption-key-option.md)]
 
+[!include[WaitForLockOption](partials/wait-for-lock-option.md)]
+
 [!include[HostOptions](partials/host-options.md)]
 
 ## Examples
