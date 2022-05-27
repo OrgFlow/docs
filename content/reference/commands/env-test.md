@@ -5,7 +5,7 @@ title: env:test
 
 ## Description
 
-List every @concept_environment in the selected @concept_stack.
+Run Apex tests in a given @concept_environment. Test results can optionally be exported in a format that a CI/CD tool can use to publish the results.
 
 ## Options
 

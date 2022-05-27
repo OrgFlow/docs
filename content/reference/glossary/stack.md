@@ -17,7 +17,7 @@ Stacks also contain @concept_environmentstate records, as well as some other inf
 There are a number of commands that allow you to manage stacks. They all begin with the prefix `stack:`. Here are some examples:
 
 - @command_stack_create - Initializes a new stack. This will probably be the very first command you run with OrgFlow.
-- @command_auth_salesforce_save - Save (encrypted) Salesforce credentials in your stack to bypass the OAuth authentication prompts.
+- @command_stack_list - List all of your stacks.
 - @command_stack_delete - Delete a stack and all of its associated records.
 
 ## Stack record storage
