@@ -62,6 +62,8 @@ Merges metadata from one @concept_environment into another.
 
 [!include[CheckOnlyDeployWarning](partials/check-only-deploy-warning.md)]
 
+[!include[AllOrNothingOption](partials/all-or-nothing-option.md)]
+
 - **`--testLevel=[NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]`**
 
   If specified, indicates the tests that should be executed as part of the deployment to Salesforce:
