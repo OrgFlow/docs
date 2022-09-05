@@ -50,6 +50,8 @@
           - topicUid: command_env_rollback
           - topicUid: command_env_snapshot_delete
           - topicUid: command_env_snapshot_list
+          - topicUid: command_env_tags_set
+          - topicUid: command_env_tags_delete
           - topicUid: command_env_test
           - topicUid: command_env_unlock
           - topicUid: command_stack_delete
