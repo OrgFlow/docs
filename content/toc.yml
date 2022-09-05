@@ -4,6 +4,8 @@
   - topicUid: overview_downloadandinstallation
 - name: Concepts
   items:
+  - name: "Environment Tags"
+    topicUid: concept_tags
   - name: "Salesforce + Git"
     topicUid: guide_git_overview
   - name: "Security"
@@ -50,6 +52,8 @@
           - topicUid: command_env_rollback
           - topicUid: command_env_snapshot_delete
           - topicUid: command_env_snapshot_list
+          - topicUid: command_env_tags_set
+          - topicUid: command_env_tags_delete
           - topicUid: command_env_test
           - topicUid: command_env_unlock
           - topicUid: command_stack_delete
