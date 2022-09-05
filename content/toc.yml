@@ -4,6 +4,8 @@
   - topicUid: overview_downloadandinstallation
 - name: Concepts
   items:
+  - name: "Environment Tags"
+    topicUid: concept_tags
   - name: "Salesforce + Git"
     topicUid: guide_git_overview
   - name: "Security"
