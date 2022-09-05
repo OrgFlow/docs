@@ -5,7 +5,7 @@ title: Environment Tags
 
 Tags are arbitrary name/value pairs that you can set on the environments in your OrgFlow stack.
 
-A tag can either have a value (for example `OwnerEmail:dimitrius@acme.com`) or no value (for example `IsDisabled`). Tags with values are most useful when you need to filter or carry out actions based on values that may differ between environments, such as send an email to the owner of an environment. Tags without values are useful for modeling and acting on boolean conditions, such as excluding environments that have been temporarily disabled.
+A tag can either have a value (for example `ownerEmail:dimitrius@acme.com`) or no value (for example `isDisabled`). Tags with values are most useful when you need to filter or carry out actions based on values that may differ between environments, such as send an email to the owner of an environment. Tags without values are useful for modeling and acting on boolean conditions, such as excluding environments that have been temporarily disabled.
 
 Both tag names and tag values are **case-insensitive**. Tag names may only contain alphanumeric characters, hyphens and underscores. Tag values may contain anything except newline characters.
 
@@ -24,11 +24,11 @@ This flexibility allows you to:
 
 The potential use cases for tags are virtually unlimited and depend on your requirements, but here are some examples of what environment tags could be used for:
 
-- **Categorize and group** your environments and develop scripts or pipelines that apply particular logic or processing only for environments in a certain category or group. As an example, you might categorize all your environments as either `dev`, `test`, `staging`. In your CI/CD pipelines, you might only flow in changes in environments with the tag `Category:dev`, because no changes made in `test` and `staging` environments should be preserved.
+- **Categorize and group** your environments and develop scripts or pipelines that apply particular logic or processing only for environments in a certain category or group. As an example, you might categorize all your environments as either `dev`, `test`, `staging`. In your CI/CD pipelines, you might only flow in changes in environments with the tag `category:dev`, because no changes made in `test` and `staging` environments should be preserved.
 
-- Save **arbitrary values** on your environments and use those values as per-environment inputs to the logic or processing in your scripts or pipelines. As an example, you might designate a code owner for each development environment, and store the owner's email address on each environment with the tags similar to `OwnerEmail:name@domain.com`. In your CI/CD pipelines, you might then send an email to the owner of any environment where merge conflicts are detected.
+- Save **arbitrary values** on your environments and use those values as per-environment inputs to the logic or processing in your scripts or pipelines. As an example, you might designate a code owner for each development environment, and store the owner's email address on each environment with the tags similar to `ownerEmail:name@domain.com`. In your CI/CD pipelines, you might then send an email to the owner of any environment where merge conflicts are detected.
 
-- **Flag** your environments based on boolean semantics and use conditional logic or processing in your scripts or pipelines based on those flags. As an example, you might add a `NoMergeFromDownstream` tag to some environments to allow environments to temporarily stop receiving automatic merges from downstream environments. In your scheduled upstream merge CI/CD pipeline, you would then exclude those environments from processing.
+- **Flag** your environments based on boolean semantics and use conditional logic or processing in your scripts or pipelines based on those flags. As an example, you might add a `noMergeFromDownstream` tag to some environments to allow environments to temporarily stop receiving automatic merges from downstream environments. In your scheduled upstream merge CI/CD pipeline, you would then exclude those environments from processing.
 
 ## Managing tags
 
