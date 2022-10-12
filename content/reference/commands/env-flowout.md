@@ -55,7 +55,10 @@ This command can also be used to validate a deployment without actually making a
 
 - **`--useLocalRepo=<directoryPath>`**
 
-  Normally, OrgFlow will create a temporary local clone of your stack's configured remote Git repository, and use that local clone as the source of the outbound flow. This argument allows you to instead have OrgFlow use an existing local repository on disk as the source of the outbound flow. This can be useful in automation and CI/CD scenarios, such as automated validation of a pull request (where you want to validate the deployment of the merge result rather than the source environment) or other scenarios when the repository has already been cloned in previous steps.
+If specified, OrgFlow will use an existing local repository on disk as the source of the outbound flow as opposed to creating a temporary local clone of your stack's configured remote Git repository.
+
+ This can be useful in automation and CI/CD scenarios, such as automated validation of a pull request (where you want to validate the deployment of the merge result rather than the source environment) or other scenarios when the repository has already been cloned in previous steps.
+
 
   The specified path must be a valid Git repository, and must be a recent clone of the stack's configured remote Git repository.
 
