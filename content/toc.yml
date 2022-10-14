@@ -43,6 +43,7 @@
           - topicUid: command_auth_key_create
           - topicUid: command_auth_key_save
           - topicUid: command_auth_salesforce_save
+          - topicUid: command_env_branch_switch
           - topicUid: command_env_create
           - topicUid: command_env_delete
           - topicUid: command_env_flowin
