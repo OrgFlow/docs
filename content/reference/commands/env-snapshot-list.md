@@ -5,7 +5,7 @@ title: env:snapshot:list
 
 ## Description
 
-List every @concept_snapshot for a given @concept_environment and @concept_backinggitbranch. By default, only snapshots that are associated with the environment's current Git branch are displayed, but this can be overridden with the `--showAllBranches` switch. Listed snapshots are ordered by their number, descending (i.e. most recent first).
+List every @concept_snapshot for a given @concept_environment and @concept_backinggitbranch. By default, only snapshots that are associated with the environment's current Git branch are displayed, but this can be overridden with the `--showAllBranches` switch (for cases where you've used @concept_branchswitching). Listed snapshots are ordered by their number, descending (i.e. most recent first).
 
 ## Options
 

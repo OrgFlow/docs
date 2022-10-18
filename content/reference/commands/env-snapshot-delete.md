@@ -7,6 +7,8 @@ title: env:snapshot:delete
 
 Delete a @concept_snapshot or a range of snapshots from a given environment. Useful if you know that some snapshots were taken at a point that was bad and you want to prevent a @concept_rollback to those snapshots.
 
+If you've used @concept_branchswitching on an environment, only snapshots that are linked to the environment's current @concept_backinggitbranch are deleted.
+
 ## Options
 
 [!include[StackOption](partials/stack-option.md)]
