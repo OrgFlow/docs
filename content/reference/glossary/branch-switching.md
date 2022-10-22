@@ -14,11 +14,17 @@ An example use case may be a development team where each developer has their own
 
 The default process is: @concept_flowin changes from the environment's Salesforce org, change the branch on the environment's record in the @concept_statestore, and then @conceptflowout from the new branch to the environment's Salesforce org. 
 
-If the branch you are switching to does not yet exist, OrgFlow will create it from the head of the environment's current Git branch.
+If the branch you are switching to does not yet exist, OrgFlow will create it from the head of the environment's current Git branch. Otherwise, the branch will be left as is on the remote repository.
 
-OrgFlow uses [Snapshots](xref:concept_snapshot) to restore environment state during the ...xxx
+When switching branches, OrgFlow will check for the most recent @concept_snapshot that is associated to the branch you are switching to. If no snapshot is found, OrgFlow will do a @concept_flowout from the head of the branch you are switching to. 
+
+If a snapshot is found, OrgFlow will apply the snapshot to the environment (similar to a @concept_rollback). This allows for the environment's @concept_environmentstate to be restored to the way it was when the environment's branch was switched away from this branch.
 
 ## Impacts
+
+@command_env_snapshot_list will only list snapshots associated to the environment's current Git branch. Use the `--showAllBranches` switch to override this.
+
+@command_env_snapshot_delete will only delete snapshots that are associated to the environment's current Git branch.
 
 ## Managing environment branches
 
