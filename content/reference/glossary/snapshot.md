@@ -11,7 +11,7 @@ Snapshots don't contain any of your metadata, but they do contain:
 - The head commit hash of your environment's branch at the time that the snapshot was taken.
 - The environment's parity hash at the time that the snapshot was taken.
 
-A snapshot can be used as a target for a @concept_rollback.
+A snapshot can be used as a target for a @concept_rollback, and they help with @concept_branchswitching.
 
 ## Taking snapshots
 
