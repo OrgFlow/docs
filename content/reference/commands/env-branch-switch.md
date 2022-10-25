@@ -5,7 +5,7 @@ title: env:branch:switch
 
 ## Description
 
-Change the @concept_backinggitbranch that an @concept_environment is associated with (known as @concept_branchswitching). Useful for cases where you need to share a sandbox between two or more long-running work items that each have their own Git branch.
+Change the @concept_backinggitbranch that an @concept_environment is associated with (known as [Branch Switching](xref:concept_branchswitching)). Useful for cases where you need to share a sandbox between two or more long-running work items that each have their own Git branch.
 
 The default process is: @concept_flowin changes from the environment's Salesforce org, change the branch on the environment's record in the @concept_statestore, and then @concept_flowout from the new branch to the environment's Salesforce org.
 
