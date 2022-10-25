@@ -22,13 +22,19 @@ If a snapshot is found, OrgFlow will apply the snapshot to the environment (simi
 
 ## Impacts
 
+Switching an environment's branch can impact the behaviour of other commands:
+
+@command_env_rollback will warn and prompt for confirmation before rolling back to a snapshot that is associated with a Git branch that differs from the environment's current Git branch. The environment's Git branch will be switched back to the Git branch associated with the target snapshot. After the rollback has been completed, OrgFlow will only delete snapshots that are associated to the same Git branch as the target snapshot.
+
 @command_env_snapshot_list will only list snapshots associated to the environment's current Git branch. Use the `--showAllBranches` switch to override this.
 
 @command_env_snapshot_delete will only delete snapshots that are associated to the environment's current Git branch.
 
+<!--
 ## Managing environment branches
 
 There are commands that allow you to manage environment branches. They all begin with the prefix `env:branch:`:
 
 - @command_env_branch_switch - Switch out the @concept_backinggitbranch for an environment.
 - @command_env_branch_list - Lists all the unique branches that have been used for a given environment.
+-->
