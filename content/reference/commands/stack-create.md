@@ -33,7 +33,7 @@ The `stack:create` command will create a stack that contains the minimum amount 
 
   The name of the stack to be initialized. Stack names are **not** case-sensitive.
 
-- **`-e|--productionEnvironmentName=<environmentName>`**
+- **`-e|--environmentName=<environmentName>`**
 
   Required. Prompted for when not specified, and possible to do so. Defaults to `Production` if not specified.
 
@@ -98,7 +98,15 @@ The `stack:create` command will create a stack that contains the minimum amount 
 
   Required. Prompted for when not specified, and possible to do so.
 
-  The username to be used during authentication with the production Salesforce organization. This username will be used during the OAuth sign in process.
+  The username to be used to authenticate with the production Salesforce organization.
+
+- **`-p|--password=<password>`**
+
+  If supplied, then this password will be used to authenticate with the production Salesforce organization. If omitted, an interactive browser-based sign-in flow will be used.
+
+- **`--environmentTags=name[:value][,name[:value],...]`**
+
+  One or more tags to set on the production environment. Omitting a value sets a tag with no value. Tag names may only contain alphanumeric characters, hyphens and underscores. Tag values may contain anything except newline characters. Spaces in tag values can be set using shell-specific quoting. Commas in tag values can be set by escaping them with backslash as `\,` e.g. `--tags=FullName:Payne\,Chris`.
 
 - **`--saveCredentials=[Local|StateStore]`**
 
@@ -121,6 +129,10 @@ The `stack:create` command will create a stack that contains the minimum amount 
   An encryption key will be generated for you if `--saveCredentials` is specified and `--encryptionKey` is omitted.
 
   The encryption key to be used to encrypt saved credentials (if any).
+
+- **`--ensurePortable`**
+
+  By default, OrgFlow optimizes some metadata types for effective version control, at the expense of compatibility with other tools, when committing your Salesforce metadata to your Git repository. Specifying `--ensurePortable` configures your stack to instead optimize metadata in your repository for compatibility with other tools, by disabling those optimizations.
 
 - **`--apiVersion=<number>`**
 
@@ -145,5 +157,5 @@ orgflow stack:create
 Create a new stack called *NightlyBackup* with a production environment called *Prod*. Commit all metadata to a repository on GitHub, inside a folder called *metadata*. Use a custom URL to authenticate with Salesforce:
 
 ```bash
-orgflow stack:create --name=NightlyBackup --productionEnvironmentName=Prod --gitRepoUrl="git@github.com:MyOrg/MyRepo.git" --archivePath=metadata --include=All --signInUrl="https://myorg.my.salesforce.com" --username=user@orgflow.io
+orgflow stack:create --name=NightlyBackup --environmentName=Prod --gitRepoUrl="git@github.com:MyOrg/MyRepo.git" --archivePath=metadata --include=All --signInUrl="https://myorg.my.salesforce.com" --username=user@orgflow.io
 ```

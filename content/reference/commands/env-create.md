@@ -54,6 +54,10 @@ This command will make sure that all of these items are available, and in a stat
   >[!TIP]
   >Unless `createFrom` is specified, the branch will be created from the HEAD of the branch that backs the @concept_productionenvironment. If you would prefer to create this branch from elsewhere in the commit history, you can do so by first manually creating the branch in the remote Git repository, and then running `env:create` with the `--useExistingBranch` option.
 
+- **`--tags=name[:value][,name[:value],...]`**
+
+  One or more tags to set on the new environment. Omitting a value sets a tag with no value. Tag names may only contain alphanumeric characters, hyphens and underscores. Tag values may contain anything except newline characters. Spaces in tag values can be set using shell-specific quoting. Commas in tag values can be set by escaping them with backslash as `\,` e.g. `--tags=FullName:Payne\,Chris`.
+
 - **`-sb|--sandboxName=<sandboxName>`**
 
   Required. Prompted for if not supplied and possible to do so.
