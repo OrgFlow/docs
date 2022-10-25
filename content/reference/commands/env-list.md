@@ -20,14 +20,18 @@ List environments in the selected @concept_stack.
 
 - **`--withTags=name[:value][,name[:value],...]`**
 
-  List only environments matching the specified tags. Multiple tags specifiers are combined using boolean `AND` logic (i.e. only environments matching **all** specified tags are included). Tag names and tag values are matched case-insensitively. Omitting a tag value matches only tags with no value.
+  List only environments matching the specified tags. Multiple tags specifiers are combined using boolean `AND` logic (i.e. only environments matching **all** of the specified tags are included). Tag names and tag values are matched case-insensitively. Omitting a tag value matches only tags with no value. `--withTags` and `--withoutTags` specifiers are combined using boolean `AND` logic; having the same tag spec in both arguments results in no environments being listed.
+
+- **`--withoutTags=name[:value][,name[:value],...]`**
+
+  List only environments **not** matching the specified tags. Multiple tags specifiers are combined using boolean `AND` logic (i.e. only environments matching **none** of the specified tags are included). Tag names and tag values are matched case-insensitively. Omitting a tag value matches only tags with no value. `--withTags` and `--withoutTags` specifiers are combined using boolean `AND` logic; having the same tag spec in both arguments results in no environments being listed.
 
 - **`--useRegex`**
 
-  If specified, regular expression syntax can be used in tag values for more flexible matching.
+  If specified, regular expression syntax can be used in tag values in `--withTags` and `--withoutTags` arguments for more flexible matching.
 
 > [!TIP]
-> If the filtering options provided by the `--withTags` and `--useRegex` arguments are insufficient for your scenario, use the `output=json` argument to list arguments in JSON format and do your own filtering, using your scripting language or a tool such as [jq](https://stedolan.github.io/jq/).
+> If the filtering options provided by the `--withTags`, `--withoutTags` and `--useRegex` arguments are insufficient for your scenario, use the `output=json` argument to list arguments in JSON format and do your own filtering, using your scripting language or a tool such as [jq](https://stedolan.github.io/jq/).
 
 - **`--nameOnly`**
 
