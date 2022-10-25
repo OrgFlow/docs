@@ -66,6 +66,7 @@
       - topicUid: concept_orgflowincludefile
       - topicUid: concept_accesscontrol
       - topicUid: concept_backinggitbranch
+      - topicUid: concept_branchswitching
       - topicUid: concept_credentialinference
       - topicUid: concept_defaultstack
       - topicUid: concept_deltaarchive
