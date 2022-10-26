@@ -30,11 +30,9 @@ Switching an environment's branch can impact the behaviour of other commands:
 
 @command_env_snapshot_delete will only delete snapshots that are associated to the environment's current Git branch.
 
-<!--
 ## Managing environment branches
 
 There are commands that allow you to manage environment branches. They all begin with the prefix `env:branch:`:
 
 - @command_env_branch_switch - Switch out the @concept_backinggitbranch for an environment.
 - @command_env_branch_list - Lists all the unique branches that have been used for a given environment.
--->
