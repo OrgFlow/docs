@@ -15,8 +15,18 @@ You can provide a passthrough argument either as an environment variable, or as 
 
 | Environment Variable | Command Option | Description | Default Value |
 |---|---|---|---|
-| `ORGFLOW_GIT_EXECUTABLEPATH` | `--c:git.executablePath` | The location of the Git executable on disk. | `git` |
-| `ORGFLOW_GIT_UNKNOWNAUTHORNAME` | `--c:git.unknownAuthorName` | The name to use in the commit signature for changes where OrgFlow is unable to determine the author (for example, deletes). | `Unknown Author` |
-| `ORGFLOW_GIT_UNKNOWNAUTHOREMAIL` | `--c:git.unknownAuthorEmail` | The email address to use in the commit signature for changes where OrgFlow is unable to determine the author (for example, deletes). | `unknownauthor@orgflow.io` |
+| `ORGFLOW_GIT__EXECUTABLEPATH` | `--c:git.executablePath` | The location of the Git executable on disk. | `git` |
+| `ORGFLOW_GIT__UNKNOWNAUTHORNAME` | `--c:git.unknownAuthorName` | The name to use in the commit signature for changes where OrgFlow is unable to determine the author (for example, deletes). | `Unknown Author` |
+| `ORGFLOW_GIT__UNKNOWNAUTHOREMAIL` | `--c:git.unknownAuthorEmail` | The email address to use in the commit signature for changes where OrgFlow is unable to determine the author (for example, deletes). | `unknownauthor@orgflow.io` |
 | `ORGFLOW_GIT_COMMITTERNAME` | `--c:git.committerName` | The name to use in the committer's commit signature. | `OrgFlow` |
-| `ORGFLOW_GIT_COMMITTEREMAIL` | `--c:git.committerEmail` | The email address to use in the committer's commit signature. | `orgflow@orgflow.io` |
+| `ORGFLOW_GIT__COMMITTEREMAIL` | `--c:git.committerEmail` | The email address to use in the committer's commit signature. | `orgflow@orgflow.io` |
+
+### Metadata Archives
+
+| Environment Variable | Command Option | Description | Default Value |
+|---|---|---|---|
+| `ORGFLOW_METADATARCHIVE__DISALLOWCASEONLYRENAMES` | `--c:metadataarchive.disallowcaseonlyrenames` | Whether or not OrgFlow will allow case-ony renames of metadata files<sup>1</sup>. | `true` |
+
+#### Notes
+
+<sup>1</sup> OrgFlow disallows this by default because case-only renames can confuse Git on a case-insensitive file system. If you encounter this situation (and OrgFlow is configured to disallow it) then OrgFlow will error with a message like `Cannot apply archive changes: The file '[...]' has changed in case only (to '[...]]')`.
