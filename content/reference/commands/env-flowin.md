@@ -25,9 +25,9 @@ title: env:flowin
 
   The message to be used when committing changes to the Git repository. The flow in process may create more than one commit, and the same message will be used for all commits.
 
-- **`--checkOnly`**
+- **`-c|--checkOnly`**
 
-  If specified, a *validation-only* inbound flow is performed, which means no changes will be pushed to your configured remote Git repository, and no changes will be persisted in the @concept_environmentstate. This is useful to proactively detect potential merge conflicts and collect information about which changes *would* be applied to your environment, were it to be flowed in.
+  If specified, a *validation-only* inbound flow is performed, which means no changes will be pushed to your configured remote Git repository, and no changes will be persisted in the @concept_environmentstate. This is useful to proactively detect potential merge conflicts, collect information about which changes *would* be applied to your environment were it to be flowed in, or to check if any changes have been made to an org that you wouldn't expect changes to be made (such as your production org).
 
 - **`--excludeUndeployable`**
 

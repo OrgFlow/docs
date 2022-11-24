@@ -23,7 +23,7 @@ This command can also be used to validate a deployment without actually making a
 
 - **`-c|--checkOnly`**
 
-  If specified, no change to the metadata in the Salesforce organization are made. Instead, the changes are validated by Salesforce, similar to [validating a changeset](https://help.salesforce.com/articleView?id=sf.changesets_inbound_test_deploy.htm&type=5).
+  If specified, no changes to the metadata in the Salesforce organization are made. Instead, the changes are validated by Salesforce, similar to [validating a changeset](https://help.salesforce.com/articleView?id=sf.changesets_inbound_test_deploy.htm&type=5).
 
 [!include[CheckOnlyDeployWarning](partials/check-only-deploy-warning.md)]
 
