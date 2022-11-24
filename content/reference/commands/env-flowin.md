@@ -25,9 +25,9 @@ title: env:flowin
 
   The message to be used when committing changes to the Git repository. The flow in process may create more than one commit, and the same message will be used for all commits.
 
-- **`--checkOnly`**
+- **`-c|--checkOnly`**
 
-  If specified, a *validation-only* inbound flow is performed, which means no changes will be pushed to your configured remote Git repository, and no changes will be persisted in the @concept_environmentstate. This is useful to proactively detect potential merge conflicts and collect information about which changes *would* be applied to your environment, were it to be flowed in.
+  If specified, a *validation-only* inbound flow is performed, which means no changes will be pushed to your configured remote Git repository, and no changes will be persisted in the @concept_environmentstate. This is useful to proactively detect potential merge conflicts, collect information about which changes *would* be applied to your environment were it to be flowed in, or to check if any changes have been made to an org that you wouldn't expect changes to be made (such as your production org).
 
 - **`--excludeUndeployable`**
 
@@ -50,10 +50,6 @@ title: env:flowin
   The end result is that the metadata in the Git repository will match the metadata in the Salesforce organization, but any change to the metadata that is in Git but not in the Salesforce organization will be lost.
 
   This has the side effect of removing all @concept_undeployablecomponents from the state store for this specific environment.
-
-- **`-c|--checkOnly`**
-
-  If specified, no permanent commits are made to the Git repository. Instead, the CLI will print what would be committed if the command were to be run without this option. This can be useful for times when you only want to know if the Salesforce org is ahead of Git (for example if you wanted to know if any changes had been made directly to your production org).
 
 - **`--keepZipFiles=<directoryPath>`**
 
