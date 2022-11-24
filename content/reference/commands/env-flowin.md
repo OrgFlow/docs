@@ -51,6 +51,10 @@ title: env:flowin
 
   This has the side effect of removing all @concept_undeployablecomponents from the state store for this specific environment.
 
+- **`-c|--checkOnly`**
+
+  If specified, no permanent commits are made to the Git repository. Instead, the CLI will print what would be committed if the command were to be run without this option. This can be useful for times when you only want to know if the Salesforce org is ahead of Git (for example if you wanted to know if any changes had been made directly to your production org).
+
 - **`--keepZipFiles=<directoryPath>`**
 
   If specified, the OrgFlow CLI will retain the zip files containing the metadata items that are retrieved from Salesforce. The zip files will be placed into the directory specified. This can be useful in scenarios where you need to troubleshoot problems.

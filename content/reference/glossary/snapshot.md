@@ -18,7 +18,7 @@ A snapshot can be used as a target for a @concept_rollback, and they help with @
 Snapshots are automatically taken after a @concept_flowin or a @concept_flowout. This includes commands that flow in or flow out as part of their process. The full list of commands that will take snapshots are:
 
 - @command_env_create
-- @command_env_flowin
+- @command_env_flowin (except if `--checkOnly`)
 - @command_env_flowout (except if `--checkOnly`)
 - @command_env_flowmerge (except if `--gitOnly`)
   - after source environment flow in (except if `--noSourceIn`)
