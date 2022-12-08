@@ -29,7 +29,7 @@ title: env:flowin
 
   If specified, a *validation-only* inbound flow is performed, which means no changes will be pushed to your configured remote Git repository, and no changes will be persisted in the @concept_environmentstate. This is useful to proactively detect potential merge conflicts, collect information about which changes *would* be applied to your environment were it to be flowed in, or to check if any changes have been made to an org that you wouldn't expect changes to be made (such as your production org).
 
-- **`-c|--conflicts=prompt|allAsLocal|allAsRemote|askForEach|gitMergetool|abort`**
+- **`--conflicts=prompt|allAsLocal|allAsRemote|askForEach|gitMergetool|abort`**
 
   Specifies how unresolved merge conflicts encountered during inbound flow should be handled.
 
