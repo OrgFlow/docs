@@ -34,8 +34,10 @@ The potential use cases for tags are virtually unlimited and depend on your requ
 
 To manage tags on your environments, use the @command_env_tags_set and @command_env_tags_delete commands. Both commands allow you to set/delete multiple tags on multiple environments in a single command.
 
-To see all tags on a given environment or to see a list of environments matching a given set of tags, use the @command_env_list command.
+To see all tags on a given environment use the @command_env_tags_get, or to see a list of environments matching a given set of tags use the @command_env_list command.
 
 ## Using tags
 
 To use tags in your scripts and automation pipelines, use the @command_env_list command. For simple filtering needs, you can use the `--withTags` argument of the @command_env_list command itself to list environments matching a given set of tags and then use a loop in your script to perform some set of actions on those environments. For more advanced filtering needs, you can use the `--output=json` argument to include all environment tags in JSON output, allowing you to base custom filtering and processing logic on those tags. You can also use a combination of both.
+
+The @command_env_tags_get command can output the tags on environments. The `--valueOnly` argument on this command can be used to print just the value of a single tag from a single environment, which simplifies scripting involving the value of tags.
