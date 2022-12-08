@@ -29,6 +29,19 @@ title: env:flowin
 
   If specified, a *validation-only* inbound flow is performed, which means no changes will be pushed to your configured remote Git repository, and no changes will be persisted in the @concept_environmentstate. This is useful to proactively detect potential merge conflicts, collect information about which changes *would* be applied to your environment were it to be flowed in, or to check if any changes have been made to an org that you wouldn't expect changes to be made (such as your production org).
 
+- **`-c|--conflicts=prompt|allAsLocal|allAsRemote|askForEach|gitMergetool|abort`**
+
+  Specifies how unresolved merge conflicts encountered during inbound flow should be handled.
+
+  - `prompt`: Prompt user interactively for each encountered set of unresolved merge conflicts if possible, otherwise abort the inbound flow
+  - `allAsLocal`: Resolve all merge conflicts by letting the version in the Git branch win
+  - `allAsRemote`: Resolve all merge conflicts by letting the incoming version from the Salesforce org win
+  - `askForEach`: Let user choose between local and remote for each conflicted file
+  - `gitMergetool`: Run configured `git-mergetool` command for each encountered set of unresolved merge conflicts
+  - `abort`: Abort the inbound flow if any unresolved merge conflicts are encountered
+
+  The specified conflict resolution strategy applies only to files which could not automatically resolved by Git. If not specified, the default behavior is equal to `prompt`.
+
 - **`--excludeUndeployable`**
 
   If specified, the metadata that is currently marked as undeployable in the state store is not included in the process.

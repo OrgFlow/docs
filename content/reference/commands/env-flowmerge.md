@@ -64,6 +64,12 @@ Merges metadata from one @concept_environment into another.
 
 [!include[AllOrNothingOption](partials/all-or-nothing-option.md)]
 
+- **`--forceOrgDiff`**
+
+  By default, OrgFlow uses the commit history in the environment's Git branch to build a diff comparison target based on recorded commit hashes at which each component was last successfully deployed. History diffing is generally the fastest and safest comparison method, as it deploys only those components for which the Git branch is **ahead** of the target org.
+
+  The `--forceOrgDiff` argument opts out of history diffing and instead forces OrgFlow to perform a full retrieve of the target org metadata and use the retrieved metadata as the diff target, which results in the deployment of any difference between the Git branch and the target org, regardless of which is ahead. This can be preferable in some cases, such as when the environment's sandbox has been manually refreshed, or when there are uncommitted changes in the target org that you want to revert.
+
 - **`--testLevel=[NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]`**
 
   If specified, indicates the tests that should be executed as part of the deployment to Salesforce:
