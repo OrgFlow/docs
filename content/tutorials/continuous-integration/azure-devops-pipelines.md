@@ -22,7 +22,7 @@ OrgFlow will need to be able to authenticate with Salesforce in order to interac
     ```yaml
     - script: |
         # Create a new encryption key and then assign it to a variable:
-        encryptionKey=`orgflow auth:key:create --output=flat`
+        encryptionKey=`orgflow auth:key:create`
         # Save the key to the container:
         orgflow auth:key:save -k=$encryptionKey
         # Encrypt and save the Salesforce username and password:
@@ -104,7 +104,7 @@ jobs:
   - script: echo $(matrix)
   # Take the Salesforce credentials from DevOps variables, and save them to the stack to support credential inference:
   - script: |
-      encryptionKey=`orgflow auth:key:create --output=flat`
+      encryptionKey=`orgflow auth:key:create`
       orgflow auth:key:save -k=$encryptionKey
       orgflow auth:salesforce:save -u=$SALESFORCE_USERNAME -p=$SALESFORCE_PASSWORD
     displayName: Set Salesforce credentials
@@ -170,7 +170,7 @@ jobs:
   - checkout: none
   - script: |
       # List all the environments in the stack and output as JSON. Use jq to transform that JSON into the format expected from Azure DevOps for a matrix, and then assign the transformed output to an output variable:
-      echo "##vso[task.setvariable variable=environmentMatrix;isOutput=true]`orgflow env:list --output=json | jq 'map( { (.name): {environment: .name} } ) | add' -c`"
+      echo "##vso[task.setvariable variable=environmentMatrix;isOutput=true]`orgflow env:list --json | jq 'map( { (.name): {environment: .name} } ) | add' -c`"
     name: createMatrix
 
 - job: env_flowin

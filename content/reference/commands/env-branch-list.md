@@ -37,5 +37,5 @@ orgflow env:branch:list -e=Dev1
 List the branches for an environment called `QA` and output as JSON:
 
 ```bash
-orgflow env:branch:list -e=QA --output=JSON
+orgflow env:branch:list -e=QA --json
 ```
