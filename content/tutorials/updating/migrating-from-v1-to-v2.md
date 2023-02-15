@@ -24,7 +24,7 @@ You do not need to do anything in OrgFlow to enable source tracking support, but
 
 ## Clobber detection
 
-@concept_clobber detection can warn you before you deploy changes that would overwrite changes in the Salesforce org. Version 1 of OrgFlow would simply continue with this deployment wihtout producing any warnings. You may need to update any workflows that will now fail if clobber is detected. The affected commands are @commend_env_flowout and @command_env_flowmerge, and the new behavior in version 2 of OrgFlow could mean that scripts including either of these two commands could now fail if OrgFlow detects clobber.
+@concept_clobber detection can warn you before you deploy changes that would overwrite changes in the Salesforce org. Version 1 of OrgFlow would simply continue with this deployment wihtout producing any warnings. You may need to update any workflows that will now fail if clobber is detected. The affected commands are @command_env_flowout and @command_env_flowmerge, and the new behavior in version 2 of OrgFlow could mean that scripts including either of these two commands could now fail if OrgFlow detects clobber.
 
 If you want to maintain the version 1 functionality (of always deploying regardless of clobber), you need to add the `--clobber=accept` argument to scripts with the affected commands. However, we'd recommend that you take advantage of OrgFlow's new clobber detection and decide the best way to proceed on a case-by-case basis for each of your scripts and environments. The [clobber documentation](xref:concept_clobber) can help you understand the different options available, and how to implement them.
 
