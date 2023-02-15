@@ -37,6 +37,6 @@ If you want to maintain the version 1 functionality (of always deploying regardl
 
 ## Selective inbound flows
 
-The `--interactiveExclude` and `--exclude` arguments have been removed from the @command_env_flowin command. These arguments allowed you to do 'selective inbound flows', but excluding components during inbound flows prevented us from being able to rely on source tracking data from Salesforce. This feature required a large amount of maintenance and testing which slowed down delivery of other features, and it contributed a relatively large percentage of the overall download size.
+The `--excludeUndeployable`, `--interactiveExclude` and `--exclude` arguments have been removed from the @command_env_flowin command. These arguments allowed you to do 'selective inbound flows', but excluding components during inbound flows prevented us from being able to rely on source tracking data from Salesforce. This feature required a large amount of maintenance and testing which slowed down delivery of other features, and it contributed a relatively large percentage of the overall download size.
 
 Usage data showed that this feature was not in use by anybody. Removing it allowed us to deliver source tracking, clobber detection, partial retrieves, all while reducing the overall binary size and maintenance/testing requirements going forward.
