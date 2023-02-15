@@ -27,6 +27,9 @@
       - topicUid: guide_ci_overview
       - topicUid: guide_ci_github
       - topicUid: guide_ci_azuredevops
+  - name: "Migration Guides"
+    items:
+      - topicUid: guide_v1tov2update
 - name: Troubleshooting
   items:
   - topicUid: troubleshooting_logging
