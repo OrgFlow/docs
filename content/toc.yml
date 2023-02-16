@@ -82,6 +82,8 @@
       - topicUid: concept_environmentstate
       - topicUid: concept_flowin
       - topicUid: concept_flowout
+      - topicUid: concept_fulldiff
+      - topicUid: concept_historydiff
       - topicUid: concept_includespecs
       - topicUid: concept_licensekey
       - topicUid: concept_mergebasedcommitstrategy
