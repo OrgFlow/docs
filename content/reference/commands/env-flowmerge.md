@@ -37,16 +37,83 @@ Merges metadata from one @concept_environment into another.
 
   If specified, the inbound flow of metadata from the `--from` environment is not performed. Instead, only the metadata changes that are already in that environment's Git branch will be merged into the `--into` environment.
 
+- **`--sourceInRetrieveMode=auto|partial|full`**
+
+  Specifies how metadata is retrieved from the source Salesforce org. The default value is `auto`.
+
+  - `auto`: Favor a @concept_partialretrieve if it is safe and possible to do so, fall back to a full retrieve if not
+  - `partial`: Never fall back to a full retrieve, always do a partial retrieve (even if it is not safe to do so); fail if it is not possible to do a partial retrieve (e.g. if source tracking is not enabled in the org)
+  - `full`: Always do a full retrieve, even if a partial retrieve would be possible
+
+- **`--sourceInConflicts=prompt|allAsLocal|allAsRemote|askForEach|gitMergetool|abort`**
+
+  Specifies how unresolved merge conflicts encountered during the inbound flow of the source environment should be handled. The default value is `prompt`.
+
+  - `prompt`: Prompt user interactively for each encountered set of unresolved merge conflicts if possible, otherwise abort the inbound flow
+  - `allAsLocal`: Resolve all merge conflicts by letting the version in the Git branch win
+  - `allAsRemote`: Resolve all merge conflicts by letting the incoming version from the Salesforce org win
+  - `askForEach`: Let user choose between local and remote for each conflicted file
+  - `gitMergetool`: Run configured `git-mergetool` command for each encountered set of unresolved merge conflicts
+  - `abort`: Abort the inbound flow if any unresolved merge conflicts are encountered
+
 - **`--noTargetIn`**
 
   If specified, the inbound flow of metadata from the `--into` environment is not performed. Instead, the metadata changes from the `--into` environment will be merged with the changes in the `--from` environment's Git branch.
 
   >[!WARNING]
-  >`--noTargetIn` can be potentially destructive unless either `--noTargetOut` or `--checkOnly` is also specified. This is because any metadata changes in the `--into` environment's Salesforce organization that are not already in the `--into` environment's Git branch will be overwritten by the deployment to the `--into` environment.
+  >`--noTargetIn` can increase the risk of clobber to the  org. This is because any metadata changes in the `--into` environment's Salesforce organization that are not already in the `--into` environment's Git branch will be overwritten by the deployment to the `--into` environment. The `--clobber` arg allows control of how to handle clobber if it is encountered.
+
+- **`--targetInRetrieveMode=auto|partial|full`**
+
+  Specifies how metadata is retrieved from the taget Salesforce org. The default value is `auto`.
+
+  - `auto`: Favor a @concept_partialretrieve if it is safe and possible to do so, fall back to a full retrieve if not
+  - `partial`: Never fall back to a full retrieve, always do a partial retrieve (even if it is not safe to do so); fail if it is not possible to do a partial retrieve (e.g. if source tracking is not enabled in the org)
+  - `full`: Always do a full retrieve, even if a partial retrieve would be possible
+
+- **`--targetInConflicts=prompt|allAsLocal|allAsRemote|askForEach|gitMergetool|abort`**
+
+  Specifies how unresolved merge conflicts encountered during the inbound flow of the target environment should be handled. The default value is `prompt`.
+
+  - `prompt`: Prompt user interactively for each encountered set of unresolved merge conflicts if possible, otherwise abort the inbound flow
+  - `allAsLocal`: Resolve all merge conflicts by letting the version in the Git branch win
+  - `allAsRemote`: Resolve all merge conflicts by letting the incoming version from the Salesforce org win
+  - `askForEach`: Let user choose between local and remote for each conflicted file
+  - `gitMergetool`: Run configured `git-mergetool` command for each encountered set of unresolved merge conflicts
+  - `abort`: Abort the inbound flow if any unresolved merge conflicts are encountered
+
+- **`--conflicts=prompt|allAsLocal|allAsRemote|askForEach|gitMergetool|abort`**
+
+  Specifies how unresolved merge conflicts should be handled during the merge from the source branch into the target branch. The default value is `prompt`.
+
+  - `prompt`: Prompt user interactively for each encountered set of unresolved merge conflicts if possible, otherwise abort the inbound flow
+  - `allAsLocal`: Resolve all merge conflicts by letting the version in the Git branch win
+  - `allAsRemote`: Resolve all merge conflicts by letting the incoming version from the Salesforce org win
+  - `askForEach`: Let user choose between local and remote for each conflicted file
+  - `gitMergetool`: Run configured `git-mergetool` command for each encountered set of unresolved merge conflicts
+  - `abort`: Abort the inbound flow if any unresolved merge conflicts are encountered
+
+- **`--diffMode=auto|history|org`**
+
+  Specifies the diffing algorithm to use when comparing metadata in the Git branch to the metadata in the Salesforce org during the outound flow of the target environment. The default value is `auto`.
+
+  - `auto`: Use history diff if supported, otherwise fall back to full diff
+  - `history`: Use @concept_historydiff if supported, otherwise abort
+  - `org`: Use @concept_orgdiff
 
 - **`--noTargetOut`**
 
   If specified, the merged metadata is not deployed to the `--into` environment's Salesforce organization.
+
+  The specified conflict resolution strategy applies only to files which could not automatically resolved by Git. If not specified, the default behavior is equal to `prompt`.
+
+- **`--clobber=auto|accept|abort`**
+
+  Specifies how @concept_clobber should be handled, if encountered during the outbound flow of the target environment. Default is `auto`.
+
+  - `auto`: Allow potential clobber, but abort on certain clobber
+  - `accept`: Allow all clobber (both potential and certain)
+  - `abort`: Do not allow any clobber (either potential or certain), and abort before any changes are deployed to the target Salesforce org.
 
 - **`-g|--gitOnly`**
 
@@ -63,12 +130,6 @@ Merges metadata from one @concept_environment into another.
 [!include[CheckOnlyDeployWarning](partials/check-only-deploy-warning.md)]
 
 [!include[AllOrNothingOption](partials/all-or-nothing-option.md)]
-
-- **`--forceOrgDiff`**
-
-  By default, OrgFlow uses the commit history in the environment's Git branch to build a diff comparison target based on recorded commit hashes at which each component was last successfully deployed. History diffing is generally the fastest and safest comparison method, as it deploys only those components for which the Git branch is **ahead** of the target org.
-
-  The `--forceOrgDiff` argument opts out of history diffing and instead forces OrgFlow to perform a full retrieve of the target org metadata and use the retrieved metadata as the diff target, which results in the deployment of any difference between the Git branch and the target org, regardless of which is ahead. This can be preferable in some cases, such as when the environment's sandbox has been manually refreshed, or when there are uncommitted changes in the target org that you want to revert.
 
 - **`--testLevel=[NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]`**
 
@@ -93,10 +154,6 @@ Merges metadata from one @concept_environment into another.
 - **`--jUnitTo=<filePath>`**
 
   If specified, the OrgFlow CLI will output the results of the test run to a JUnit format file. This file can be read by many CI/CD tools to report on the results of the test run.
-
-- **`--keepZipFiles=<directoryPath>`**
-
-  If specified, the OrgFlow CLI will retain the zip files containing the metadata items that are retrieved from Salesforce. The zip files will be placed into the directory specified. This can be useful in scenarios where you need to troubleshoot problems.
 
 - **`--keepDelta=<directoryPath>`**
 
