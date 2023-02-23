@@ -10,7 +10,6 @@ Stacks also contain @concept_environmentstate records, as well as some other inf
 - A name for your stack (so that you can identify and switch between stacks if you need to).
 - Information about the @concept_remotegitrepository (so that OrgFlow can clone and push to it).
 - Optional information related to authenticating with Salesforce (so that automated processes that can't open an OAuth dialog can authenticate with your Salesforce organizations).
-- An optional API version (so that you can target a specific version of the Salesforce APIs).
 
 ## Managing stacks
 
