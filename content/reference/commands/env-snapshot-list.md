@@ -38,5 +38,5 @@ orgflow env:snapshot:list -e=Production
 List every snapshot in an environment called `QA`, and format the output as JSON:
 
 ```bash
-orgflow env:snapshot:list -e=QA --output=json
+orgflow env:snapshot:list -e=QA --json
 ```

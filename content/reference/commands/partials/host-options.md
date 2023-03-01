@@ -55,14 +55,9 @@ The following options are global across all commands:
 
   If not specified, the CLI will automatically choose an appropriate location on disk (usually in the current user's temporary storage location). This automatically chosen location may be deeply nested within a drive, which may be problematic if the operating system imposes limits on file path lengths and the files placed into temporary storage have particularly long paths or names.
 
-- **`--output=[Pretty|Flat|Json]`**
+- **`--json`**
 
-  Default: `Pretty`
-
-  Controls the format of the output sent to the standard output stream:
-  - `Pretty`: The output is designed to be read by humans. It may contain visual indicators to help you understand the data, such as colored text, indentation, symbols.
-  - `Flat`: The output is designed to be easy to copy and paste into another application or format.
-  - `Json`: The output is serialized into a structured JSON object that is designed to be consumed by another process or application. This is the most verbose output available, and is useful for scripting or automation.
+  Switches the format of the output sent to the standard output stream to JSON. This is the most verbose output available, and is useful for scripting or automation.
 
 - **`--forceSignIn`**.
 

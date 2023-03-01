@@ -75,7 +75,7 @@ Generate an encryption key, use it to encrypt git credentials that are saved loc
 
 ```bash
 # Cache the Git credentials locally:
-encryptionKey=`orgflow auth:key:create --output=flat`
+encryptionKey=`orgflow auth:key:create`
 orgflow auth:git:save -u="myusername" -p="mypassword" -k=$encryptionKey
 
 # Add OrgFlow as a Git credential helper:

@@ -16,7 +16,6 @@ The `stack:create` command will create a stack that contains the minimum amount 
   - A path relative to the root of the repository to indicate where metadata should be located within the repository (optional).
   - A flag indicating whether or not metadata should be committed in a way that maintains compatibility with other deployment tools (optional) .
   - The Sign-in URL for your production Salesforce organization (optional).
-  - The preferred Salesforce API version to use (optional).
 - The remote Git repository must already exist, but OrgFlow will configure it with a few pre-requisites:
   - The repository will be initialized with a first commit if required. The first commit will be a `.gitignore` file
   - The branch to back the production environment will be created from the head of the default branch (if the branch does not already exist).
@@ -133,10 +132,6 @@ The `stack:create` command will create a stack that contains the minimum amount 
 - **`--ensurePortable`**
 
   By default, OrgFlow optimizes some metadata types for effective version control, at the expense of compatibility with other tools, when committing your Salesforce metadata to your Git repository. Specifying `--ensurePortable` configures your stack to instead optimize metadata in your repository for compatibility with other tools, by disabling those optimizations.
-
-- **`--apiVersion=<number>`**
-
-  The API version to be used when connecting to Salesforce. You only need to make use of this option if you have a need to target a specific API version.
 
 - **`--keepZipFiles`**
 

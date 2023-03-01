@@ -8,11 +8,7 @@ title: env:list
 List environments in the selected @concept_stack.
 
 > [!TIP]
-> The `--output` option allows you to control the output format of this (and every other) command.
->
-> - `--output=pretty` is the default and will give you a human readable summary of each environment.
-> - `--output=flat` will give you a terser summary of each environment.
-> - `--output=json` is the most verbose and, because the output is JSON format, it can be consumed by another process or script (for example to loop over every environment).
+> The `--json` switch on this (and every other) command causes OrgFlow to print the output of the command in JSON format, so that it can be read and parsed by subsequent steps in a script or pipeline.
 
 ## Options
 
@@ -35,7 +31,7 @@ List environments in the selected @concept_stack.
 
 - **`--nameOnly`**
 
-  If specified, only the names of matching environments are printed; all other environment information is omitted. With `--output=pretty` or `--output=flat` the environment names will be printed as separate lines with no other formatting or delimiters (useful for parsing into a simple array in most common shells to loop over environments). With `--output=json` the environment names will be printed as a JSON array of strings.
+  If specified, only the names of matching environments are printed; all other environment information is omitted. By default, the environment names will be printed as separate lines with no other formatting or delimiters (useful for parsing into a simple array in most common shells to loop over environments). With `--json` the environment names will be printed as a JSON array of strings.
 
 [!include[EncryptionKeyOption](partials/encryption-key-option.md)]
 
@@ -54,7 +50,7 @@ orgflow env:list
 List all environments in a stack called `backup` in JSON format:
 
 ```bash
-orgflow env:list --stack=backup --output=json
+orgflow env:list --stack=backup --json
 ```
 
 ***

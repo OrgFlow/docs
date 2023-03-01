@@ -42,19 +42,13 @@ title: env:flowin
 
   The specified conflict resolution strategy applies only to files which could not automatically resolved by Git. If not specified, the default behavior is equal to `prompt`.
 
-- **`--excludeUndeployable`**
+- **`--retrieveMode=auto|partial|full`**
 
-  If specified, the metadata that is currently marked as undeployable in the state store is not included in the process.
+  Specifies how metadata is retrieved from the Salesforce org. The default value is `auto`.
 
-- **`--interactiveExclude`**
-
-  If specified, the OrgFlow CLI will launch a browser window to give you an opportunity to hand-pick the metadata items that you would like exclude from the flow in process.
-
-- **`--exclude=<includeSpecs>`**
-
-  If specified, the OrgFlow CLI will exclude metadata types and items that match the @concept_includespecs from this flow in execution.
-
-  Each include spec should be comma separated.
+  - `auto`: Favor a @concept_partialretrieve if it is safe and possible to do so, fall back to a full retrieve if not
+  - `partial`: Never fall back to a full retrieve, always do a partial retrieve (even if it is not safe to do so); fail if it is not possible to do a partial retrieve (e.g. if source tracking is not enabled in the org)
+  - `full`: Always do a full retrieve, even if a partial retrieve would be possible
 
 - **`--force`**
 

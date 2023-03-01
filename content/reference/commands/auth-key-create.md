@@ -31,11 +31,11 @@ Generate a key and copy it to the clipboard (useful to paste a generated key int
 ## [Windows](#tab/win)
 
 ```bash
-orgflow auth:key:create --output=flat | clip
+orgflow auth:key:create | clip
 ```
 
 ## [macOS](#tab/macos)
 
 ```bash
-orgflow auth:key:create --output=flat | pbcopy
+orgflow auth:key:create | pbcopy
 ```

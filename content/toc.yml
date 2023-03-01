@@ -27,6 +27,9 @@
       - topicUid: guide_ci_overview
       - topicUid: guide_ci_github
       - topicUid: guide_ci_azuredevops
+  - name: "Migration Guides"
+    items:
+      - topicUid: guide_v1tov2update
 - name: Troubleshooting
   items:
   - topicUid: troubleshooting_logging
@@ -69,6 +72,7 @@
       - topicUid: concept_accesscontrol
       - topicUid: concept_backinggitbranch
       - topicUid: concept_branchswitching
+      - topicUid: concept_clobber
       - topicUid: concept_credentialinference
       - topicUid: concept_defaultstack
       - topicUid: concept_deltaarchive
@@ -78,13 +82,17 @@
       - topicUid: concept_environmentstate
       - topicUid: concept_flowin
       - topicUid: concept_flowout
+      - topicUid: concept_fulldiff
+      - topicUid: concept_historydiff
       - topicUid: concept_includespecs
       - topicUid: concept_licensekey
       - topicUid: concept_mergebasedcommitstrategy
       - topicUid: concept_orgbasedcommands
+      - topicUid: concept_partialretrieve
       - topicUid: concept_productionenvironment
       - topicUid: concept_remotegitrepository
       - topicUid: concept_rollback
+      - topicUid: concept_sourcetracking
       - topicUid: concept_snapshot
       - topicUid: concept_stack
       - topicUid: concept_stackbasedcommands

@@ -8,7 +8,7 @@ A @concept_stack is linked to a @concept_remotegitrepository. A backing [Git bra
 The metadata in a Salesforce organisation can be committed to the backing Git branch with the @command_env_flowin command (@concept_flowin ). And the metadata in the backing Git branch can be deployed to a Salesforce organisation with the @command_env_flowout command (@concept_flowout ).
 
 > [!TIP]
-> The @command_env_flowin command is no the only way that you can change the metadata in a backing Git branch.
+> The @command_env_flowin command is not the only way that you can change the metadata in a backing Git branch.
 >
 > You can change any of the metadata files either directly in this branch by cloning it, making the required changes, and then pushing the changes back up to the remote Git Repository. You can also merge changes from other branches (either with the Git merge command or via a Pull Request).
 >

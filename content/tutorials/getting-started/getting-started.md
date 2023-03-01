@@ -79,7 +79,7 @@ At the terminal prompt, type `orgflow --version` and press enter to run the comm
 
 ```termynal
 $ orgflow --version
-1.1.2
+2.0.0
 
 OrgFlow (prod/RELEASE)
 Copyright Ⓒ OrgFlow GmbH
