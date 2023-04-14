@@ -52,7 +52,7 @@ The `stack:create` command will create a stack that contains the minimum amount 
 
 - **`-b|--gitBranch=<branchName>`**
 
-  Required. Prompted for when not specified, and possible to do so. Defaults to `master` if not specified.
+  Required. Prompted for when not specified, and possible to do so. Defaults to `main` if not specified.
 
   The name of the branch to back the production environment. Metadata that is retrieved from the production organisation is committed to this branch, and metadata changes made in this branch can be deployed to the production Salesforce organisation. The branch will be created from the head of the default branch (only if the branch does not already exist on the remote).
 
