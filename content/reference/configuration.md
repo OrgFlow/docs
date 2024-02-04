@@ -15,13 +15,15 @@ You can provide a passthrough argument either as an environment variable, or as 
 
 Control the way that OrgFlow interacts with Git.
 
-| Environment Variable              | Command Option               | Description                                                                                                                          | Default Value              |
-| --------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-| `ORGFLOW_GIT__EXECUTABLEPATH`     | `--c:git:executablePath`     | The location of the Git executable on disk.                                                                                          | `git`                      |
-| `ORGFLOW_GIT__UNKNOWNAUTHORNAME`  | `--c:git:unknownAuthorName`  | The name to use in the commit signature for changes where OrgFlow is unable to determine the author (for example, deletes).          | `Unknown Author`           |
-| `ORGFLOW_GIT__UNKNOWNAUTHOREMAIL` | `--c:git:unknownAuthorEmail` | The email address to use in the commit signature for changes where OrgFlow is unable to determine the author (for example, deletes). | `unknownauthor@orgflow.io` |
-| `ORGFLOW_GIT__COMMITTERNAME`      | `--c:git:committerName`      | The name to use in the committer's commit signature.                                                                                 | `OrgFlow`                  |
-| `ORGFLOW_GIT__COMMITTEREMAIL`     | `--c:git:committerEmail`     | The email address to use in the committer's commit signature.                                                                        | `orgflow@orgflow.io`       |
+| Environment Variable                | Command Option                 | Description                                                                                                                          | Default Value              |
+| ----------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
+| `ORGFLOW_GIT__EXECUTABLEPATH`       | `--c:git:executablePath`       | The location of the Git executable on disk.                                                                                          | `git`                      |
+| `ORGFLOW_GIT__UNKNOWNAUTHORNAME`    | `--c:git:unknownAuthorName`    | The name to use in the commit signature for changes where OrgFlow is unable to determine the author (for example, deletes).          | `Unknown Author`           |
+| `ORGFLOW_GIT__UNKNOWNAUTHOREMAIL`   | `--c:git:unknownAuthorEmail`   | The email address to use in the commit signature for changes where OrgFlow is unable to determine the author (for example, deletes). | `unknownauthor@orgflow.io` |
+| `ORGFLOW_GIT__COMMITTERNAME`        | `--c:git:committerName`        | The name to use in the committer's commit signature.                                                                                 | `OrgFlow`                  |
+| `ORGFLOW_GIT__COMMITTEREMAIL`       | `--c:git:committerEmail`       | The email address to use in the committer's commit signature.                                                                        | `orgflow@orgflow.io`       |
+| `ORGFLOW_GIT__MERGESTRATEGY`        | `--c:git:mergeStrategy`        | The [merge strategy option](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt--sltstrategygt) passed to Git.            | `recursive`                |
+| `ORGFLOW_GIT__MERGESTRATEGYOPTIONS` | `--c:git:mergeStrategyOptions` | The [merge strategy specific options](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt--Xltoptiongt) passed to Git.    | `diff-algorithm=patience`  |
 
 ### Metadata API
 
