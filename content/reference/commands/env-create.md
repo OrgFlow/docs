@@ -78,6 +78,20 @@ This command will make sure that all of these items are available, and in a stat
 
   Only effective if a sandbox is created during this process.
 
+- **`-a|--access=`**
+
+	Required if `licenseType` is `developer` or `developerPro` and the process requires a new sandbox to be created.
+
+  The name of the public group that can access the sandbox. This is the value in the `DeveloperName` field on the `Group` object (shown as `Group Name` in the Salesforce UI).
+
+  Only effective if a sandbox is created during this process.
+
+- **`--additionalStorage`**
+
+  If specified and a sandbox is created during the process, the sandbox will have the additional storage feature enabled.
+
+  Only valid if `licenseType` is `developer` or `developerPro` and you have sufficient additional storage licenses available.
+
 - **`--createFrom=<environmentName>`**
 
   If specified, the environment that is created will be created as a copy of the environment specified. If not specified, the environment that is created will be created as a copy of the production environment. Environment names are case-insensitive.
